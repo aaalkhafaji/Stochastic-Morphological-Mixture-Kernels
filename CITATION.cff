@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript and this reproducibility package when using these materials."
+type: software
+title: "Stochastic Morphological pi-Mixture Kernels: Reproducibility Package"
+version: 2.1.0
+authors:
+  - family-names: Abdulwahid
+    given-names: Adnan H.
+    affiliation: "Mathematics Department, College of Arts, Sciences, and Education, Texas A&M University--Texarkana"
+  - family-names: Neupane
+    given-names: Ram C.
+    affiliation: "Mathematics Department, College of Arts, Sciences, and Education, Texas A&M University--Texarkana"
+abstract: >-
+  Reproducibility materials for Stochastic Morphological pi-Mixture Kernels:
+  Identifiability, Topological Stability, and Output-Space Learning. The package
+  contains code, frozen clean inputs, fitted models, numerical outputs, figures,
+  mathematical checks, and supplementary documentation for the JVCIR submission.
+keywords:
+  - mathematical morphology
+  - probability kernels
+  - digital topology
+  - image denoising
+  - reproducibility
+preferred-citation:
+  type: unpublished
+  title: "Stochastic Morphological pi-Mixture Kernels: Identifiability, Topological Stability, and Output-Space Learning"
+  authors:
+    - family-names: Abdulwahid
+      given-names: Adnan H.
+    - family-names: Neupane
+      given-names: Ram C.
+  year: 2026
+  notes: "Unpublished manuscript prepared for Journal of Visual Communication and Image Representation; no publication DOI has been assigned."

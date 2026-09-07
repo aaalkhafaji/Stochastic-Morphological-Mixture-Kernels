@@ -1,0 +1,200 @@
+% Standalone editable LaTeX version of Supplementary Material S1.
+% Compile twice with: pdflatex JVCIR_Supplementary_Guide.tex
+% Standard TeX Live/MiKTeX packages only; no external assets or BibTeX needed.
+% Numerical tables are embedded snapshots of the accompanying frozen results.
+% Source content corresponds to package 2.1.0; LaTeX conversion adds no experiment.
+\documentclass[10pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath}
+\usepackage[letterpaper,margin=0.75in,top=0.625in,bottom=0.67in,footskip=0.32in]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{array,booktabs}
+\usepackage{microtype,listings,fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Supplementary Material S1: Stochastic Morphological pi-Mixture Kernels},pdfauthor={Adnan H. Abdulwahid; Ram C. Neupane}}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{1.5em}
+\definecolor{GuideNavy}{HTML}{173A53}
+\definecolor{GuideMuted}{HTML}{536B7C}
+\definecolor{GuideTable}{HTML}{E9EFF3}
+\definecolor{GuideCode}{HTML}{F2F5F7}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[L]{\fontsize{7.5}{9}\selectfont\color{GuideMuted}Supplementary Material S1 | Stochastic Morphological pi-Mixture Kernels}
+\fancyfoot[R]{\fontsize{7.5}{9}\selectfont\color{GuideMuted}\thepage}
+\newcommand{\GuideTitle}[1]{\par\noindent{\color{GuideNavy}\bfseries\fontsize{19}{24}\selectfont #1\par}\vspace{5pt}}
+\newcommand{\GuideHeading}[1]{\par\addvspace{5pt}\noindent{\color{GuideNavy}\bfseries\fontsize{12}{15}\selectfont #1\par}\nobreak\vspace{1pt}}
+\newcommand{\GuideSmall}[1]{{\fontsize{8.5}{11}\selectfont #1\par}}
+\lstset{basicstyle=\ttfamily\fontsize{8.4}{11}\selectfont,backgroundcolor=\color{GuideCode},columns=fullflexible,keepspaces=true,showstringspaces=false,breaklines=true,aboveskip=4pt,belowskip=7pt,xleftmargin=5pt,xrightmargin=5pt,frame=none}
+\newlength{\GuideTableWidth}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\begin{document}
+\fontsize{10}{13}\selectfont
+\GuideTitle{Supplementary Material S1}
+\textbf{Stochastic Morphological \(\pi\)-Mixture Kernels: Identifiability, Topological Stability, and Output-Space Learning}
+
+\GuideSmall{Adnan H. Abdulwahid \textperiodcentered{} Ram C. Neupane}
+\GuideSmall{Reproducibility guide | Package version 2.1.0 | Prepared 6 September 2026}
+\GuideHeading{Purpose and scope}
+This archive supplies the complete computational record accompanying the manuscript: frozen inputs, fitted models, candidate outputs, primary and diagnostic results, figure and table generators, and numerical checks of the mathematical claims. The written proofs remain in the main manuscript.
+
+The original campaign evaluates a fixed morphological bank on a held-out test set. The subsequent output-space construction reuses that inspected set and is explicitly exploratory. Reproducing these calculations does not create a new independent validation.
+
+\GuideHeading{Primary experiment at a glance}
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.25}
+\setlength{\GuideTableWidth}{\dimexpr\linewidth-8\tabcolsep\relax}
+\begin{tabular}{P{0.22817460\GuideTableWidth}P{0.16865079\GuideTableWidth}P{0.35119048\GuideTableWidth}P{0.25198413\GuideTableWidth}}
+\toprule
+\rowcolor{GuideTable}
+\textbf{Dataset} & \textbf{Mask size} & \textbf{Train / validation} & \textbf{Scored test} \\
+\midrule
+Shapes & 48 \(\times\) 48 & 1,000 / 300 & 499 \\
+MNIST & 28 \(\times\) 28 & 2,000 / 500 & 1,000 \\
+Fashion-MNIST & 28 \(\times\) 28 & 2,000 / 500 & 1,000 \\
+\bottomrule
+\end{tabular}
+\endgroup
+
+The 31-action bank is frozen before the final primary evaluation. Six primary corruption conditions produce 14,994 noisy cases; two additional conditions produce 4,998 diagnostic cases. Five fitted seeds (101-105) are retained for each dataset, together with three learned local-filter models.
+
+\GuideHeading{Mean primary composite loss}
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.25}
+\setlength{\GuideTableWidth}{\dimexpr\linewidth-6\tabcolsep\relax}
+\begin{tabular}{P{0.26587302\GuideTableWidth}P{0.36706349\GuideTableWidth}P{0.36706349\GuideTableWidth}}
+\toprule
+\rowcolor{GuideTable}
+\textbf{Dataset} & \textbf{Validation-best fixed filter} & \textbf{Conditional selector} \\
+\midrule
+shapes & 0.044996 & 0.040324 \\
+mnist & 0.044702 & 0.042749 \\
+fashion & 0.153080 & 0.130340 \\
+\bottomrule
+\end{tabular}
+\endgroup
+
+\GuideSmall{Lower is better. These are image-cluster means across primary corruptions and fitted seeds. The comparisons concern this fixed bank and study design, not all denoising methods. Full metric tables and paired intervals are in results/.}
+
+\clearpage
+\GuideTitle{Protocol and indexing}
+\GuideHeading{Frozen data and exclusions}
+MNIST and Fashion-MNIST retain selected original pixels, thresholded masks (intensity \(\geq128\)), and original partition row IDs. Training and validation come from official training partitions; evaluation uses official test partitions. Development-pilot IDs and identical binary masks are quarantined. The shapes file retains 500 prospective test masks; ID 173 duplicates validation and is excluded from scoring, leaving 499.
+
+\GuideHeading{Corruption schedule}
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.25}
+\setlength{\GuideTableWidth}{\dimexpr\linewidth-8\tabcolsep\relax}
+\begin{tabular}{P{0.45238095\GuideTableWidth}P{0.15476191\GuideTableWidth}P{0.15476191\GuideTableWidth}P{0.23809524\GuideTableWidth}}
+\toprule
+\rowcolor{GuideTable}
+\textbf{Index / name} & \textbf{Deletion} & \textbf{Addition} & \textbf{Role} \\
+\midrule
+0 balanced04 / 1 balanced10 & .04 / .10 & .04 / .10 & Primary \\
+2 salt04 / 3 salt10 & .01 / .01 & .04 / .10 & Primary \\
+4 pepper04 / 5 pepper10 & .04 / .10 & .01 / .01 & Primary \\
+6 shift20 / 7 clean & .20 / 0 & .20 / 0 & Diagnostic \\
+\bottomrule
+\end{tabular}
+\endgroup
+
+Training and validation use one corruption per image. Each final test image uses all eight conditions. The exact corruption law and seeded random-number construction are in run\_campaign.py. Repeated corruptions of the same image are clustered for reporting.
+
+\GuideHeading{Loss, topology, and uncertainty}
+The objective is 0.4(1-Dice) + 0.2(binary MSE) + 0.2 times each capped, target-normalized component and hole error. Separately reported Betti-error columns contain raw absolute errors. Foreground uses 8-connectivity; background uses 4-connectivity with a permanent exterior frame. \(\beta_0\) counts foreground components; \(\beta_1\) counts bounded background components.
+
+Sampled-method metrics are exact expectations over the finite categorical law. Mean-mask methods are scored separately. Aggregate PSNR is \(-10\log_{10}(\text{mean binary MSE})\). The bootstrap uses 2,000 clean-image cluster resamples; six paired control comparisons use Bonferroni-adjusted percentile intervals. These descriptive intervals do not certify performance on a new noise distribution.
+
+\GuideHeading{Decode and join arrays correctly}
+Bank scores have axes case \(\times\) action \(\times\) metric. Metric order is loss, MSE, Dice, IoU, component error, hole error, exact topology. Action order is recorded in environment.json. Map image\_index through the clean split IDs to recover a public source row. Primary CSVs use condition names; quotient CSVs use numeric condition indices.
+
+\GuideSmall{Candidate masks are packed on the width axis in big bit order: unpack with count=W. Noisy masks are flattened before packing: unpack with count=\(H\times W\) and then reshape. Detailed field names and commands are in docs/REPRODUCIBILITY.md.}
+
+\clearpage
+\GuideTitle{Reproduce the evidence}
+\GuideHeading{Environment and integrity}
+Use Python 3.12 and install the pinned requirements in a fresh virtual environment. No GPU or source-data download is needed for ordinary reproduction. The archive includes the clean masks and selected public pixels. The wrapper sets one thread for BLAS and OpenMP; fitted forests use n\_jobs=1.
+
+
+\begin{lstlisting}
+python -m pip install -r requirements.txt
+python code/check_package.py
+\end{lstlisting}
+The checksum check verifies every frozen release file. Run it before making edits. The reproduction wrapper copies the package to a new directory and rejects an existing destination. All generated files and timings are written into that copy.
+
+\GuideHeading{Three execution levels}
+
+\begin{lstlisting}
+python code/reproduce.py --level quick --workdir ../smm-quick
+python code/reproduce.py --level analysis --workdir ../smm-analysis
+python code/reproduce.py --level full --workdir ../smm-full
+\end{lstlisting}
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.25}
+\setlength{\GuideTableWidth}{\dimexpr\linewidth-4\tabcolsep\relax}
+\begin{tabular}{P{0.15476191\GuideTableWidth}P{0.84523810\GuideTableWidth}}
+\toprule
+\rowcolor{GuideTable}
+\textbf{Level} & \textbf{Executed work} \\
+\midrule
+quick & Original mathematical checks; regenerated masks/features for two cases per dataset; all 15 forests replayed on those cases; frozen-pair invariance checked. \\
+analysis & Quick checks, full saved-model replays, seed-101 fresh refits, all summaries/figures, expanded mathematical checks, quotient validation, and this guide. \\
+full & Recompute all candidate banks from frozen clean masks, refit all models, then perform the analysis level. \\
+\bottomrule
+\end{tabular}
+\endgroup
+
+\GuideHeading{Where each result comes from}
+summarize.py regenerates primary metrics, bootstrap intervals, ablations, diagnostic plots, qualitative examples, and gradient-variance diagnostics. validate\_kernel\_quotient.py regenerates the exploratory output-space table and saved probabilities. verify\_release.py checks splits, reconstructed scores, all saved forest predictions, fresh seed-101 refits, and CPU timings.
+
+audit\_math.py and audit\_kernel\_theory.py contain finite mathematical checks; plot\_topology\_sharpness.py generates the explicit extremal masks. docs/RESULT\_MAP.md links the manuscript evidence to exact filenames. models/ contains every fitted estimator. data/source\_manifest.json preserves source archive URLs and hashes.
+
+\GuideHeading{Expected agreement}
+Discrete actions and masks should agree under the pinned stack. Saved float32 arrays introduce rounding: replay probability tolerances are \(10^{-7}\) and sampled score recomputation tolerances are \(2\times10^{-6}\). Timings, PDF metadata, and compressed-container bytes can differ. Compare scientific values rather than regeneration timestamps.
+
+
+\clearpage
+\GuideTitle{Kernel validation and limits}
+\GuideHeading{Exploratory output-space comparison}
+The output law uses the minimum predicted action risk within each exact-output class and a uniform reference over distinct outputs. Copying an existing frozen output/score pair preserves that law. Refitting after changing the feature representation is outside the invariance claim. Temperature is selected from .005, .02, and .1 using the original validation set; all 15 models select .005.
+
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.25}
+\setlength{\GuideTableWidth}{\dimexpr\linewidth-8\tabcolsep\relax}
+\begin{tabular}{P{0.20833333\GuideTableWidth}P{0.28373016\GuideTableWidth}P{0.25396825\GuideTableWidth}P{0.25396825\GuideTableWidth}}
+\toprule
+\rowcolor{GuideTable}
+\textbf{Dataset} & \textbf{Mean distinct outputs} & \textbf{Action Gibbs loss} & \textbf{Output-space loss} \\
+\midrule
+shapes & 26.724 & 0.041460 & 0.041698 \\
+mnist & 23.545 & 0.043322 & 0.043493 \\
+fashion & 26.236 & 0.131275 & 0.131510 \\
+\bottomrule
+\end{tabular}
+\endgroup
+
+The output-space loss is slightly higher on all three datasets. Its demonstrated benefit here is invariance to redundant action representation. There are 14,880 direct replication checks on retained cases; the largest residual is below \(7\times10^{-16}\). This extension is not an independent confirmatory benchmark.
+
+\GuideHeading{Numerical support for the proofs}
+Independent graph calculations compare 66,146 masks and 1,053,698 single-pixel changes, check 2,304 exact local component identities, and include separate constructions attaining both sharp sensitivity bounds. The suite also runs 2,000 entropy/risk/replication trials, 32 finite transport comparisons, Bayesian-reversal checks, and gradient comparisons.
+
+The largest finite-difference gradient residual in the expanded suite is \(8.2\times10^{-11}\). These finite and numerical checks complement the quantified written proofs; they are not a proof-assistant certificate or external mathematical review.
+
+\GuideHeading{Limits to retain in any presentation}
+Individual metrics do not all improve: MNIST Dice and shapes hole error can worsen. Stronger Fashion-MNIST corruption gives a documented failure against the fixed area filter. Clean inputs can change. Evaluating a full 31-action bank is materially slower than using a single area filter. Low-resolution binary masks and simulated corruptions do not establish RGB, clinical, real-sensor, or high-resolution performance.
+
+The smooth morphology control is not a full implementation of BiMoNN, DMNN, or SoftMorph. No superiority over those published architectures is claimed. The mathematical contraction statements require their stated coefficient conditions; the fitted model has not been shown to satisfy a global contraction coefficient below one.
+
+\GuideHeading{Attribution and reuse}
+\GuideSmall{Dataset sources, original hashes, and the Fashion-MNIST license are supplied. LICENSE\_NOTICE.md records the project rights status without asserting an unselected open-source license. CITATION.cff contains manuscript/software attribution without an invented DOI. The manuscript discloses generative AI assistance; the authors retain responsibility for its content.}
+\end{document}

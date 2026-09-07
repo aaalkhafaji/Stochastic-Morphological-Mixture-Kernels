@@ -1,0 +1,14 @@
+* -text
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.cff text eol=lf
+*.yml text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+SHA256SUMS text eol=lf
+*.npz binary
+*.joblib binary
+*.gz binary
+*.pdf binary
+*.png binary

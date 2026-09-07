@@ -1,0 +1,24 @@
+{
+  "creators": [
+    {
+      "name": "Abdulwahid, Adnan H.",
+      "affiliation": "Mathematics Department, College of Arts, Sciences, and Education, Texas A&M University--Texarkana"
+    },
+    {
+      "name": "Neupane, Ram C.",
+      "affiliation": "Mathematics Department, College of Arts, Sciences, and Education, Texas A&M University--Texarkana"
+    }
+  ],
+  "title": "Stochastic Morphological pi-Mixture Kernels: Reproducibility Package",
+  "version": "2.1.0",
+  "access_right": "open",
+  "keywords": [
+    "mathematical morphology",
+    "probability kernels",
+    "digital topology",
+    "image denoising",
+    "reproducibility"
+  ],
+  "upload_type": "software",
+  "language": "eng"
+}
