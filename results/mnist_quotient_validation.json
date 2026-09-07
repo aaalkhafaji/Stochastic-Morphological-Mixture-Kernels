@@ -1,0 +1,82 @@
+{
+  "dataset": "mnist",
+  "status": "exploratory reuse of previously inspected test cases",
+  "temperature_candidates": [
+    0.005,
+    0.02,
+    0.1
+  ],
+  "runs": [
+    {
+      "seed": 101,
+      "validation_losses": [
+        0.048215565729106596,
+        0.05511846575366896,
+        0.162753345650488
+      ],
+      "temperature": 0.005,
+      "primary_quotient_loss": 0.04341434968885225,
+      "primary_action_loss": 0.04324955044280896,
+      "mean_max_replication_tv": 0.07699270821914715,
+      "max_replication_tv": 0.4999999170301122
+    },
+    {
+      "seed": 102,
+      "validation_losses": [
+        0.04853700720467759,
+        0.05509246621528472,
+        0.16268722638670477
+      ],
+      "temperature": 0.005,
+      "primary_quotient_loss": 0.04348859665603186,
+      "primary_action_loss": 0.04331662591774299,
+      "mean_max_replication_tv": 0.07782014433125278,
+      "max_replication_tv": 0.49999858015701565
+    },
+    {
+      "seed": 103,
+      "validation_losses": [
+        0.048507791059383014,
+        0.055129905732432566,
+        0.162782834729131
+      ],
+      "temperature": 0.005,
+      "primary_quotient_loss": 0.043537282074574205,
+      "primary_action_loss": 0.04336207383520686,
+      "mean_max_replication_tv": 0.07854913632245157,
+      "max_replication_tv": 0.4999999991173848
+    },
+    {
+      "seed": 104,
+      "validation_losses": [
+        0.04866338681290085,
+        0.05530325027704841,
+        0.1628366134623631
+      ],
+      "temperature": 0.005,
+      "primary_quotient_loss": 0.043504116381067895,
+      "primary_action_loss": 0.04333341470229542,
+      "mean_max_replication_tv": 0.07801656337990422,
+      "max_replication_tv": 0.49999992242463676
+    },
+    {
+      "seed": 105,
+      "validation_losses": [
+        0.04831129453381942,
+        0.05515460199267902,
+        0.1626508776212757
+      ],
+      "temperature": 0.005,
+      "primary_quotient_loss": 0.0435205259822972,
+      "primary_action_loss": 0.04335042533095596,
+      "mean_max_replication_tv": 0.07813424603704582,
+      "max_replication_tv": 0.4999999910869811
+    }
+  ],
+  "mean_distinct_outputs_primary": 23.545,
+  "min_distinct_outputs_primary": 7,
+  "max_distinct_outputs_primary": 30,
+  "duplicate_bank_fraction_primary": 1.0,
+  "replication_invariance_max_residual": 3.3306690738754696e-16,
+  "replication_checks": 4960
+}

@@ -1,0 +1,185 @@
+\begin{table}[htbp]
+
+\centering\small
+
+\caption{Shapes: primary conditions. Loss includes a 95\% image-cluster interval. PSNR is derived from aggregate binary MSE. Raw component and hole errors are reported separately.}
+
+\begin{tabular}{lccrrr}
+
+\toprule Method & Loss [95\% CI] & PSNR & Dice & $E_0$ & $E_1$\\\midrule
+
+Input & 0.462 [0.459, 0.464] & 13.01 & 0.786 & 68.32 & 7.44\\
+
+Validation best & 0.045 [0.042, 0.048] & 21.81 & 0.967 & 0.13 & 0.35\\
+
+Classical best & 0.045 [0.042, 0.048] & 21.81 & 0.967 & 0.13 & 0.35\\
+
+Soft morphology & 0.119 [0.110, 0.129] & 17.63 & 0.896 & 0.34 & 0.79\\
+
+Learned local filter & 0.082 [0.078, 0.086] & 21.96 & 0.964 & 0.54 & 0.44\\
+
+Conditional selector & 0.040 [0.037, 0.044] & 21.92 & 0.968 & 0.07 & 0.37\\
+
+Conditional sampled & 0.041 [0.038, 0.045] & 21.87 & 0.968 & 0.07 & 0.38\\
+
+Conditional mean mask & 0.040 [0.037, 0.044] & 21.91 & 0.968 & 0.06 & 0.37\\
+
+Exact softmax gate & 0.045 [0.041, 0.048] & 21.77 & 0.967 & 0.07 & 0.41\\
+
+Uniform sampled & 0.260 [0.254, 0.266] & 13.30 & 0.795 & 11.41 & 1.40\\
+
+No topology & 0.050 [0.047, 0.054] & 22.00 & 0.968 & 0.10 & 0.46\\
+
+Three openings & 0.196 [0.189, 0.204] & 16.74 & 0.875 & 0.85 & 2.11\\
+
+Target oracle & 0.028 [0.026, 0.031] & 21.76 & 0.969 & 0.04 & 0.21\\
+
+\bottomrule\end{tabular}
+
+\end{table}
+
+\begin{table}[htbp]
+
+\centering\small
+
+\caption{MNIST masks: primary conditions. Loss includes a 95\% image-cluster interval. PSNR is derived from aggregate binary MSE. Raw component and hole errors are reported separately.}
+
+\begin{tabular}{lccrrr}
+
+\toprule Method & Loss [95\% CI] & PSNR & Dice & $E_0$ & $E_1$\\\midrule
+
+Input & 0.396 [0.393, 0.398] & 13.02 & 0.834 & 21.00 & 1.71\\
+
+Validation best & 0.045 [0.043, 0.047] & 18.63 & 0.947 & 0.09 & 0.15\\
+
+Classical best & 0.045 [0.043, 0.047] & 18.63 & 0.947 & 0.09 & 0.15\\
+
+Soft morphology & 0.145 [0.141, 0.150] & 12.23 & 0.795 & 0.21 & 0.34\\
+
+Learned local filter & 0.074 [0.071, 0.077] & 19.47 & 0.953 & 0.43 & 0.15\\
+
+Conditional selector & 0.043 [0.041, 0.045] & 18.62 & 0.946 & 0.07 & 0.14\\
+
+Conditional sampled & 0.043 [0.041, 0.045] & 18.60 & 0.946 & 0.07 & 0.14\\
+
+Conditional mean mask & 0.043 [0.041, 0.045] & 18.64 & 0.946 & 0.07 & 0.14\\
+
+Exact softmax gate & 0.043 [0.041, 0.045] & 18.59 & 0.945 & 0.08 & 0.13\\
+
+Uniform sampled & 0.301 [0.298, 0.305] & 11.28 & 0.665 & 3.87 & 0.46\\
+
+No topology & 0.047 [0.045, 0.049] & 18.94 & 0.950 & 0.11 & 0.15\\
+
+Three openings & 0.183 [0.179, 0.188] & 16.61 & 0.899 & 1.39 & 0.39\\
+
+Target oracle & 0.030 [0.029, 0.032] & 18.94 & 0.950 & 0.03 & 0.06\\
+
+\bottomrule\end{tabular}
+
+\end{table}
+
+\begin{table}[htbp]
+
+\centering\small
+
+\caption{Fashion masks: primary conditions. Loss includes a 95\% image-cluster interval. PSNR is derived from aggregate binary MSE. Raw component and hole errors are reported separately.}
+
+\begin{tabular}{lccrrr}
+
+\toprule Method & Loss [95\% CI] & PSNR & Dice & $E_0$ & $E_1$\\\midrule
+
+Input & 0.379 [0.376, 0.383] & 13.01 & 0.889 & 14.92 & 6.61\\
+
+Validation best & 0.153 [0.146, 0.160] & 16.06 & 0.920 & 1.63 & 2.15\\
+
+Classical best & 0.153 [0.146, 0.160] & 16.06 & 0.920 & 1.63 & 2.15\\
+
+Soft morphology & 0.221 [0.212, 0.229] & 11.15 & 0.806 & 1.79 & 2.35\\
+
+Learned local filter & 0.165 [0.161, 0.169] & 16.57 & 0.929 & 1.38 & 1.65\\
+
+Conditional selector & 0.130 [0.125, 0.135] & 16.46 & 0.939 & 1.22 & 1.84\\
+
+Conditional sampled & 0.131 [0.126, 0.136] & 16.39 & 0.938 & 1.23 & 1.86\\
+
+Conditional mean mask & 0.130 [0.125, 0.135] & 16.45 & 0.939 & 1.22 & 1.85\\
+
+Exact softmax gate & 0.133 [0.128, 0.138] & 16.38 & 0.937 & 1.27 & 1.82\\
+
+Uniform sampled & 0.291 [0.285, 0.298] & 10.66 & 0.759 & 3.47 & 2.64\\
+
+No topology & 0.139 [0.134, 0.144] & 16.60 & 0.940 & 1.33 & 1.80\\
+
+Three openings & 0.261 [0.255, 0.268] & 12.45 & 0.819 & 1.94 & 3.29\\
+
+Target oracle & 0.078 [0.074, 0.082] & 15.35 & 0.929 & 0.62 & 0.94\\
+
+\bottomrule\end{tabular}
+
+\end{table}
+
+\begin{table}[htbp]\centering\small
+
+\caption{Paired gain in composite loss: control minus conditional selector. Positive values favor conditioning. Simultaneous intervals use Bonferroni-adjusted bootstrap percentiles for the six listed comparisons.}\label{tab:paired}
+
+\begin{tabular}{llrr} \toprule Dataset & Control & Gain & Simultaneous interval\\\midrule
+
+Shapes & Validation best & +0.0047 & [+0.0032, +0.0062]\\
+
+Shapes & Classical best & +0.0047 & [+0.0032, +0.0062]\\
+
+MNIST masks & Validation best & +0.0020 & [+0.0010, +0.0027]\\
+
+MNIST masks & Classical best & +0.0020 & [+0.0010, +0.0027]\\
+
+Fashion masks & Validation best & +0.0227 & [+0.0187, +0.0269]\\
+
+Fashion masks & Classical best & +0.0227 & [+0.0187, +0.0269]\\
+
+\bottomrule\end{tabular}\end{table}
+
+For Shapes, conditional selection reduces mean composite loss relative to the validation-selected bank action by 0.0047. Its mean loss is 0.0403, compared with 0.0450 for that fixed action and 0.0450 for the selected classical control. The standard deviation of the five conditional-selector run means is 0.0001. The fraction with both Betti counts correct is 71.5\%, and mean IoU is 0.940.
+
+For MNIST masks, conditional selection reduces mean composite loss relative to the validation-selected bank action by 0.0020. Its mean loss is 0.0427, compared with 0.0447 for that fixed action and 0.0447 for the selected classical control. The standard deviation of the five conditional-selector run means is 0.0001. The fraction with both Betti counts correct is 82.4\%, and mean IoU is 0.901.
+
+For Fashion masks, conditional selection reduces mean composite loss relative to the validation-selected bank action by 0.0227. Its mean loss is 0.1303, compared with 0.1531 for that fixed action and 0.1531 for the selected classical control. The standard deviation of the five conditional-selector run means is 0.0003. The fraction with both Betti counts correct is 28.0\%, and mean IoU is 0.894.
+
+These comparisons measure the specified composite loss. A lower value does not imply an improvement in every individual metric, and a larger operator bank is not a new primitive morphological operation. All original square sizes and every additional action are retained in the complete candidate table and Figure~\ref{fig:bank}.
+
+In particular, MNIST Dice decreases slightly under conditional selection, and the synthetic-shape hole error increases despite the composite-loss gain. Under stronger balanced noise on Fashion-MNIST, the conditional selector loses to the fixed area filter. These are material limitations of the fitted decision rule, rather than exceptions to be omitted from the evaluation.
+
+\begin{table}[htbp]\centering\small
+
+\caption{Median of three end-to-end CPU timing runs, 100 primary cases per run, batch size one, milliseconds per image. Conditional timing includes all 31 filters and feature computation.}
+
+\begin{tabular}{lrr}\toprule Dataset & Conditional & Fixed area-8\\\midrule
+
+Shapes & 11.052 & 0.102\\
+
+MNIST masks & 8.624 & 0.065\\
+
+Fashion masks & 8.472 & 0.065\\
+
+\bottomrule\end{tabular}\end{table}
+
+The implemented selector is substantially slower than the fixed filter because it evaluates the entire bank and all topological features. CPU measurements use one BLAS thread and one forest worker on the available shared host; they are environment-specific. No speed advantage is claimed.
+
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{primary_comparison.pdf}
+
+\caption{Primary test loss and 95\% image-cluster intervals for the main deployable controls. All methods use the same clean-image splits and corruption cases.}\label{fig:primary}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{noise_diagnostics.pdf}
+
+\caption{Condition-specific losses. B, S, and P denote balanced, salt-dominant, and pepper-dominant noise. Conditions to the right of the dashed divider are diagnostics excluded from the primary averages.}\label{fig:noise}\end{figure}
+
+\begin{figure}[p]\centering\includegraphics[width=\linewidth,height=.83\textheight,keepaspectratio]{qualitative_cases.pdf}
+
+\caption{Actual final-test masks: largest gain and largest loss relative to the fixed bank action in each dataset, selected by a declared deterministic rule for seed 101. These are extreme illustrative cases, not representative random samples. Red denotes false foreground; blue denotes missed foreground. Case IDs and actions are supplied.}\label{fig:qualitative}\end{figure}
+
+\begin{figure}[htbp]\centering\includegraphics[width=.8\linewidth]{gradient_variance.pdf}
+
+\caption{Score-gradient variance on 32 fixed MNIST training cases using the fitted gate from seed 101. Lines are exact categorical variance divided by the draw count; crosses average 2,000 independently sampled estimates per case. Exact enumeration has zero action-sampling variance.}\label{fig:variance}\end{figure}
+
+\begin{figure}[p]\centering\includegraphics[width=.8\linewidth,height=.85\textheight,keepaspectratio]{candidate_bank.pdf}
+
+\caption{Mean loss of every fixed candidate on final primary test cases. These test values are reported for comparison; the deployed fixed action was chosen using validation data.}\label{fig:bank}\end{figure}

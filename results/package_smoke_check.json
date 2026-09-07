@@ -1,0 +1,45 @@
+{
+  "shapes": {
+    "cases_reconstructed": [
+      0,
+      3989
+    ],
+    "forest_seeds_replayed": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "replication_residual": 2.1382117680737565e-50
+  },
+  "mnist": {
+    "cases_reconstructed": [
+      0,
+      7997
+    ],
+    "forest_seeds_replayed": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "replication_residual": 1.4693679385278594e-39
+  },
+  "fashion": {
+    "cases_reconstructed": [
+      0,
+      7997
+    ],
+    "forest_seeds_replayed": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "replication_residual": 2.938735877055719e-39
+  },
+  "scope": "Packaging smoke check, not a replacement for full release or theorem checks."
+}

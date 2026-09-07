@@ -1,0 +1,82 @@
+{
+  "dataset": "fashion",
+  "status": "exploratory reuse of previously inspected test cases",
+  "temperature_candidates": [
+    0.005,
+    0.02,
+    0.1
+  ],
+  "runs": [
+    {
+      "seed": 101,
+      "validation_losses": [
+        0.12305531724714186,
+        0.1347768662178218,
+        0.2111941409587263
+      ],
+      "temperature": 0.005,
+      "primary_quotient_loss": 0.13162162975936698,
+      "primary_action_loss": 0.13140921876552736,
+      "mean_max_replication_tv": 0.1665505901689416,
+      "max_replication_tv": 0.4999999981837064
+    },
+    {
+      "seed": 102,
+      "validation_losses": [
+        0.12301187538839281,
+        0.1349597765425559,
+        0.2113181365864927
+      ],
+      "temperature": 0.005,
+      "primary_quotient_loss": 0.13140234057820352,
+      "primary_action_loss": 0.13116065591299822,
+      "mean_max_replication_tv": 0.16540022694333872,
+      "max_replication_tv": 0.4999999974943295
+    },
+    {
+      "seed": 103,
+      "validation_losses": [
+        0.12256874883061436,
+        0.1346008384653248,
+        0.21115296678686152
+      ],
+      "temperature": 0.005,
+      "primary_quotient_loss": 0.13162921917283563,
+      "primary_action_loss": 0.1313769980436011,
+      "mean_max_replication_tv": 0.16605113843962074,
+      "max_replication_tv": 0.4999999205755264
+    },
+    {
+      "seed": 104,
+      "validation_losses": [
+        0.12311987657054053,
+        0.1347051311192052,
+        0.2110991619025794
+      ],
+      "temperature": 0.005,
+      "primary_quotient_loss": 0.13142840218556812,
+      "primary_action_loss": 0.13119245822384087,
+      "mean_max_replication_tv": 0.16509017900450798,
+      "max_replication_tv": 0.4999999702485078
+    },
+    {
+      "seed": 105,
+      "validation_losses": [
+        0.12270038651667449,
+        0.13457266867875206,
+        0.2111018800159205
+      ],
+      "temperature": 0.005,
+      "primary_quotient_loss": 0.13146618912158087,
+      "primary_action_loss": 0.13123753403275934,
+      "mean_max_replication_tv": 0.1658413636573638,
+      "max_replication_tv": 0.49999999964230407
+    }
+  ],
+  "mean_distinct_outputs_primary": 26.236,
+  "min_distinct_outputs_primary": 4,
+  "max_distinct_outputs_primary": 31,
+  "duplicate_bank_fraction_primary": 0.9966666666666667,
+  "replication_invariance_max_residual": 3.3306690738754696e-16,
+  "replication_checks": 4960
+}

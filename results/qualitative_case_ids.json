@@ -1,0 +1,56 @@
+[
+  {
+    "dataset": "shapes",
+    "row": 0,
+    "image": 339,
+    "case_index": 2707,
+    "condition": 3,
+    "selected_action": "area_connected16",
+    "gain": 0.2645883560180664
+  },
+  {
+    "dataset": "shapes",
+    "row": 1,
+    "image": 498,
+    "case_index": 3979,
+    "condition": 3,
+    "selected_action": "area_connected16",
+    "gain": -0.17456215620040894
+  },
+  {
+    "dataset": "mnist",
+    "row": 2,
+    "image": 701,
+    "case_index": 5611,
+    "condition": 3,
+    "selected_action": "area_connected16",
+    "gain": 0.22934438288211823
+  },
+  {
+    "dataset": "mnist",
+    "row": 3,
+    "image": 834,
+    "case_index": 6673,
+    "condition": 1,
+    "selected_action": "area_connected16",
+    "gain": -0.4720521569252014
+  },
+  {
+    "dataset": "fashion",
+    "row": 4,
+    "image": 287,
+    "case_index": 2298,
+    "condition": 2,
+    "selected_action": "area_connected3",
+    "gain": 0.5533163547515869
+  },
+  {
+    "dataset": "fashion",
+    "row": 5,
+    "image": 300,
+    "case_index": 2403,
+    "condition": 3,
+    "selected_action": "area_connected3",
+    "gain": -0.39761900901794434
+  }
+]

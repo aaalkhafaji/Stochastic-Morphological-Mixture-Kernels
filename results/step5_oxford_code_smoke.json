@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "source_shape": [
+        57,
+        91
+      ],
+      "condition": 0,
+      "n_distinct": 29,
+      "input_loss": 0.4434274137020111,
+      "oracle_loss": 0.0009250878938473761
+    },
+    {
+      "source_shape": [
+        57,
+        91
+      ],
+      "condition": 1,
+      "n_distinct": 30,
+      "input_loss": 0.5039257407188416,
+      "oracle_loss": 0.005414157174527645
+    },
+    {
+      "source_shape": [
+        211,
+        133
+      ],
+      "condition": 0,
+      "n_distinct": 29,
+      "input_loss": 0.4465137720108032,
+      "oracle_loss": 0.001270208042114973
+    },
+    {
+      "source_shape": [
+        211,
+        133
+      ],
+      "condition": 1,
+      "n_distinct": 29,
+      "input_loss": 0.5072569251060486,
+      "oracle_loss": 0.0042299446649849415
+    },
+    {
+      "source_shape": [
+        128,
+        128
+      ],
+      "condition": 0,
+      "n_distinct": 29,
+      "input_loss": 0.4303257167339325,
+      "oracle_loss": 0.00108412466943264
+    },
+    {
+      "source_shape": [
+        128,
+        128
+      ],
+      "condition": 1,
+      "n_distinct": 30,
+      "input_loss": 0.4775983989238739,
+      "oracle_loss": 0.002759590046480298
+    },
+    {
+      "source_shape": [
+        90,
+        240
+      ],
+      "condition": 0,
+      "n_distinct": 29,
+      "input_loss": 0.464298278093338,
+      "oracle_loss": 0.001784979715012014
+    },
+    {
+      "source_shape": [
+        90,
+        240
+      ],
+      "condition": 1,
+      "n_distinct": 30,
+      "input_loss": 0.5456860661506653,
+      "oracle_loss": 0.00545564154163003
+    }
+  ]
+}

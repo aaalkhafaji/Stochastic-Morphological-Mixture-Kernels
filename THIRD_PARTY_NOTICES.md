@@ -21,3 +21,7 @@ third-party numerical software is not bundled.
 
 
 Original project code and generated outputs: see LICENSE_NOTICE.md. Dependencies are installed separately under their own licenses.
+
+## Oxford-IIIT Pet — Step 5 external validation dependency
+
+The Step-5 working branch can use the Oxford-IIIT Pet pixel-level trimap annotations from the University of Oxford Visual Geometry Group. The upstream host states that the dataset is available under Creative Commons Attribution-ShareAlike 4.0 International and that image copyrights remain with the original owners. The project does not redistribute the Oxford annotation archive. See `data/OXFORD_IIIT_PET_NOTICE.md` for the official source and expected MD5.

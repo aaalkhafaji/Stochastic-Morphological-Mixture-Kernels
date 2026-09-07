@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "purpose": "Step-3 deterministic retraining stress test; not benchmark evidence",
+  "required_tolerance": 1e-12,
+  "image_shapes": [
+    [
+      12,
+      12
+    ],
+    [
+      16,
+      16
+    ],
+    [
+      20,
+      24
+    ],
+    [
+      28,
+      28
+    ]
+  ],
+  "fit_seeds": [
+    2026,
+    314159,
+    8675309
+  ],
+  "duplicate_copy_counts": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "duplicated_action_indices": [
+    0,
+    2,
+    7,
+    11,
+    30
+  ],
+  "duplicated_action_names": [
+    "identity",
+    "O_square3",
+    "CO_square3",
+    "C_diamond1",
+    "area_connected32"
+  ],
+  "permutation_seeds": [
+    443,
+    991,
+    1777,
+    2718
+  ],
+  "temperatures": [
+    0.005,
+    0.02,
+    0.1
+  ],
+  "reference_laws": [
+    "uniform",
+    "output-dependent strictly positive"
+  ],
+  "representation_count_including_base": 57,
+  "all_representation_signature_checks": 3136,
+  "retraining_representation_count_per_shape_seed": 24,
+  "nonbase_retraining_comparisons": 288,
+  "law_comparisons": 6912,
+  "direct_output_law_api_checks": 288,
+  "sample_draws_per_law": 128,
+  "training_images_per_shape": 14,
+  "test_images_per_shape": 4,
+  "trees_per_retraining_fit": 8,
+  "maximum_action_coordinates_after_refinement": 351,
+  "global_maxima": {
+    "canonical_output_cost_signature": 0.0,
+    "predicted_cost": 0.0,
+    "output_law": 0.0,
+    "expected_observable": 0.0,
+    "sample_decode_disagreement": 0.0,
+    "map_decode_disagreement": 0.0,
+    "direct_api_output_law": 0.0
+  },
+  "detail_csv": "results/step3_invariance_stress_detail.csv",
+  "interpretation": "All tested output-preserving representation changes retained the exact canonical output/cost signature. Across the stratified retraining matrix, matched deterministic fits retained predicted costs, output masses, expected observables, MAP outputs, fixed-uniform sampled outputs, and the public direct_output_law API to the stated tolerance."
+}

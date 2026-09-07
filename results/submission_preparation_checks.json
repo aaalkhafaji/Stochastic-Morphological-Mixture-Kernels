@@ -1,0 +1,168 @@
+{
+  "preparation_date": "2026-09-06",
+  "version": "2.1.0",
+  "analysis_workflow_completed": true,
+  "steps": [
+    [
+      "audit_math.py"
+    ],
+    [
+      "smoke_check.py"
+    ],
+    [
+      "verify_release.py"
+    ],
+    [
+      "summarize.py"
+    ],
+    [
+      "audit_kernel_theory.py"
+    ],
+    [
+      "validate_kernel_quotient.py"
+    ],
+    [
+      "plot_topology_sharpness.py"
+    ],
+    [
+      "build_supplement_guide.py"
+    ]
+  ],
+  "table_max_absolute_differences": {
+    "summary.csv": 0.0,
+    "paired_comparisons.csv": 0.0,
+    "condition_metrics.csv": 0.0,
+    "all_candidate_metrics.csv": 0.0,
+    "run_metrics.csv": 0.0,
+    "gradient_variance.csv": 0.0,
+    "quotient_summary.csv": 0.0
+  },
+  "mathematical_check_numerical_differences": [
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/0",
+      "absolute_difference": 9.947598300641403e-14
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/1",
+      "absolute_difference": 1.4210854715202004e-14
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/2",
+      "absolute_difference": 1.7763568394002505e-14
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/3",
+      "absolute_difference": 1.4210854715202004e-14
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/4",
+      "absolute_difference": 1.0658141036401503e-14
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/5",
+      "absolute_difference": 3.552713678800501e-15
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/6",
+      "absolute_difference": 3.552713678800501e-15
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/7",
+      "absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/8",
+      "absolute_difference": 3.552713678800501e-15
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/9",
+      "absolute_difference": 1.2434497875801753e-14
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/10",
+      "absolute_difference": 1.9539925233402755e-14
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/11",
+      "absolute_difference": 8.881784197001252e-15
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/12",
+      "absolute_difference": 7.105427357601002e-15
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/13",
+      "absolute_difference": 3.552713678800501e-15
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/14",
+      "absolute_difference": 6.217248937900877e-15
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/15",
+      "absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/17",
+      "absolute_difference": 2.6645352591003757e-15
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/18",
+      "absolute_difference": 1.2757576525108419e-14
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/19",
+      "absolute_difference": 7.948842207408133e-15
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/20",
+      "absolute_difference": 4.5080059364910295e-15
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/21",
+      "absolute_difference": 1.4482100509080703e-16
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/22",
+      "absolute_difference": 3.011854866966199e-15
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/23",
+      "absolute_difference": 2.723355125858971e-16
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/24",
+      "absolute_difference": 3.4230022494743555e-16
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/25",
+      "absolute_difference": 1.3723550257400744e-16
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/26",
+      "absolute_difference": 8.863711746954999e-17
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/27",
+      "absolute_difference": 6.8765938877612424e-18
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/28",
+      "absolute_difference": 2.6044719156413275e-17
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/29",
+      "absolute_difference": 1.498007420598773e-17
+    },
+    {
+      "field": "mathematical_checks.json/identifiability_3x3/singular_values/30",
+      "absolute_difference": 1.4743434686493782e-48
+    }
+  ],
+  "all_15_forest_replays": "passed for all retained test cases",
+  "seed101_fresh_refits": "matched saved actions for all three datasets",
+  "original_scientific_files_preserved": 80,
+  "four_page_supplement_visually_checked": true,
+  "full_bank_reextraction_rerun_in_this_preparation": false,
+  "scope": "Packaging and rerun of retained-data analyses. No new independent benchmark or external proof certification."
+}

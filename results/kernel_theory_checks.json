@@ -1,0 +1,33 @@
+{
+  "topology": {
+    "single_pixel_comparisons": 1053698,
+    "independent_graph_vs_scipy_masks": 66146,
+    "exact_local_identity_cases": 2304,
+    "largest_changes": [
+      3,
+      2
+    ],
+    "sharpness_foreground_and_holes": true
+  },
+  "entropy_risk": {
+    "trials": 2000,
+    "kl_chain_rule_max_residual": 8.881784197001252e-16,
+    "replication_formula_max_residual": 4.53104344555873e-16,
+    "quotient_regret_max_violation": 0.0,
+    "sharp_replication_tv_exact": "1/2"
+  },
+  "transport": {
+    "transport_pairs_checked": 32,
+    "coefficient_K": 0.8406060556284187,
+    "coefficient_L": 0.8621058966479194,
+    "coefficient_KL": 0.18791128065169282,
+    "coefficient_product_bound": 0.7246914373152087,
+    "same_index_bound_max_violation": 0.0
+  },
+  "bayes_gradient": {
+    "bayes_marginal_residual": 2.220446049250313e-16,
+    "two_state_testing_identity_residual": 1.6653345369377348e-16,
+    "gradient_max_residual": 8.173436233382958e-11
+  },
+  "scope": "Finite and numerical checks; not formal verification or external proof review."
+}

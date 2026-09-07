@@ -1,10 +1,10 @@
 # Stochastic Morphological pi-Mixture Kernels
 
-**Compact GitHub reproducibility repository, version 2.1.0**
+**Strengthening campaign working branch - Step 4 (derived from compact release v2.1.0)**
 
 Companion manuscript: *Stochastic Morphological pi-Mixture Kernels: Identifiability, Topological Stability, and Output-Space Learning*, Adnan H. Abdulwahid and Ram C. Neupane (2026). This is an unpublished research package prepared for JVCIR submission.
 
-This GitHub package is intentionally kept **below 25 MB**. It contains the complete source code, clean input arrays, lightweight numerical summaries/checks, figures, documentation, LaTeX supplement source, and citation metadata. Large fitted-model binaries and cached per-case result banks are stored only in the companion Zenodo archival snapshot.
+This working branch is intentionally kept compact and is **not yet the archival public release**. Steps 2--4 add direct output-space learning, a broad retraining invariance stress suite, and a global oracle/excess-risk decomposition with finite numerical checks while preserving the frozen v2.1.0 baseline. The eventual GitHub package will remain below 25 MB. It contains the complete source code, clean input arrays, lightweight numerical summaries/checks, figures, documentation, LaTeX supplement source, and citation metadata. Large fitted-model binaries and cached per-case result banks are stored only in the companion Zenodo archival snapshot.
 
 ## Repository / archive split
 
@@ -12,7 +12,21 @@ This GitHub package is intentionally kept **below 25 MB**. It contains the compl
 - **Zenodo:** the complete frozen archival snapshot, including fitted `.joblib` models, candidate banks, prediction arrays, and large compressed metric tables.
 - `ZENODO_ASSETS.csv` records every artifact omitted from this compact GitHub package, with its size and SHA-256 digest.
 
-The Zenodo DOI and GitHub repository URL should be inserted into `CITATION.cff`, `.zenodo.json`, and this README after the records are actually created; no identifier is invented here.
+Public baseline repository: `https://github.com/aaalkhafaji/Stochastic-Morphological-Mixture-Kernels`. Frozen baseline archive: `https://doi.org/10.5281/zenodo.22637861`. Campaign changes should not overwrite that frozen release; they will become a later version only after the full 12-step audit.
+
+## Step-2 direct output-space learner
+
+`code/output_space_learning.py` implements a scalar cost learner on canonical distinct-output rows `phi(x,z)`. `code/test_output_space_invariance.py` retrains that learner after action permutation, exact duplication, and permutation+duplication and checks that the canonical training table, fitted costs, and output law are unchanged to tolerance `1e-12`.
+
+## Step-3 invariance stress suite
+
+`code/stress_test_output_space_invariance.py` expands the deterministic construction check to four image sizes, three fitting seeds, duplicate multiplicities through 64 copies, multiple duplicated operators, random permutations, multi-action duplication, unequal multiplicities, and output-preserving class refinements. The recorded stress run performs 3,136 canonical signature checks, 288 independently retrained nonbase comparisons, 6,912 output-law comparisons, and 288 direct API checks. All recorded discrepancies are exactly zero; see `results/step3_invariance_stress_summary.json` and `results/step3_invariance_stress_detail.csv`.
+
+## Step-4 oracle/excess-risk audit
+
+The manuscript now separates excess risk into finite-bank approximation, output-cost estimation, and entropy/reference terms. `code/audit_oracle_risk.py` independently checks the pointwise/general-reference bound, the uniform-reference specialization, the exact global decomposition, hard output selection, and monotonicity under bank enlargement on 2,500 random finite problems (19,692 conditional inputs). All bound violations are zero to numerical precision and the largest exact-decomposition residual is `1.11e-16`; see `results/step4_oracle_risk_checks.json`.
+
+The archived `code/kernel_quotient.py` remains as the post-hoc action-risk quotient baseline.
 
 ## Quick validation
 
@@ -72,6 +86,12 @@ The excluded-file hashes in `ZENODO_ASSETS.csv` make the GitHub/Zenodo split aud
 
 Extract this ZIP and commit/upload the **contents**, not the ZIP file itself. The repository source package is deliberately below 25 MB, and no individual file approaches GitHub's ordinary per-file limits. Do not commit regenerated `*.joblib`, large `*.npz`, or compressed per-case metric files; `.gitignore` and the Zenodo split are intended to keep those out of Git history.
 
-## Citation and generative-AI declaration
+## Citation and generative-AI disclosure
 
-Use `CITATION.cff` and add the eventual repository URL/article DOI after publication. The manuscript declaration states that AI-assisted tools were used only for grammar correction, language readability, and formatting support; they were not used to generate scientific content, mathematical derivations, simulations, data, figures, results, analysis, interpretations, or conclusions. All content was reviewed, verified, and approved by the authors, who take full responsibility for the accuracy and integrity of the manuscript.
+Use `CITATION.cff` for citation metadata. The frozen baseline manuscript contains the authors' earlier AI declaration. Because this strengthening working branch uses AI assistance in scientific theorem/code development, that declaration must be reconsidered before any revised submission so that the final disclosure accurately reflects the actual workflow and the publisher policy then in force.
+
+## Step-5 Oxford-IIIT Pet higher-resolution campaign
+
+`code/run_oxford_pet_step5.py` is the frozen Step-5 protocol for an independent natural-image mask domain. It uses only the official Oxford-IIIT Pet trimap annotation archive, preserves aspect ratio by nearest-neighbor letterboxing to 128×128, retains the entire official test partition, evaluates all six predeclared primary corruptions, and reports clean-mask-clustered bootstrap intervals. The external Oxford archive is **not** redistributed here; see `data/OXFORD_IIIT_PET_NOTICE.md` and `docs/OXFORD_PET_STEP5.md`.
+
+The working branch intentionally contains **no Oxford performance numbers yet** because the official binary archive could not be fetched inside the Step-5 authoring session. The code path has passed offline smoke and miniature end-to-end integration tests. A manual GitHub Actions workflow at `.github/workflows/step5-oxford-pet.yml` can download the official annotations and produce the frozen numerical result artifact without committing the dataset to GitHub.

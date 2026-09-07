@@ -1,0 +1,140 @@
+[
+  {
+    "location": "2.1",
+    "claim": "Measurable mixture kernel",
+    "assumptions": "Nonempty standard Borel state/parameter spaces; jointly measurable T; probability kernel pi.",
+    "proof": "Dynkin system for parameter-section integration, countable additivity, simple approximation, duality."
+  },
+  {
+    "location": "2.2 derivation",
+    "claim": "Lattice morphology",
+    "assumptions": "Nonempty finite footprint on the extended integer lattice; crop after the full pipeline.",
+    "proof": "Adjunction proved from set inclusion; monotonicity, opening/closing inequalities and both idempotence inclusions derived."
+  },
+  {
+    "location": "2.3 derivation",
+    "claim": "Composition and moments",
+    "assumptions": "The second draw uses the intermediate-state kernel; common-parameter reuse is explicitly different.",
+    "proof": "Substitute the pushforward integration formula; a singleton example separates shared and independent draws; pixel covariance computed."
+  },
+  {
+    "location": "3.1",
+    "claim": "Global mixture identification",
+    "assumptions": "Finite nonempty bank; access to all input/output laws for global weights.",
+    "proof": "Full-column-rank equivalence; explicit positive simplex perturbations constructed from a null vector."
+  },
+  {
+    "location": "3.1 subsection",
+    "claim": "Output classes and TV",
+    "assumptions": "Exact output equality at a fixed input; finite probability masses.",
+    "proof": "Class aggregation characterizes equality; triangle inequality contracts action TV; signed-mass argument bounds observables."
+  },
+  {
+    "location": "3.2",
+    "claim": "Output-space entropy and lift",
+    "assumptions": "Finite class costs, positive reference law, positive temperature.",
+    "proof": "Exact Gibbs/KL identity; nonnegativity and equality conditions; KL chain rule including zero-mass classes."
+  },
+  {
+    "location": "3.2 subsection",
+    "claim": "Duplication invariance",
+    "assumptions": "Frozen output/prediction pairs; copy an existing pair; class cost is a minimum.",
+    "proof": "Neither distinct outputs nor class minima change; therefore the normalized output distribution is unchanged. Refitting is excluded."
+  },
+  {
+    "location": "3.3",
+    "claim": "Sharp replication sensitivity",
+    "assumptions": "Integer r >= 1 copies; original logits fixed; positive categorical weights.",
+    "proof": "New normalizer and signed class-mass changes derived; one-variable maximization and an attaining two-output example."
+  },
+  {
+    "location": "4.1",
+    "claim": "Conditional decision limits",
+    "assumptions": "Bounded loss; Y -> X -> Z Markov model; costs defined only on positive-mass inputs with arbitrary bounded null-state extension.",
+    "proof": "Risk by joint-mass summation; finite convex combinations; measurable minimizer; equality via zero nonnegative regret."
+  },
+  {
+    "location": "4.2",
+    "claim": "Risk and temperature bounds",
+    "assumptions": "Finite uniform action-risk error; class minimum; positive temperature; integrability for averaging.",
+    "proof": "Hard-rule three-term decomposition; class-minimum error bound; variational comparison with a true minimizing vertex."
+  },
+  {
+    "location": "4.3",
+    "claim": "Global oracle/excess-risk decomposition",
+    "assumptions": "Finite binary state space and finite bank; bounded loss; arbitrary finite output-cost estimates; strictly positive output reference; positive temperature.",
+    "proof": "Define unrestricted and bank Bayes costs; exact add-and-subtract decomposition; compare the entropy minimizer with the true bank-optimal point mass; apply the uniform output-cost error twice; average. Corollaries cover hard selection, bank enlargement/output-equivalent refinement, and consistency."
+  },
+  {
+    "location": "4.4 derivation",
+    "claim": "Mean/sampled squared loss",
+    "assumptions": "Unthresholded Euclidean mean for the stated identity.",
+    "proof": "Square expansion and cancellation of the centered cross term; no extension to thresholded or topological loss asserted."
+  },
+  {
+    "location": "4.5 derivation",
+    "claim": "Exact gradient and variance",
+    "assumptions": "Fixed features, bank and target costs; baseline independent of the sampled label; independent repeated draws.",
+    "proof": "Softmax Jacobian, full matrix chain rule, unbiased score identity, and trace covariance v/s derived component by component."
+  },
+  {
+    "location": "5.1",
+    "claim": "Sharp digital topology sensitivity",
+    "assumptions": "Positive rectangular grid; 8-foreground/4-background; permanently connected exterior frame.",
+    "proof": "Beta counts defined before the claim; exact vertex-addition identity, neighbor clique cover, background reversal, all pixel flips, and both sharpness examples."
+  },
+  {
+    "location": "5.2",
+    "claim": "Separated-set additivity",
+    "assumptions": "Disjoint sets with no foreground adjacency edge between them.",
+    "proof": "Components of the union are exactly components of the disjoint induced graphs; adjacent-singleton counterexample shows why disjointness is insufficient."
+  },
+  {
+    "location": "5.3",
+    "claim": "Topology and matched-action transport",
+    "assumptions": "Finite laws; Hamming cost; both rows use the same indexed bank.",
+    "proof": "Existence of minimizing transport coupling; observable inequality; explicit diagonal-plus-residual action coupling with checked marginals."
+  },
+  {
+    "location": "5.4",
+    "claim": "Composed-kernel stability",
+    "assumptions": "Finite state space and the defined row transport coefficient.",
+    "proof": "Mixture of optimal row couplings; composition inequality; induction; no unconditional contraction claim."
+  },
+  {
+    "location": "6.1",
+    "claim": "Stochastic left inversion",
+    "assumptions": "Nonempty finite input and output spaces; Markov left inverse.",
+    "proof": "Nonnegative diagonal deficit proves support separation; explicit reverse construction; equal-cardinality counting proves permutation characterization."
+  },
+  {
+    "location": "6.1 subsection",
+    "claim": "Binary unbiasedness and positive errors",
+    "assumptions": "Binary reconstruction output; finitely many pixels; nonnegative closing errors with probability weights.",
+    "proof": "Extremal Bernoulli means force each pixel almost surely; finite union gives full recovery; nonnegative terms cannot cancel."
+  },
+  {
+    "location": "6.2",
+    "claim": "Bayesian reverse and optimal error",
+    "assumptions": "Specified prior; arbitrary rows at zero-probability outputs; decoder independent of original input given observation.",
+    "proof": "Joint identity includes null outputs; marginal restoration by summation; pointwise maximization and binary TV error identity."
+  },
+  {
+    "location": "Appendix A",
+    "claim": "Poisson evolution",
+    "assumptions": "Fixed finite Markov kernel; positive event rate; independent Poisson events.",
+    "proof": "Norm convergence, binomial regrouping, first-order generator with controlled remainder, and a common-event coupling for transport."
+  },
+  {
+    "location": "Appendix B",
+    "claim": "Parabolic closing",
+    "assumptions": "a > 0 and theta > 0; stated supremal convolution and infimal erosion on the real line.",
+    "proof": "Both complete-square identities and extremizers displayed; no false bounded-function assumption or truncation."
+  },
+  {
+    "location": "Appendix C",
+    "claim": "Validation selection inequality",
+    "assumptions": "Finite rules fixed independently of iid validation examples; bounded loss.",
+    "proof": "Hoeffding plus union bound and three risk comparisons; clustered and non-iid protocol qualifications stated."
+  }
+]

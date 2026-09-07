@@ -1,0 +1,129 @@
+{
+  "shapes": {
+    "evaluated_test_images": 499,
+    "primary_cases": 2994,
+    "diagnostic_cases": 998,
+    "cross_split_mask_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "independent_score_rechecks": 992,
+    "maximum_score_residual": 2.9758856268102818e-08,
+    "models_replayed": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "seed101_fresh_refit": "all test actions identical",
+    "forest_parameters": {
+      "bootstrap": false,
+      "ccp_alpha": 0.0,
+      "criterion": "squared_error",
+      "max_depth": null,
+      "max_features": 1.0,
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 20,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 96,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 101,
+      "verbose": 0,
+      "warm_start": false
+    }
+  },
+  "mnist": {
+    "evaluated_test_images": 1000,
+    "primary_cases": 6000,
+    "diagnostic_cases": 2000,
+    "cross_split_mask_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "independent_score_rechecks": 992,
+    "maximum_score_residual": 2.9692350689281e-08,
+    "models_replayed": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "seed101_fresh_refit": "all test actions identical",
+    "forest_parameters": {
+      "bootstrap": false,
+      "ccp_alpha": 0.0,
+      "criterion": "squared_error",
+      "max_depth": null,
+      "max_features": 1.0,
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 8,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 96,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 101,
+      "verbose": 0,
+      "warm_start": false
+    }
+  },
+  "fashion": {
+    "evaluated_test_images": 1000,
+    "primary_cases": 6000,
+    "diagnostic_cases": 2000,
+    "cross_split_mask_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "independent_score_rechecks": 992,
+    "maximum_score_residual": 2.9744228191574962e-08,
+    "models_replayed": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "seed101_fresh_refit": "all test actions identical",
+    "forest_parameters": {
+      "bootstrap": false,
+      "ccp_alpha": 0.0,
+      "criterion": "squared_error",
+      "max_depth": null,
+      "max_features": 1.0,
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 8,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 96,
+      "n_jobs": 1,
+      "oob_score": false,
+      "random_state": 101,
+      "verbose": 0,
+      "warm_start": false
+    }
+  },
+  "hardware": {
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "logical_cpus_visible": 9,
+    "processor": "x86_64",
+    "timing_note": "CPU-only, n_jobs=1, BLAS thread count 1. Shared-host wall times are environment-specific."
+  }
+}

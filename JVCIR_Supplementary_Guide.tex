@@ -2,7 +2,7 @@
 % Compile twice with: pdflatex JVCIR_Supplementary_Guide.tex
 % Standard TeX Live/MiKTeX packages only; no external assets or BibTeX needed.
 % Numerical tables are embedded snapshots of the accompanying frozen results.
-% Source content corresponds to package 2.1.0; LaTeX conversion adds no experiment.
+% Strengthening working branch through Step 4; frozen public baseline is v2.1.0.
 \documentclass[10pt,letterpaper]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -39,7 +39,7 @@
 \textbf{Stochastic Morphological \(\pi\)-Mixture Kernels: Identifiability, Topological Stability, and Output-Space Learning}
 
 \GuideSmall{Adnan H. Abdulwahid \textperiodcentered{} Ram C. Neupane}
-\GuideSmall{Reproducibility guide | Package version 2.1.0 | Prepared 6 September 2026}
+\GuideSmall{Reproducibility guide | Strengthening branch Step 4 | Baseline archive v2.1.0 | Prepared 7 September 2026}
 \GuideHeading{Purpose and scope}
 This archive supplies the complete computational record accompanying the manuscript: frozen inputs, fitted models, candidate outputs, primary and diagnostic results, figure and table generators, and numerical checks of the mathematical claims. The written proofs remain in the main manuscript.
 
@@ -156,7 +156,7 @@ full & Recompute all candidate banks from frozen clean masks, refit all models, 
 \GuideHeading{Where each result comes from}
 summarize.py regenerates primary metrics, bootstrap intervals, ablations, diagnostic plots, qualitative examples, and gradient-variance diagnostics. validate\_kernel\_quotient.py regenerates the exploratory output-space table and saved probabilities. verify\_release.py checks splits, reconstructed scores, all saved forest predictions, fresh seed-101 refits, and CPU timings.
 
-audit\_math.py and audit\_kernel\_theory.py contain finite mathematical checks; plot\_topology\_sharpness.py generates the explicit extremal masks. docs/RESULT\_MAP.md links the manuscript evidence to exact filenames. models/ contains every fitted estimator. data/source\_manifest.json preserves source archive URLs and hashes.
+audit\_math.py, audit\_kernel\_theory.py, and audit\_oracle\_risk.py contain finite mathematical checks; test\_output\_space\_invariance.py and stress\_test\_output\_space\_invariance.py verify the direct output-space representation invariance; plot\_topology\_sharpness.py generates the explicit extremal masks. docs/RESULT\_MAP.md links the manuscript evidence to exact filenames. models/ contains every fitted estimator. data/source\_manifest.json preserves source archive URLs and hashes.
 
 \GuideHeading{Expected agreement}
 Discrete actions and masks should agree under the pinned stack. Saved float32 arrays introduce rounding: replay probability tolerances are \(10^{-7}\) and sampled score recomputation tolerances are \(2\times10^{-6}\). Timings, PDF metadata, and compressed-container bytes can differ. Compare scientific values rather than regeneration timestamps.
@@ -184,6 +184,11 @@ fashion & 26.236 & 0.131275 & 0.131510 \\
 \endgroup
 
 The output-space loss is slightly higher on all three datasets. Its demonstrated benefit here is invariance to redundant action representation. There are 14,880 direct replication checks on retained cases; the largest residual is below \(7\times10^{-16}\). This extension is not an independent confirmatory benchmark.
+
+\GuideHeading{Strengthening-branch direct learner and oracle checks}
+The table above remains the archived post-hoc class-minimum baseline. The strengthening branch additionally learns one scalar cost per distinct candidate-output row, so action duplication does not duplicate training observations. Under fixed deterministic fitting options/seeds, the manuscript proves end-to-end invariance under output-preserving action refinement. Step~3 verifies the construction across 57 representation forms, four mask sizes, three fitting seeds, duplicate multiplicities through 64 copies, 288 independent nonbase retraining comparisons, and 6,912 output-law comparisons; all recorded discrepancies are exactly zero at a required tolerance of \(10^{-12}\).
+
+Step~4 adds a global oracle/excess-risk decomposition into finite-bank approximation, output-cost estimation, and entropy/reference terms. audit\_oracle\_risk.py checks the pointwise and global inequalities on 2,500 random finite problems containing 19,692 conditional inputs. No positive bound violation occurs; the exact-decomposition residual is \(1.11\times10^{-16}\). These are mathematical/implementation checks, not additional independent benchmark data.
 
 \GuideHeading{Numerical support for the proofs}
 Independent graph calculations compare 66,146 masks and 1,053,698 single-pixel changes, check 2,304 exact local component identities, and include separate constructions attaining both sharp sensitivity bounds. The suite also runs 2,000 entropy/risk/replication trials, 32 finite transport comparisons, Bayesian-reversal checks, and gradient comparisons.

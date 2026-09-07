@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "purpose": "Step-2 deterministic construction test; not benchmark evidence",
+  "training_images": 30,
+  "test_images": 8,
+  "representations": [
+    "base",
+    "permuted",
+    "duplicated",
+    "permuted_duplicated"
+  ],
+  "feature_dimension": 10,
+  "canonical_training_rows": 649,
+  "retraining_comparisons": 24,
+  "max_canonical_table_residual": 0.0,
+  "max_predicted_cost_residual": 0.0,
+  "max_output_law_residual": 0.0,
+  "required_tolerance": 1e-12,
+  "model_metadata": {
+    "base": {
+      "n_images": 30,
+      "n_distinct_rows": 649,
+      "feature_dimension": 10,
+      "seed": 2026,
+      "min_samples_leaf": 2,
+      "n_estimators": 48
+    },
+    "permuted": {
+      "n_images": 30,
+      "n_distinct_rows": 649,
+      "feature_dimension": 10,
+      "seed": 2026,
+      "min_samples_leaf": 2,
+      "n_estimators": 48
+    },
+    "duplicated": {
+      "n_images": 30,
+      "n_distinct_rows": 649,
+      "feature_dimension": 10,
+      "seed": 2026,
+      "min_samples_leaf": 2,
+      "n_estimators": 48
+    },
+    "permuted_duplicated": {
+      "n_images": 30,
+      "n_distinct_rows": 649,
+      "feature_dimension": 10,
+      "seed": 2026,
+      "min_samples_leaf": 2,
+      "n_estimators": 48
+    }
+  }
+}

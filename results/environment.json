@@ -1,0 +1,91 @@
+{
+  "python": "3.12.13",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "scikit-learn": "1.8.0",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "conditions": [
+    [
+      "balanced04",
+      0.04,
+      0.04
+    ],
+    [
+      "balanced10",
+      0.1,
+      0.1
+    ],
+    [
+      "salt04",
+      0.01,
+      0.04
+    ],
+    [
+      "salt10",
+      0.01,
+      0.1
+    ],
+    [
+      "pepper04",
+      0.04,
+      0.01
+    ],
+    [
+      "pepper10",
+      0.1,
+      0.01
+    ],
+    [
+      "shift20",
+      0.2,
+      0.2
+    ],
+    [
+      "clean",
+      0.0,
+      0.0
+    ]
+  ],
+  "seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "blas_threads": 1,
+  "operator_names": [
+    "identity",
+    "O_square2",
+    "O_square3",
+    "O_square4",
+    "O_square5",
+    "C_square3",
+    "OC_square3",
+    "CO_square3",
+    "C_square5",
+    "OC_square5",
+    "CO_square5",
+    "C_diamond1",
+    "OC_diamond1",
+    "CO_diamond1",
+    "C_diamond2",
+    "OC_diamond2",
+    "CO_diamond2",
+    "C_horizontal3",
+    "OC_horizontal3",
+    "CO_horizontal3",
+    "C_vertical3",
+    "OC_vertical3",
+    "CO_vertical3",
+    "O_diamond1",
+    "O_diamond2",
+    "O_horizontal3",
+    "O_vertical3",
+    "area_connected3",
+    "area_connected8",
+    "area_connected16",
+    "area_connected32"
+  ]
+}

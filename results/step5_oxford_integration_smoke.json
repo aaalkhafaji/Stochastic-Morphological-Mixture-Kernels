@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "scope": "synthetic miniature end-to-end harness only; not Oxford benchmark evidence",
+  "mock_classes": 37,
+  "mock_resolution": 48,
+  "mock_train_per_breed": 1,
+  "mock_val_per_breed": 1,
+  "mock_test_per_breed": 1,
+  "tested_stages": [
+    "protocol split",
+    "trimap conversion",
+    "letterbox resize",
+    "candidate extraction",
+    "action learner",
+    "direct-output learner",
+    "temperature selection",
+    "clustered summaries",
+    "bootstrap output"
+  ],
+  "note": "Real Oxford numerical results are intentionally absent until the official annotation bytes are executed."
+}

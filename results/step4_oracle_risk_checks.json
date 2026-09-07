@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "random_batches": 2500,
+  "conditional_inputs_checked": 19692,
+  "max_pointwise_oracle_bound_violation": 0.0,
+  "max_uniform_reference_bound_violation": 0.0,
+  "max_global_oracle_bound_violation": 0.0,
+  "max_exact_decomposition_residual": 1.1102230246251565e-16,
+  "max_hard_selector_bound_violation": 0.0,
+  "max_bank_enlargement_monotonicity_violation": 0.0,
+  "minimum_selection_excess_seen": -6.938893903907228e-18,
+  "hard_selector_2e_near_sharp_ratio": 0.9999999974999999,
+  "scope": "Finite numerical sanity checks of the written theorem; not formal proof or independent benchmark evidence."
+}

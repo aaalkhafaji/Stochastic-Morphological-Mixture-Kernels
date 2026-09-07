@@ -1,0 +1,123 @@
+{
+  "dataset": "shapes",
+  "operator_names": [
+    "identity",
+    "O_square2",
+    "O_square3",
+    "O_square4",
+    "O_square5",
+    "C_square3",
+    "OC_square3",
+    "CO_square3",
+    "C_square5",
+    "OC_square5",
+    "CO_square5",
+    "C_diamond1",
+    "OC_diamond1",
+    "CO_diamond1",
+    "C_diamond2",
+    "OC_diamond2",
+    "CO_diamond2",
+    "C_horizontal3",
+    "OC_horizontal3",
+    "CO_horizontal3",
+    "C_vertical3",
+    "OC_vertical3",
+    "CO_vertical3",
+    "O_diamond1",
+    "O_diamond2",
+    "O_horizontal3",
+    "O_vertical3",
+    "area_connected3",
+    "area_connected8",
+    "area_connected16",
+    "area_connected32"
+  ],
+  "seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "forest_leaf_candidates": [
+    [
+      2,
+      0.045934662222862244
+    ],
+    [
+      8,
+      0.04645320400595665
+    ],
+    [
+      20,
+      0.04487496241927147
+    ]
+  ],
+  "leaf": 20,
+  "tuning_seconds": 3.3053924859996187,
+  "best_deterministic": "area_connected8",
+  "training_best": "area_connected8",
+  "classical_best": "area8",
+  "soft_best": [
+    3,
+    1.0,
+    "CO"
+  ],
+  "runs": [
+    {
+      "seed": 101,
+      "temperature": 0.005,
+      "fit_predict_seconds": 0.7080634100002499,
+      "mean_action_entropy": 0.6693980816362948,
+      "gate_success": true,
+      "gate_iterations": 117,
+      "gate_gradient_inf": 9.71941297412589e-07,
+      "gate_objective": 0.04557978732876414
+    },
+    {
+      "seed": 102,
+      "temperature": 0.005,
+      "fit_predict_seconds": 0.6793567580002673,
+      "mean_action_entropy": 0.6806364718984275,
+      "gate_success": true,
+      "gate_iterations": 131,
+      "gate_gradient_inf": 9.290899726127857e-07,
+      "gate_objective": 0.04581881332308573
+    },
+    {
+      "seed": 103,
+      "temperature": 0.005,
+      "fit_predict_seconds": 0.6849203060000946,
+      "mean_action_entropy": 0.67363437460402,
+      "gate_success": true,
+      "gate_iterations": 80,
+      "gate_gradient_inf": 9.006426887937886e-07,
+      "gate_objective": 0.04704733539885445
+    },
+    {
+      "seed": 104,
+      "temperature": 0.005,
+      "fit_predict_seconds": 0.6960411619998013,
+      "mean_action_entropy": 0.6806845274319957,
+      "gate_success": true,
+      "gate_iterations": 88,
+      "gate_gradient_inf": 7.777661675437572e-07,
+      "gate_objective": 0.04609379426344839
+    },
+    {
+      "seed": 105,
+      "temperature": 0.005,
+      "fit_predict_seconds": 0.7377639819997057,
+      "mean_action_entropy": 0.6724000791640126,
+      "gate_success": true,
+      "gate_iterations": 176,
+      "gate_gradient_inf": 8.621472856579264e-07,
+      "gate_objective": 0.045576365175185214
+    }
+  ],
+  "logistic_threshold": 0.5,
+  "logistic_iterations": [
+    32
+  ]
+}

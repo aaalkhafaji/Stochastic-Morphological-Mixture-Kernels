@@ -1,0 +1,15 @@
+{
+  "conversion": "Standalone LaTeX guide",
+  "pages": 4,
+  "tables": 5,
+  "original_guide_content_blocks_preserved": 51,
+  "external_assets_required": false,
+  "compiles_with_pdflatex": true,
+  "latex_errors": false,
+  "undefined_references": false,
+  "overfull_boxes": false,
+  "underfull_boxes": false,
+  "all_pages_visually_checked": true,
+  "scientific_data_models_code_and_result_records_changed": false,
+  "scope": "Format conversion; embedded tables are a snapshot of the frozen results."
+}

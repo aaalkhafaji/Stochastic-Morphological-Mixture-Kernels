@@ -1,0 +1,38 @@
+name: Step 5 Oxford-IIIT Pet validation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  oxford-pet:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run offline smoke test
+        run: python code/test_oxford_pet_step5_smoke.py
+      - name: Run Oxford-IIIT Pet Step 5 campaign
+        run: |
+          python code/run_oxford_pet_step5.py \
+            --download-annotations \
+            --data-root data/oxford_pet_official \
+            --output-dir results/step5_oxford_pet \
+            --resolution 128
+      - name: Freeze checksums
+        run: |
+          find results/step5_oxford_pet -type f -print0 | sort -z | xargs -0 sha256sum > results/step5_oxford_pet_SHA256SUMS.txt
+      - name: Upload Step 5 results
+        uses: actions/upload-artifact@v4
+        with:
+          name: step5-oxford-pet-results
+          path: |
+            results/step5_oxford_pet/
+            results/step5_oxford_pet_SHA256SUMS.txt
+          compression-level: 9
+          retention-days: 90

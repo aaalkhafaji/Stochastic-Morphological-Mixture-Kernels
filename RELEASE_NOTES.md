@@ -26,3 +26,7 @@ does not select or grant a new open-source license.
 ## Compact GitHub packaging
 
 The GitHub-distribution ZIP was reduced to below 25 MB by excluding fitted model binaries and large cached result arrays. Those frozen artifacts remain in the companion Zenodo archive and are enumerated in `ZENODO_ASSETS.csv`. Clean input arrays and all source code remain on GitHub so a full campaign can be regenerated.
+
+## Strengthening branch — Step 5 staged validation
+
+The working strengthening branch adds an execution-ready Oxford-IIIT Pet higher-resolution validation protocol, external-data provenance checks, a preprocessing topology audit, clean-mask-clustered bootstrap statistics, and a GitHub Actions execution workflow. No Oxford benchmark performance claim is included in this snapshot because the official annotation archive was not executed in the authoring environment. The frozen v2.1.0 baseline results remain unchanged.
