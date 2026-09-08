@@ -59,3 +59,10 @@ manuscript; the numerical-check files support rather than replace them.
 - `step9_bayes_pairwise.csv`: equal-prior Bayes error versus row-law TV for all unordered pairs.
 - `step9_transport_iterates.csv`: exact contraction coefficients through eight compositions.
 - `figures/step9_replication_bound.*`, `step9_bayes_tv_error.*`, `step9_transport_contraction.*`: visual diagnostics.
+
+## Step 10 (execution-ready; no results claimed yet)
+- Workflow: `.github/workflows/step10-generalization-calibration.yml`
+- Runner: `code/run_step10_generalization.py`
+- Frozen design: `docs/STEP10_GENERALIZATION_CALIBRATION.md`
+- Planned artifact: `step10-generalization-calibration-results`
+- Scope: Oxford-to-DAVIS zero-refit transfer, direct-output Gibbs calibration/selective risk, and computational scaling.

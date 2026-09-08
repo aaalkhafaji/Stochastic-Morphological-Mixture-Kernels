@@ -57,3 +57,10 @@ Across 22,014 IID held-out cases, both learned selectors significantly outperfor
 - Verified the sharp replication constant through 256 duplicate copies and 4,500 additional random partitioned categorical laws.
 - Added separate figures for replication sensitivity, Bayes error versus row-law TV, and exact composition contraction.
 - These checks support theorem consequences only; they do not claim global contraction or identifiability of the trained high-resolution adaptive kernel.
+
+## Step 10 execution-ready
+- Added Oxford-to-DAVIS zero-refit transfer evaluation.
+- Added direct-output Gibbs calibration, reliability, and selective-risk analysis.
+- Added computational scaling benchmark for 64, 128, 256, and 480 pixel masks and 7, 15, 31, and 63-action banks.
+- Added GitHub Actions workflow `step10-generalization-calibration.yml`.
+- No Step-10 outcome is integrated into manuscript claims before the frozen artifact is audited.
