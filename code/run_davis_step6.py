@@ -167,14 +167,41 @@ def ensure_davis(data_root: Path, data_archive: Path | None, results_archive: Pa
 
 
 def read_sequence_list(path: Path) -> list[str]:
+    """Read DAVIS split files and return unique video-sequence names.
+
+    DAVIS 2016's original ``ImageSets/480p/{train,val}.txt`` files are
+    frame lists, e.g.::
+
+        /JPEGImages/480p/bear/00000.jpg /Annotations/480p/bear/00000.png
+
+    while newer DAVIS layouts often store one sequence name per line.  This
+    parser accepts both formats.  In a frame-list row, the sequence is the
+    directory immediately below the resolution component (``480p``), or, as a
+    fallback, the parent directory of the frame path.
+    """
     rows = []
+    seen = set()
     for line in path.read_text().splitlines():
         line = line.strip()
         if not line or line.startswith("#"):
             continue
-        token = line.split()[0].strip().strip("/")
-        token = Path(token).stem if "/" in token else token
-        rows.append(token)
+        token = line.split()[0].strip()
+        clean = token.strip("/")
+        if "/" not in clean:
+            seq = clean
+        else:
+            parts = list(Path(clean).parts)
+            seq = None
+            # Original DAVIS 2016 frame-list format: .../480p/<seq>/<frame>
+            for i, part in enumerate(parts[:-1]):
+                if part.lower() == "480p" and i + 1 < len(parts) - 1:
+                    seq = parts[i + 1]
+                    break
+            if seq is None:
+                seq = Path(clean).parent.name
+        if seq and seq not in seen:
+            rows.append(seq)
+            seen.add(seq)
     return rows
 
 
