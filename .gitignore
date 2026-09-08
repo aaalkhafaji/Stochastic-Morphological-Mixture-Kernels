@@ -12,3 +12,6 @@ Thumbs.db
 models/*.joblib
 results/*.npz
 results/*.csv.gz
+# Step 6 public DAVIS archives/caches are fetched in Actions and not committed
+data/davis2016_official/
+results/step6_davis2016/*.npz

@@ -15,10 +15,11 @@
 | Original finite checks | `results/mathematical_checks.json` | `audit_math.py` |
 | Expanded graph/entropy/transport checks | `results/kernel_theory_checks.json` | `audit_kernel_theory.py` |
 | Step-4 oracle/excess-risk checks | `results/step4_oracle_risk_checks.json` | `audit_oracle_risk.py` |
+| Step-5 Oxford higher-resolution validation | `results/step5_oxford_pet/*` | `run_oxford_pet_step5.py` / GitHub Actions |
 | Split identity and all saved model replays | `results/release_verification.json` | `verify_release.py` |
 | Written proof/derivation inventory | `docs/proof_inventory.json` | Complete proofs in the main manuscript |
 
-All generators live in `code/`. There are six figures, each with a PDF and PNG.
+All generators live in `code/`. There are six baseline figures, each with a PDF and PNG. Step 5 adds a higher-resolution Oxford result table and machine-readable summaries rather than a new figure.
 Generated manuscript tables are retained in `results/generated_results.tex` and
 `results/generated_quotient.tex`. Full mathematical proofs remain in the main
 manuscript; the numerical-check files support rather than replace them.

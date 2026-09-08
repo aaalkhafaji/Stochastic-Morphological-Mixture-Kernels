@@ -1,0 +1,144 @@
+{
+  "status": "PASS / STEP 5 COMPLETED",
+  "artifact_sha256": "889e7df9af279974d46595444bf768c627602d188ca8c93d0f65b30739f16e96",
+  "internal_manifest_entries": 15,
+  "internal_manifest_mismatches": [],
+  "official_archive_sha256": "52425fb6de5c424942b7626b428656fcbd798db970a937df61750c0f1d358e91",
+  "counts": {
+    "train": 1840,
+    "val": 1840,
+    "test": 3669
+  },
+  "n_test_corrupted_cases": 22014,
+  "n_categories": 37,
+  "split_overlap_counts": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "test_resize_topology_preserved_fraction": 0.8530934859634778,
+  "all_resize_topology_preserved_fraction": 0.7733024901347122,
+  "selection": {
+    "resolution": 128,
+    "best_validation_action_index": 29,
+    "best_validation_action": "area_connected16",
+    "action_leaf_candidates": [
+      [
+        2,
+        0.018546385690569878
+      ],
+      [
+        8,
+        0.01850803568959236
+      ],
+      [
+        20,
+        0.018411867320537567
+      ]
+    ],
+    "action_leaf": 20,
+    "direct_leaf_candidates": [
+      [
+        2,
+        0.023482000180063
+      ],
+      [
+        8,
+        0.022783116903559383
+      ],
+      [
+        20,
+        0.022892066662872978
+      ]
+    ],
+    "direct_leaf": 8,
+    "model_seeds": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "temperature_candidates": [
+      0.005,
+      0.02,
+      0.1
+    ],
+    "runs": [
+      {
+        "seed": 101,
+        "temperature": 0.005,
+        "fit_predict_seconds": 100.83560140099985
+      },
+      {
+        "seed": 102,
+        "temperature": 0.005,
+        "fit_predict_seconds": 99.96434241800011
+      },
+      {
+        "seed": 103,
+        "temperature": 0.005,
+        "fit_predict_seconds": 100.44648315199993
+      },
+      {
+        "seed": 104,
+        "temperature": 0.005,
+        "fit_predict_seconds": 101.31908346
+      },
+      {
+        "seed": 105,
+        "temperature": 0.005,
+        "fit_predict_seconds": 101.00582589800001
+      }
+    ]
+  },
+  "headline_loss": {
+    "Action-coordinate selector": 0.0161947741,
+    "Direct-output sampled": 0.0207294773,
+    "Direct-output selector": 0.0200574877,
+    "Input": 0.448234161,
+    "Oracle (diagnostic)": 0.00957664248,
+    "Validation best": 0.0163924112
+  },
+  "action_minus_validation_best_loss": -0.00019763705263191615,
+  "action_relative_loss_reduction_percent_vs_validation_best": 1.2056618802999977,
+  "direct_minus_action_loss": 0.0038627135867015452,
+  "predeclared_direct_output_paired_comparisons": [
+    {
+      "method_a": "Direct-output selector",
+      "method_b": "Validation best",
+      "metric": "loss",
+      "n_images": 3669,
+      "mean_difference_a_minus_b": 0.0036650765340407593,
+      "ci95": [
+        0.003118974692496533,
+        0.004243463808710277
+      ],
+      "simultaneous_familywise95_ci_two_comparisons": [
+        0.003061253888541176,
+        0.004300392680653999
+      ],
+      "bootstrap_resamples": 2000,
+      "cluster": "clean test mask"
+    },
+    {
+      "method_a": "Direct-output selector",
+      "method_b": "Action-coordinate selector",
+      "metric": "loss",
+      "n_images": 3669,
+      "mean_difference_a_minus_b": 0.0038627135870324745,
+      "ci95": [
+        0.0032508867944149645,
+        0.004480875298338339
+      ],
+      "simultaneous_familywise95_ci_two_comparisons": [
+        0.003160928457661072,
+        0.004560032833293507
+      ],
+      "bootstrap_resamples": 2000,
+      "cluster": "clean test mask"
+    }
+  ],
+  "adverse_condition_note": "Direct-output selector has higher mean loss than action-coordinate selector in all six predefined conditions. Action-coordinate selector is slightly worse than validation-best under balanced10 and worse under pepper10; all conditions retained.",
+  "interpretation": "Higher-resolution natural-image validation succeeds as a domain/resolution stress test. It does not establish predictive superiority of the direct-output learner; instead it separates structural representation invariance from empirical performance."
+}

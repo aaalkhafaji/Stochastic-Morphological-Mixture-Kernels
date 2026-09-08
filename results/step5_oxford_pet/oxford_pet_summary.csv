@@ -1,0 +1,37 @@
+metric,method,mean,std,count
+loss,Action-coordinate selector,0.0161947741,0.0335585712,3669
+loss,Direct-output sampled,0.0207294773,0.0411238462,3669
+loss,Direct-output selector,0.0200574877,0.0402725104,3669
+loss,Input,0.448234161,0.02244245,3669
+loss,Oracle (diagnostic),0.00957664248,0.0218627751,3669
+loss,Validation best,0.0163924112,0.0356844994,3669
+dice,Action-coordinate selector,0.995139216,0.00214040578,3669
+dice,Direct-output sampled,0.991582704,0.017946406,3669
+dice,Direct-output selector,0.992874588,0.0101937531,3669
+dice,Input,0.903729727,0.064156764,3669
+dice,Oracle (diagnostic),0.995082114,0.0043943273,3669
+dice,Validation best,0.995020478,0.00343454452,3669
+iou,Action-coordinate selector,0.990354593,0.00420385318,3669
+iou,Direct-output sampled,0.984103991,0.0189526577,3669
+iou,Direct-output selector,0.986269672,0.0120658814,3669
+iou,Input,0.83355638,0.082152391,3669
+iou,Oracle (diagnostic),0.990323083,0.00819303575,3669
+iou,Validation best,0.990163636,0.00497126965,3669
+beta0_error,Action-coordinate selector,0.0119378577,0.080561705,3669
+beta0_error,Direct-output sampled,0.0245429914,0.150298949,3669
+beta0_error,Direct-output selector,0.0235304806,0.14528796,3669
+beta0_error,Input,392.292677,89.0908536,3669
+beta0_error,Oracle (diagnostic),0.00640501499,0.0482629752,3669
+beta0_error,Validation best,0.0119015172,0.0856763852,3669
+beta1_error,Action-coordinate selector,0.171381848,0.833326351,3669
+beta1_error,Direct-output sampled,0.207854825,0.912975459,3669
+beta1_error,Direct-output selector,0.207277187,0.912860332,3669
+beta1_error,Input,201.790542,99.6794282,3669
+beta1_error,Oracle (diagnostic),0.103252476,0.722085653,3669
+beta1_error,Validation best,0.178931589,0.854449525,3669
+topology_exact,Action-coordinate selector,0.87689652,0.299468629,3669
+topology_exact,Direct-output sampled,0.849027165,0.347991334,3669
+topology_exact,Direct-output selector,0.849314073,0.348136275,3669
+topology_exact,Input,0,0,3669
+topology_exact,Oracle (diagnostic),0.92668302,0.211521379,3669
+topology_exact,Validation best,0.873716726,0.316428805,3669

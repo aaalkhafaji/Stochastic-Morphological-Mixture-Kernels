@@ -1,0 +1,45 @@
+NLC: coverage 24/24 = 1.0000
+FST: coverage 24/24 = 1.0000
+SAL: coverage 24/24 = 1.0000
+TRC: coverage 24/24 = 1.0000
+MSG: coverage 24/24 = 1.0000
+CVOS: coverage 24/24 = 1.0000
+NLC: coverage 8/8 = 1.0000
+FST: coverage 8/8 = 1.0000
+SAL: coverage 8/8 = 1.0000
+TRC: coverage 8/8 = 1.0000
+MSG: coverage 8/8 = 1.0000
+CVOS: coverage 8/8 = 1.0000
+NLC: coverage 16/16 = 1.0000
+FST: coverage 16/16 = 1.0000
+SAL: coverage 16/16 = 1.0000
+TRC: coverage 16/16 = 1.0000
+MSG: coverage 16/16 = 1.0000
+CVOS: coverage 16/16 = 1.0000
+Extracted train: 144 genuine-error cases in 2.6s
+Extracted tune: 48 genuine-error cases in 0.9s
+Extracted test: 96 genuine-error cases in 1.8s
+fit seed 101
+fit seed 102
+fit seed 103
+fit seed 104
+fit seed 105
+{
+  "status": "PASS",
+  "case_counts": {
+    "train": 144,
+    "tune": 48,
+    "test": 96
+  },
+  "selection": {
+    "action_leaf": 8,
+    "direct_leaf": 2
+  },
+  "required_outputs": [
+    "davis2016_summary.csv",
+    "davis2016_source_method_summary.csv",
+    "davis2016_sequence_clustered_ci.csv",
+    "davis2016_paired_comparisons.json",
+    "generated_davis2016.tex"
+  ]
+}

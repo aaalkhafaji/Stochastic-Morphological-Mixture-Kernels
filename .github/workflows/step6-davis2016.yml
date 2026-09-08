@@ -1,0 +1,70 @@
+name: Step 6 DAVIS 2016 genuine-error validation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  davis2016:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Step 6 offline smoke test
+        env:
+          PYTHONPATH: code
+        run: python code/test_davis_step6_smoke.py
+
+      - name: Run Step 6 miniature integration test
+        env:
+          PYTHONPATH: code
+        run: python code/test_davis_step6_integration.py
+
+      - name: Run official DAVIS 2016 genuine-error campaign
+        env:
+          PYTHONPATH: code
+          OMP_NUM_THREADS: '1'
+          OPENBLAS_NUM_THREADS: '1'
+          MKL_NUM_THREADS: '1'
+        run: |
+          python code/run_davis_step6.py \
+            --download \
+            --data-root data/davis2016_official \
+            --output-dir results/step6_davis2016 \
+            --resolution 128
+
+      - name: Build compact result artifact and freeze checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf results/step6_davis2016_artifact
+          mkdir -p results/step6_davis2016_artifact
+          find results/step6_davis2016 -maxdepth 1 -type f \
+            ! -name '*.npz' ! -name 'SHA256SUMS' -print0 | \
+            xargs -0 -I{} cp {} results/step6_davis2016_artifact/
+          cd results/step6_davis2016_artifact
+          find . -maxdepth 1 -type f ! -name SHA256SUMS -printf '%P\0' | sort -z | \
+            xargs -0 sha256sum > SHA256SUMS
+          sha256sum -c SHA256SUMS
+
+      - name: Upload Step 6 results
+        uses: actions/upload-artifact@v4
+        with:
+          name: step6-davis2016-results
+          path: results/step6_davis2016_artifact/
+          retention-days: 90
+          if-no-files-found: error

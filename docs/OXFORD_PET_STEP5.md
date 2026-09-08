@@ -81,3 +81,17 @@ These outputs should be frozen and hashed before their numerical values are inse
 ## GitHub Actions
 
 `.github/workflows/step5-oxford-pet.yml` provides a manual workflow that downloads only the official annotations, runs the campaign, and uploads a ZIP artifact with the numerical Step-5 outputs. The dataset archive itself is not committed to GitHub.
+
+
+## Executed result status
+
+The official campaign was executed successfully by GitHub Actions on 7 September 2026.
+
+- test masks: 3,669;
+- six corruption conditions per mask: 22,014 held-out corrupted cases;
+- five fitted estimator seeds;
+- downloaded artifact SHA-256: `889e7df9af279974d46595444bf768c627602d188ca8c93d0f65b30739f16e96`;
+- internal result manifest: 15/15 entries verified;
+- test native/resized topology-preservation fraction: 0.8531.
+
+Headline mean composite losses after clean-mask aggregation are 0.0162 for the action-coordinate selector, 0.0164 for validation-best fixed morphology, 0.0201 for the direct-output selector, and 0.0096 for the target-aware bank oracle. The direct-output selector is adverse relative to both primary baselines under the prespecified paired comparisons; this result is retained rather than filtered. See `results/step5_oxford_pet/` and `STEP5_OXFORD_PET_HIGH_RESOLUTION_VALIDATION.md` in the campaign package.

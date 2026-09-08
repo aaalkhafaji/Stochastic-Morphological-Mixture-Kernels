@@ -1,0 +1,36 @@
+[
+  {
+    "method_a": "Direct-output selector",
+    "method_b": "Validation best",
+    "metric": "loss",
+    "n_images": 3669,
+    "mean_difference_a_minus_b": 0.0036650765340407593,
+    "ci95": [
+      0.003118974692496533,
+      0.004243463808710277
+    ],
+    "simultaneous_familywise95_ci_two_comparisons": [
+      0.003061253888541176,
+      0.004300392680653999
+    ],
+    "bootstrap_resamples": 2000,
+    "cluster": "clean test mask"
+  },
+  {
+    "method_a": "Direct-output selector",
+    "method_b": "Action-coordinate selector",
+    "metric": "loss",
+    "n_images": 3669,
+    "mean_difference_a_minus_b": 0.0038627135870324745,
+    "ci95": [
+      0.0032508867944149645,
+      0.004480875298338339
+    ],
+    "simultaneous_familywise95_ci_two_comparisons": [
+      0.003160928457661072,
+      0.004560032833293507
+    ],
+    "bootstrap_resamples": 2000,
+    "cluster": "clean test mask"
+  }
+]

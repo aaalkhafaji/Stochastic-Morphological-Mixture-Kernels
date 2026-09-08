@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "target_resolution": [
+    128,
+    128
+  ],
+  "n_actions": 31,
+  "n_distinct": 9,
+  "boundary_f08": 0.911764705882353,
+  "train_sequences": 24,
+  "tune_sequences": 6,
+  "source_methods": [
+    "NLC",
+    "FST",
+    "SAL",
+    "TRC",
+    "MSG",
+    "CVOS"
+  ]
+}

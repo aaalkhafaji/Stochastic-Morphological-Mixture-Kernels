@@ -94,4 +94,25 @@ Use `CITATION.cff` for citation metadata. The frozen baseline manuscript contain
 
 `code/run_oxford_pet_step5.py` is the frozen Step-5 protocol for an independent natural-image mask domain. It uses only the official Oxford-IIIT Pet trimap annotation archive, preserves aspect ratio by nearest-neighbor letterboxing to 128×128, retains the entire official test partition, evaluates all six predeclared primary corruptions, and reports clean-mask-clustered bootstrap intervals. The external Oxford archive is **not** redistributed here; see `data/OXFORD_IIIT_PET_NOTICE.md` and `docs/OXFORD_PET_STEP5.md`.
 
-The working branch intentionally contains **no Oxford performance numbers yet** because the official binary archive could not be fetched inside the Step-5 authoring session. The code path has passed offline smoke and miniature end-to-end integration tests. A manual GitHub Actions workflow at `.github/workflows/step5-oxford-pet.yml` can download the official annotations and produce the frozen numerical result artifact without committing the dataset to GitHub.
+The official Step-5 campaign has now been executed through the manual GitHub Actions workflow. The run used 1,840 fitting, 1,840 validation, and all 3,669 official test masks at 128x128; every held-out mask was evaluated under all six frozen corruption conditions (22,014 test cases). The action-coordinate selector achieved mean composite loss 0.0162 versus 0.0164 for the validation-best fixed morphology, while the direct-output selector was adverse at 0.0201. The two predeclared paired clean-mask comparisons confirm higher direct-output loss relative to both baselines. Lightweight summaries/provenance are frozen under `results/step5_oxford_pet/`; large caches remain outside the compact GitHub tree for archival deposition.
+
+## Step 6: DAVIS 2016 genuine segmentation-error validation
+
+Step 6 tests the morphology framework on actual algorithm-produced segmentation
+errors from the official DAVIS 2016 benchmark.  It uses the pre-computed masks
+of the six unsupervised methods NLC, FST, SAL, TRC, MSG, and CVOS and the
+official dense ground-truth annotations.  No synthetic corruption is introduced
+in this campaign, and statistical inference is clustered by video sequence.
+
+The easiest execution route is GitHub Actions:
+
+1. Open **Actions**.
+2. Choose **Step 6 DAVIS 2016 genuine-error validation**.
+3. Click **Run workflow** on `main`.
+4. After success, download the artifact **step6-davis2016-results**.
+
+The workflow downloads the official DAVIS 2016 data and pre-computed result
+archives, verifies the official MD5 published for `DAVIS-data.zip`, records
+SHA-256 hashes for both downloaded archives, selectively extracts only masks and
+split files (RGB frames are not used by the estimator), runs the predeclared
+analysis, and freezes checksums for the compact result artifact.

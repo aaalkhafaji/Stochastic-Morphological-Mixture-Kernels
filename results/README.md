@@ -20,3 +20,11 @@ Step-4 finite oracle/excess-risk verification is stored in
 the exact excess-risk decomposition, hard-selector bound, and bank-enlargement
 monotonicity on randomly generated finite conditional-risk problems. It is a
 mathematical sanity check, not benchmark evidence.
+
+
+Step-5 Oxford-IIIT Pet higher-resolution evidence is stored under
+`step5_oxford_pet/`. The compact tree retains protocol IDs, preprocessing audit,
+selection metadata, per-condition and macro-breed summaries, clustered confidence
+intervals, paired comparisons, generated LaTeX, and provenance. Large NPZ caches
+and the compressed per-case metric table are excluded from Git history; their
+full-artifact hashes are retained for the next Zenodo archival update.

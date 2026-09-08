@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Oxford-IIIT Pet higher-resolution mask validation at ${128}\times{128}$. Values average the six predeclared corruptions and, for learned estimators, five fitted seeds within each clean held-out mask before averaging over masks.}
+\label{tab:oxfordpet}
+\small
+\begin{tabular}{lccc}
+\toprule
+Method & Loss $\downarrow$ & Dice $\uparrow$ & IoU $\uparrow$\\
+\midrule
+Input & 0.4482 & 0.9037 & 0.8336\\
+Validation best & 0.0164 & 0.9950 & 0.9902\\
+Action-coordinate selector & 0.0162 & 0.9951 & 0.9904\\
+Direct-output selector & 0.0201 & 0.9929 & 0.9863\\
+Direct-output sampled & 0.0207 & 0.9916 & 0.9841\\
+Oracle (diagnostic) & 0.0096 & 0.9951 & 0.9903\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Paired clean-mask clustered bootstrap comparisons (Direct-output selector minus baseline):
+% vs Validation best: mean=0.0036650765, 95% CI=[0.0031189747,0.0042434638], n=3669
+% vs Action-coordinate selector: mean=0.0038627136, 95% CI=[0.0032508868,0.0044808753], n=3669

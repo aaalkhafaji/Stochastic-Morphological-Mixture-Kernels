@@ -1,0 +1,6 @@
+Artifact: step5-oxford-pet-results.zip
+GitHub Actions run: 34167588194
+Artifact ID: 10035125626
+SHA256: 889e7df9af279974d46595444bf768c627602d188ca8c93d0f65b30739f16e96
+Artifact ZIP size: 42412564 bytes as reported by actions/upload-artifact; local downloaded ZIP is the GitHub-compressed delivery.
+The compact repository retains only lightweight summaries/provenance. Large NPZ caches and the compressed per-case metric table are reserved for the archival release.

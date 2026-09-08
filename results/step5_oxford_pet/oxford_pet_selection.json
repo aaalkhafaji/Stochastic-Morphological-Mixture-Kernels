@@ -1,0 +1,74 @@
+{
+  "resolution": 128,
+  "best_validation_action_index": 29,
+  "best_validation_action": "area_connected16",
+  "action_leaf_candidates": [
+    [
+      2,
+      0.018546385690569878
+    ],
+    [
+      8,
+      0.01850803568959236
+    ],
+    [
+      20,
+      0.018411867320537567
+    ]
+  ],
+  "action_leaf": 20,
+  "direct_leaf_candidates": [
+    [
+      2,
+      0.023482000180063
+    ],
+    [
+      8,
+      0.022783116903559383
+    ],
+    [
+      20,
+      0.022892066662872978
+    ]
+  ],
+  "direct_leaf": 8,
+  "model_seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "temperature_candidates": [
+    0.005,
+    0.02,
+    0.1
+  ],
+  "runs": [
+    {
+      "seed": 101,
+      "temperature": 0.005,
+      "fit_predict_seconds": 100.83560140099985
+    },
+    {
+      "seed": 102,
+      "temperature": 0.005,
+      "fit_predict_seconds": 99.96434241800011
+    },
+    {
+      "seed": 103,
+      "temperature": 0.005,
+      "fit_predict_seconds": 100.44648315199993
+    },
+    {
+      "seed": 104,
+      "temperature": 0.005,
+      "fit_predict_seconds": 101.31908346
+    },
+    {
+      "seed": 105,
+      "temperature": 0.005,
+      "fit_predict_seconds": 101.00582589800001
+    }
+  ]
+}
