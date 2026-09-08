@@ -2,7 +2,7 @@
 % Compile twice with: pdflatex JVCIR_Supplementary_Guide.tex
 % Standard TeX Live/MiKTeX packages only; no external assets or BibTeX needed.
 % Numerical tables are embedded snapshots of the accompanying frozen results.
-% Strengthening working branch through Step 7; frozen public baseline is v2.1.0.
+% Strengthening working branch through Step 9; frozen public baseline is v2.1.0.
 \documentclass[10pt,letterpaper]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -39,11 +39,11 @@
 \textbf{Stochastic Morphological \(\pi\)-Mixture Kernels: Identifiability, Topological Stability, and Output-Space Learning}
 
 \GuideSmall{Adnan H. Abdulwahid \textperiodcentered{} Ram C. Neupane}
-\GuideSmall{Reproducibility guide | Strengthening branch Step 7 | Baseline archive v2.1.0 | Prepared 7 September 2026}
+\GuideSmall{Reproducibility guide | Strengthening branch Step 9 | Baseline archive v2.1.0 | Prepared 8 September 2026}
 \GuideHeading{Purpose and scope}
 This archive supplies the complete computational record accompanying the manuscript: frozen inputs, fitted models, candidate outputs, primary and diagnostic results, figure and table generators, and numerical checks of the mathematical claims. The written proofs remain in the main manuscript.
 
-The original campaign evaluates a fixed morphological bank on a held-out test set. The subsequent output-space construction reuses that inspected set and is explicitly exploratory. Steps 5 and 6 add independent public-data validations: Oxford-IIIT Pet supplies higher-resolution human annotations under frozen synthetic corruptions, while DAVIS 2016 supplies genuine algorithm-produced segmentation errors with no synthetic corruption. Step 7 freezes the Step-5 IID-fitted selectors and evaluates nine structured Oxford error families without refitting or retuning. Reproducing the original calculations does not create a new independent validation.
+The original campaign evaluates a fixed morphological bank on a held-out test set. The subsequent output-space construction reuses that inspected set and is explicitly exploratory. Steps 5 and 6 add independent public-data validations: Oxford-IIIT Pet supplies higher-resolution human annotations under frozen synthetic corruptions, while DAVIS 2016 supplies genuine algorithm-produced segmentation errors with no synthetic corruption. Step 7 freezes the Step-5 IID-fitted selectors and evaluates nine structured Oxford error families without refitting or retuning. Step 8 then adds a validation-only fair-baseline audit against public SoftMorph2, an empirical $3\times3$ W-operator, and a condition-aware fixed-bank control. Step 9 closes the theory--computation loop with separately frozen finite stress tests of replication sensitivity, topology sharpness, incidence rank, Bayesian reversal, and kernel composition. Reproducing the original calculations does not create a new independent validation.
 
 \GuideHeading{Primary experiment at a glance}
 
@@ -207,15 +207,25 @@ Step~7 reuses the frozen Step~5 IID deletion/addition fitting distribution and f
 
 The nine-condition mean favors the frozen direct-output selector: loss 0.1010 versus 0.1587 for input, while exact topology agreement rises from 0.3663 to 0.5287 and boundary $F$ from 0.8759 to 0.9173. The family-wise direct-minus-input loss interval is $[-0.05888,-0.05650]$. Direct-output selection is adverse for boundary contraction and bridge/spur errors, and the secondary component-dropout diagnostic is also adverse; all are retained.
 
+\GuideHeading{Step 8 modern and fair baselines}
+Step~8 uses the same Step~5 fitting/validation information budget and never tunes on the Step~7 structured errors. Public SoftMorph2 is retrieved at runtime; an independent product-logic implementation matches the public 2D code with maximum absolute discrepancy 0.0. Validation selects SoftMorph closing with 4-connectivity, one iteration, $\sigma=.75$, and threshold $.5$. A regularized empirical $3\times3$ W-operator is also selected on validation only, together with an intentionally advantaged IID condition-aware fixed-bank control.
+
+On the 22,014 IID cases, condition-aware fixed morphology has loss 0.01574, action-coordinate selection 0.01619, direct-output selection 0.02006, SoftMorph2 0.09752, and the empirical W-operator 0.15709. Both learned selectors significantly outperform SoftMorph2 and the W-operator under the predeclared family-wise comparisons. On the 33,021 structured-OOD cases, direct-output selection remains at 0.10104 versus 0.15195 for SoftMorph2 and 0.16448 for the W-operator; direct-output significantly outperforms both. The adverse direction is retained: SoftMorph2 significantly outperforms action-coordinate selection under structured shift (0.15195 versus 0.15385).
+
+\GuideHeading{Step 9 theorem-targeted finite stress tests}
+Step~9 is not a performance benchmark. It enumerates complete small state spaces where feasible and targets exact consequences of the paper's theorems. Replication tests use duplicate counts through 256 plus 4,500 random partitioned categorical laws; the sharp TV constant is attained to $1.1\times10^{-16}$ while the distinct-output count remains fixed. Topology checks enumerate all 2,304 Hamming-one pairs on $3\times3$, add 30,000 random multi-flip cases, and recover both $|\Delta\beta_k|=3$ sharpness constructions.
+
+On all 512 $3\times3$ masks, the 31 action labels induce 18 distinct maps and the incidence rank is 18; exact deduplication yields a full-rank 18-map bank, while adding a duplicate label leaves the rank unchanged. A four-action lossy kernel on the same 512-state space recovers the uniform prior exactly under Bayesian reversal but has $HH_\mu^{\leftarrow}$ residual 0.9953. Exact finite optimal transport on all 16 $2\times2$ masks gives $\kappa(K)=0.6$ and $\kappa(K^n)=0.6^n$ through $n=8$ for $K=.6I+.4O_{5\times5}$, while a deterministic $2\times2$ square opening has $\kappa=4$. These checks illustrate both the contracting and noncontracting regimes; they do not assert global contraction of the trained $128\times128$ kernel.
+
 \GuideHeading{Numerical support for the proofs}
 Independent graph calculations compare 66,146 masks and 1,053,698 single-pixel changes, check 2,304 exact local component identities, and include separate constructions attaining both sharp sensitivity bounds. The suite also runs 2,000 entropy/risk/replication trials, 32 finite transport comparisons, Bayesian-reversal checks, and gradient comparisons.
 
 The largest finite-difference gradient residual in the expanded suite is \(8.2\times10^{-11}\). These finite and numerical checks complement the quantified written proofs; they are not a proof-assistant certificate or external mathematical review.
 
 \GuideHeading{Limits to retain in any presentation}
-Individual metrics do not all improve: MNIST Dice and shapes hole error can worsen. Stronger Fashion-MNIST corruption gives a documented failure against the fixed area filter. Clean inputs can change. Evaluating a full 31-action bank is materially slower than using a single area filter. Oxford closes the low-resolution-only gap, DAVIS closes the synthetic-error-only gap, and Step~7 probes structured mask-error shift; none establishes RGB restoration, clinical performance, correlated real-sensor-noise robustness, or native-resolution topology preservation. DAVIS source segmentations are from the 2016 benchmark rather than contemporary architectures.
+Individual metrics do not all improve: MNIST Dice and shapes hole error can worsen. Stronger Fashion-MNIST corruption gives a documented failure against the fixed area filter. Clean inputs can change. Evaluating a full 31-action bank is materially slower than using a single area filter. Oxford closes the low-resolution-only gap, DAVIS closes the synthetic-error-only gap, Step~7 probes structured mask-error shift, Step~8 adds a matched public SoftMorph2/W-operator comparison, and Step~9 stress-tests theorem consequences on small finite state spaces; none establishes RGB restoration, clinical performance, correlated real-sensor-noise robustness, or native-resolution topology preservation. DAVIS source segmentations are from the 2016 benchmark rather than contemporary architectures.
 
-The smooth morphology control is not a full implementation of BiMoNN, DMNN, or SoftMorph. No superiority over those published architectures is claimed. The mathematical contraction statements require their stated coefficient conditions; the fitted model has not been shown to satisfy a global contraction coefficient below one.
+Step~8 evaluates the public SoftMorph2 operator as matched post-processing and a learned local W-operator, but it does not reproduce full BiMoNN/DMNN architectures or SoftMorph as an end-to-end network component. No universal architecture-level superiority is claimed. The mathematical contraction statements require their stated coefficient conditions; the fitted model has not been shown to satisfy a global contraction coefficient below one.
 
 \GuideHeading{Attribution and reuse}
 \GuideSmall{Dataset sources, original hashes, and the Fashion-MNIST license are supplied. LICENSE\_NOTICE.md records the project rights status without asserting an unselected open-source license. CITATION.cff contains manuscript/software attribution without an invented DOI. The manuscript discloses generative AI assistance; the authors retain responsibility for its content.}

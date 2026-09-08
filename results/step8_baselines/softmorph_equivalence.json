@@ -1,0 +1,104 @@
+{
+  "checks": [
+    {
+      "operation": "erosion",
+      "connectivity": 4,
+      "iterations": 1,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "erosion",
+      "connectivity": 4,
+      "iterations": 2,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "erosion",
+      "connectivity": 8,
+      "iterations": 1,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "erosion",
+      "connectivity": 8,
+      "iterations": 2,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "dilation",
+      "connectivity": 4,
+      "iterations": 1,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "dilation",
+      "connectivity": 4,
+      "iterations": 2,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "dilation",
+      "connectivity": 8,
+      "iterations": 1,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "dilation",
+      "connectivity": 8,
+      "iterations": 2,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "opening",
+      "connectivity": 4,
+      "iterations": 1,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "opening",
+      "connectivity": 4,
+      "iterations": 2,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "opening",
+      "connectivity": 8,
+      "iterations": 1,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "opening",
+      "connectivity": 8,
+      "iterations": 2,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "closing",
+      "connectivity": 4,
+      "iterations": 1,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "closing",
+      "connectivity": 4,
+      "iterations": 2,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "closing",
+      "connectivity": 8,
+      "iterations": 1,
+      "max_abs": 0.0
+    },
+    {
+      "operation": "closing",
+      "connectivity": 8,
+      "iterations": 2,
+      "max_abs": 0.0
+    }
+  ],
+  "max_abs_discrepancy": 0.0,
+  "tolerance": 2e-06,
+  "status": "PASS",
+  "torch_version": "2.9.0+cpu"
+}

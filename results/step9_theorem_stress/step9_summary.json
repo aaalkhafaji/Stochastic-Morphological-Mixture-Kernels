@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "seconds": 5.7112877368927,
+  "replication_cardinality": {
+    "max_random_bound_violation": 0.0,
+    "max_sharpness_residual": 1.1102230246251565e-16
+  },
+  "topology": {
+    "exhaustive_3x3_pairs": 2304,
+    "beta0_max_abs_delta_3x3": 3,
+    "beta1_max_abs_delta_3x3": 1,
+    "beta0_sharp_count_3x3": 1,
+    "beta1_sharp_count_3x3": 0,
+    "explicit_beta0_sharp_delta": 3,
+    "explicit_beta1_sharp_delta": 3,
+    "random_multiflip_checks": 30000,
+    "max_bound_violation": 0.0,
+    "max_random_ratio": 0.6666666666666666
+  },
+  "identifiability": {
+    "grid": "3x3",
+    "states": 512,
+    "actions": 31,
+    "global_incidence_rank": 18,
+    "unique_deterministic_maps": 18,
+    "full_bank_identifiable": false,
+    "duplicated_bank_actions": 32,
+    "duplicated_bank_rank": 18,
+    "duplicate_creates_nonidentifiability": true,
+    "min_gram_eigenvalue": -4.3242782115452484e-13
+  },
+  "bayes_reversal": {
+    "states": 512,
+    "kernel_actions": 4,
+    "uniform_prior_marginal_recovery_max_abs": 2.168404344971009e-19,
+    "HHreverse_identity_max_abs_residual": 0.9953271028037384,
+    "row_pairs": 130816,
+    "row_pairs_with_support_overlap": 130312,
+    "pairwise_formula_max_abs_residual": 0.0,
+    "global_optimal_classification_error": 0.57763671875,
+    "exact_left_inverse_support_condition": false
+  },
+  "transport_composition": {
+    "states": 16,
+    "contractive_kernel": "0.6 identity + 0.4 O_square5",
+    "kappa_K": 0.6,
+    "expected_kappa": 0.6,
+    "kappa_K2": 0.36,
+    "kappa_product_bound": 0.36,
+    "max_iterate_kappa_residual": 6.938893903907228e-17,
+    "max_iterate_topology_bound_violation": 0.0,
+    "largest_deterministic_bank_lipschitz": 4.0,
+    "largest_deterministic_bank_action": "O_square2",
+    "exact_kappa_that_action": 4.0
+  }
+}

@@ -113,5 +113,16 @@ The protocol is frozen in `results/step7_structured/STEP7_PROTOCOL_FROZEN.json`;
 Step 7 completed successfully on 33,021 structured cases. The frozen direct-output selector reduces the nine-condition mean loss from 0.1587 (raw input) to 0.1010, with family-wise direct-minus-input interval [-0.05888, -0.05650]. Aggregate Dice, IoU, topology-exact rate, and boundary F also improve. Two primary families (boundary contraction and bridge/spur) and the secondary natural component-dropout diagnostic are adverse and are retained.
 
 
-## Step 8 modern/fair baselines (execution-ready)
-The workflow `.github/workflows/step8-modern-baselines.yml` compares the frozen Oxford pipeline against a condition-aware fixed-bank control, a validation-selected SoftMorph2 post-processing baseline, and a regularized empirical 3x3 W-operator. SoftMorph2 is retrieved from its public upstream repository at runtime and is not redistributed here. Step-8 test outcomes are not yet incorporated until the workflow artifact is audited.
+## Step 8 modern/fair baselines
+
+Step 8 has been **successfully executed** on the frozen Oxford-IIIT Pet protocol. It compares the same-bank selectors with an intentionally advantaged condition-aware fixed control, the public SoftMorph2 implementation (retrieved at runtime and checked against an independent product-logic implementation), and a regularized empirical 3x3 W-operator. All selections use Step-5 training/validation data only; the 33,021 Step-7 structured-OOD cases are never used for tuning.
+
+On 22,014 IID held-out cases, condition-aware fixed morphology has loss 0.01574, action-coordinate selection 0.01619, direct-output selection 0.02006, SoftMorph2 0.09752, and the empirical W-operator 0.15709. The predeclared family-wise contrasts show both learned selectors significantly outperform SoftMorph2 and the W-operator on IID data.
+
+Under structured OOD, direct-output selection remains strongest at loss 0.10104, versus 0.15195 for SoftMorph2, 0.15385 for action-coordinate selection, and 0.16448 for the W-operator. Direct-output selection significantly outperforms both external controls, while SoftMorph2 significantly outperforms the action-coordinate selector. Full provenance, selection records, summaries, clustered intervals, paired comparisons, and the SoftMorph equivalence audit are under `results/step8_baselines/`.
+
+## Step 9 theorem-targeted finite stress tests
+
+Step 9 closes the theory--computation loop without introducing another performance benchmark. `code/run_theorem_stress_step9.py` checks five theorem families on complete finite state spaces where tractable: sharp action-label replication sensitivity and the distinction between `log m` and `log M`; the `3 d_H` topology bound and its sharp constructions; the finite incidence-rank criterion on all 512 `3x3` masks; Bayesian reversal and optimal equal-prior recovery over all row pairs of a lossy finite kernel; and exact Wasserstein contraction/composition on all 16 `2x2` masks.
+
+The 31-action bank induces 18 distinct deterministic maps on the complete `3x3` state space and has incidence rank 18 there. The Bayesian reverse recovers the uniform prior to floating-point precision but is not a samplewise inverse. A contractive construction `K = 0.6 I + 0.4 O_(5x5)` has exact `kappa(K^n)=0.6^n` through eight compositions, while a deterministic square opening has `kappa=4`, retaining the theorem's noncontraction caveat. Machine-readable results and figures are under `results/step9_theorem_stress/` and `figures/step9_*`.

@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE",
+  "primary_dataset": "Oxford-IIIT Pet",
+  "resolution": 128,
+  "step5_artifact_sha256": "889e7df9af279974d46595444bf768c627602d188ca8c93d0f65b30739f16e96",
+  "step7_directory": "results/step7_structured",
+  "softmorph_public_repository": "https://github.com/lisaGUZZI/SoftMorph2",
+  "softmorph_publication_doi": "10.1016/j.media.2026.104284",
+  "softmorph_commit": "19729d10cc8d012e13154a470f07a094d683c2d0",
+  "softmorph_source_redistributed": false,
+  "woperator": "regularized empirical 3x3 translation-invariant binary W-operator",
+  "training": "Step-5 Oxford IID train only",
+  "selection": "Step-5 Oxford validation only",
+  "structured_ood_retuning": false,
+  "iid_test_cases": 22014,
+  "structured_test_cases": 33021,
+  "bootstrap_resamples": 5000,
+  "condition_aware_fixed_iid_only": true
+}

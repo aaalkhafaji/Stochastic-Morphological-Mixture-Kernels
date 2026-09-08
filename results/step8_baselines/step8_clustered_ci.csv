@@ -1,0 +1,57 @@
+dataset,method,metric,mean,ci95_low,ci95_high,n_images,bootstrap_resamples
+oxford_pet,Action-coordinate selector,loss,0.0161947741,0.0151332989,0.0172953721,3669,5000
+oxford_pet,Action-coordinate selector,dice,0.995139216,0.995069221,0.995207419,3669,5000
+oxford_pet,Action-coordinate selector,iou,0.990354593,0.990218817,0.990488466,3669,5000
+oxford_pet,Action-coordinate selector,topology_exact,0.87689652,0.867165213,0.886817934,3669,5000
+oxford_pet,Condition-aware fixed morphology,loss,0.0157396501,0.0146399232,0.0168617828,3669,5000
+oxford_pet,Condition-aware fixed morphology,dice,0.995077808,0.995008773,0.995144043,3669,5000
+oxford_pet,Condition-aware fixed morphology,iou,0.990233141,0.990097245,0.99036368,3669,5000
+oxford_pet,Condition-aware fixed morphology,topology_exact,0.878304715,0.868537067,0.88825293,3669,5000
+oxford_pet,Direct-output selector,loss,0.0200574877,0.0187615049,0.0213918992,3669,5000
+oxford_pet,Direct-output selector,dice,0.992874588,0.992512529,0.993181102,3669,5000
+oxford_pet,Direct-output selector,iou,0.986269672,0.985864287,0.986628742,3669,5000
+oxford_pet,Direct-output selector,topology_exact,0.849314073,0.837794131,0.860089034,3669,5000
+oxford_pet,Empirical W3 operator,loss,0.157085939,0.156132434,0.158027065,3669,5000
+oxford_pet,Empirical W3 operator,dice,0.994475781,0.993774767,0.995066231,3669,5000
+oxford_pet,Empirical W3 operator,iou,0.989890715,0.989170973,0.990491023,3669,5000
+oxford_pet,Empirical W3 operator,topology_exact,0.35263923,0.34732443,0.357817752,3669,5000
+oxford_pet,Input,loss,0.448234161,0.447518564,0.448977071,3669,5000
+oxford_pet,Input,dice,0.903729727,0.901575714,0.905794187,3669,5000
+oxford_pet,Input,iou,0.83355638,0.830923367,0.83615712,3669,5000
+oxford_pet,Input,topology_exact,0,0,0,3669,5000
+oxford_pet,Oracle (diagnostic),loss,0.00957664248,0.00890065882,0.0102980907,3669,5000
+oxford_pet,Oracle (diagnostic),dice,0.995082114,0.994935089,0.995216966,3669,5000
+oxford_pet,Oracle (diagnostic),iou,0.990323083,0.990058087,0.990590261,3669,5000
+oxford_pet,Oracle (diagnostic),topology_exact,0.92668302,0.920005451,0.933452576,3669,5000
+oxford_pet,SoftMorph2 validation-selected,loss,0.0975184445,0.0960629763,0.0990236707,3669,5000
+oxford_pet,SoftMorph2 validation-selected,dice,0.990195244,0.989380418,0.990882037,3669,5000
+oxford_pet,SoftMorph2 validation-selected,iou,0.981684696,0.980793559,0.982418028,3669,5000
+oxford_pet,SoftMorph2 validation-selected,topology_exact,0.507586082,0.500181703,0.514401063,3669,5000
+oxford_pet,Validation best,loss,0.0163924112,0.0152838027,0.0175551199,3669,5000
+oxford_pet,Validation best,dice,0.995020478,0.994896428,0.995116613,3669,5000
+oxford_pet,Validation best,iou,0.990163636,0.989996749,0.990314282,3669,5000
+oxford_pet,Validation best,topology_exact,0.873716726,0.863540247,0.883937494,3669,5000
+oxford_pet_structured,Action-coordinate selector,loss,0.153854019,0.153283326,0.154437438,3669,5000
+oxford_pet_structured,Action-coordinate selector,dice,0.961237552,0.960719827,0.961750794,3669,5000
+oxford_pet_structured,Action-coordinate selector,iou,0.927299239,0.92649012,0.928097825,3669,5000
+oxford_pet_structured,Action-coordinate selector,topology_exact,0.366615184,0.362738863,0.370279519,3669,5000
+oxford_pet_structured,Direct-output selector,loss,0.101042025,0.100121152,0.101988297,3669,5000
+oxford_pet_structured,Direct-output selector,dice,0.965639522,0.965123179,0.966140364,3669,5000
+oxford_pet_structured,Direct-output selector,iou,0.935562135,0.934740337,0.936357054,3669,5000
+oxford_pet_structured,Direct-output selector,topology_exact,0.528742315,0.522091548,0.535489688,3669,5000
+oxford_pet_structured,Empirical W3 operator,loss,0.164475816,0.163811054,0.165162911,3669,5000
+oxford_pet_structured,Empirical W3 operator,dice,0.960593601,0.960060539,0.961106353,3669,5000
+oxford_pet_structured,Empirical W3 operator,iou,0.926186041,0.925369406,0.926993641,3669,5000
+oxford_pet_structured,Empirical W3 operator,topology_exact,0.285757548,0.282335483,0.289209897,3669,5000
+oxford_pet_structured,Input,loss,0.15870067,0.158137712,0.159253972,3669,5000
+oxford_pet_structured,Input,dice,0.960387617,0.959855904,0.960908644,3669,5000
+oxford_pet_structured,Input,iou,0.925810862,0.924966595,0.92665127,3669,5000
+oxford_pet_structured,Input,topology_exact,0.366251779,0.363223403,0.369371006,3669,5000
+oxford_pet_structured,SoftMorph2 validation-selected,loss,0.151949903,0.1512411,0.15268369,3669,5000
+oxford_pet_structured,SoftMorph2 validation-selected,dice,0.962510313,0.961963825,0.963051343,3669,5000
+oxford_pet_structured,SoftMorph2 validation-selected,iou,0.92984602,0.929018328,0.930667439,3669,5000
+oxford_pet_structured,SoftMorph2 validation-selected,topology_exact,0.383846643,0.379516066,0.388298356,3669,5000
+oxford_pet_structured,Validation best,loss,0.151081116,0.150465211,0.151682344,3669,5000
+oxford_pet_structured,Validation best,dice,0.962076442,0.961561491,0.962588038,3669,5000
+oxford_pet_structured,Validation best,iou,0.928819543,0.928004514,0.929595642,3669,5000
+oxford_pet_structured,Validation best,topology_exact,0.366524333,0.362557161,0.370491505,3669,5000

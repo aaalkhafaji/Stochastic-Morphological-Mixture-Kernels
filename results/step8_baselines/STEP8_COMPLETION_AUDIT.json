@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "artifact_sha256": "1fdcddb32406ae2c097439d7d1f84e690715b08bbe6812da65b027b8d0215840",
+  "internal_manifest_verified": true,
+  "artifact_files_in_manifest": 11,
+  "iid_case_rows": 176112,
+  "ood_case_rows": 198126,
+  "iid_unique_images": 3669,
+  "ood_unique_images": 3669,
+  "summary_max_abs_recompute_discrepancy": 3.871172680192103e-07,
+  "paired_point_estimate_max_abs_recompute_discrepancy": 2.8817503938682876e-12,
+  "softmorph_equivalence_max_abs": 0.0,
+  "softmorph_equivalence_status": "PASS"
+}

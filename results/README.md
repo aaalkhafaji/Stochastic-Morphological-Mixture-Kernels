@@ -40,3 +40,7 @@ the SHA-256 of the original downloaded artifact.
 ## Step 7 structured-error distribution shift
 
 `step7_structured/` contains the frozen 33,021-case Oxford structured-error campaign: protocol/provenance, raw compressed case metrics, seed summaries, condition summaries, clean-mask-clustered intervals, four family-wise loss contrasts, adverse accounting, the component-dropout diagnostic, and generated LaTeX. No Step-7 structured case enters fitting or tuning.
+
+## Step 8 modern/fair baseline audit
+
+`step8_baselines/` freezes the public SoftMorph2 provenance/equivalence check, validation-only SoftMorph and W-operator selections, condition-aware fixed selections, IID and structured-OOD summaries, 5,000-resample clean-mask-clustered intervals, and all eight family-wise paired loss contrasts. Large per-case Step-8 arrays are retained in the complete campaign/Zenodo archival payload rather than required for the compact GitHub tree.

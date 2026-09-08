@@ -1,0 +1,19 @@
+\\begin{table}[t]
+\\centering
+\\caption{Step-8 fair-baseline comparison on Oxford-IIIT Pet. SoftMorph2 and the empirical $3\\times3$ W-operator are tuned on validation data only.}
+\\label{tab:step8baselines}
+\\small
+\\begin{tabular}{lcccc}
+\\toprule
+Method & Loss $\\downarrow$ & Dice $\\uparrow$ & IoU $\\uparrow$ & Topology exact $\\uparrow$\\\\
+\\midrule
+Input & 0.4482 & 0.9037 & 0.8336 & 0.0000\\
+Validation best & 0.0164 & 0.9950 & 0.9902 & 0.8737\\
+Condition-aware fixed morphology & 0.0157 & 0.9951 & 0.9902 & 0.8783\\
+Action-coordinate selector & 0.0162 & 0.9951 & 0.9904 & 0.8769\\
+Direct-output selector & 0.0201 & 0.9929 & 0.9863 & 0.8493\\
+SoftMorph2 validation-selected & 0.0975 & 0.9902 & 0.9817 & 0.5076\\
+Empirical W3 operator & 0.1571 & 0.9945 & 0.9899 & 0.3526\\
+\\bottomrule
+\\end{tabular}
+\\end{table}

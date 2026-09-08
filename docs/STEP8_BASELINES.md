@@ -1,56 +1,103 @@
-# Step 8 — Modern and fair baselines (execution-ready)
+# Step 8 — Modern and fair baselines (COMPLETE)
 
-## Scientific question
-Is the reported gain specific to the proposed stochastic/output-space construction, or can it be matched by strong fixed, learned-local, or contemporary differentiable-morphology post-processing under the same information budget?
+## Status
+**DONE / PASS — comparison-completeness gate satisfied.**
 
-## Frozen comparison protocol
-Step 8 is frozen before Step-8 outcomes are inspected.
+The frozen GitHub Actions artifact `step8-modern-baseline-results.zip` has SHA-256
+`1fdcddb32406ae2c097439d7d1f84e690715b08bbe6812da65b027b8d0215840`. Its internal `SHA256SUMS` verifies with zero mismatches. Independent
+recomputation from all raw case rows agrees with the archived aggregate summaries to
+within 3.88e-7 (the largest discrepancy is only CSV rounding on very large Betti-error
+means); all eight archived paired point estimates agree to within 2.89e-12.
 
-### Training/tuning information
-All trainable/tunable Step-8 baselines use only the successful Step-5 Oxford-IIIT Pet train/validation masks at 128x128. They receive **binary masks only**—no RGB images, class labels, test targets, or corruption labels (except the explicitly named condition-aware fixed control).
+## Frozen scientific question
+Is the reported behavior specific to the stochastic/output-space construction, or can it
+be matched by strong fixed, learned-local, or contemporary differentiable-morphology
+post-processing under the same binary-mask information budget?
 
-### Primary held-out tests
-1. **Oxford IID:** the full Step-5 held-out test, 3,669 clean masks × 6 predeclared IID corruptions = 22,014 cases.
-2. **Oxford structured OOD:** the Step-7 nine-family test, 3,669 masks × 9 structured corruptions = 33,021 cases. No Step-8 baseline is retuned on structured errors.
+## Baselines and fairness
+All trainable/tunable Step-8 baselines use only the Step-5 Oxford-IIIT Pet training and
+validation masks at 128x128. No RGB images or held-out targets are supplied. The
+structured-OOD benchmark is never used for tuning.
 
-## Baselines
-### Existing controls
-- Raw input.
-- Validation-best fixed 31-action morphology.
-- Action-coordinate selector.
-- Direct-output selector.
-- Oracle diagnostic (not a deployable comparator).
+- **Condition-aware fixed morphology (IID only):** one action from the same 31-action
+  bank is selected separately for each known IID corruption condition on validation
+  data. It is intentionally advantaged because it receives the corruption label.
+- **SoftMorph2:** public upstream source is retrieved at runtime, with commit
+  `19729d10cc8d012e13154a470f07a094d683c2d0` frozen in provenance. The independent
+  vectorized product-logic implementation agrees with the public 2D code with maximum
+  absolute discrepancy 0.0 (required tolerance 2e-6).
+- **Empirical 3x3 W-operator:** a regularized translation-invariant binary operator over
+  all 512 local 3x3 neighborhoods, with regularization and threshold selected on
+  validation only. This is a W-operator control aligned with the operator class used by
+  discrete morphological neural networks; it is not represented as a reimplementation
+  of the full DMNN lattice-descent architecture.
 
-### New strong same-bank control
-**Condition-aware fixed morphology (IID only).** For each of the six known IID corruption labels, select one of the same 31 actions using validation loss only. This control is intentionally advantaged because it receives the corruption-condition label; the proposed learned selectors do not.
+SoftMorph validation selects closing, 4-connectivity, one iteration, sigma=0.75,
+threshold=0.5 (validation loss 0.099214). The W-operator selects alpha=1 and threshold
+0.6 (validation loss 0.161106).
 
-### Contemporary differentiable morphology
-**SoftMorph2 validation-selected post-processing.** Step 8 retrieves the public SoftMorph2 2D code at runtime and records its Git commit. The authors' source is not redistributed. A local vectorized product-logic implementation is required to agree with the downloaded public implementation to max absolute discrepancy <=2e-6 before the benchmark is allowed to run.
+## IID Oxford results
+Across 22,014 held-out IID cases:
+- condition-aware fixed morphology: loss **0.01574**;
+- action-coordinate selector: **0.01619**;
+- validation-best fixed morphology: **0.01639**;
+- direct-output selector: **0.02006**;
+- SoftMorph2: **0.09752**;
+- empirical W-operator: **0.15709**.
 
-The predeclared SoftMorph candidate family is small and fixed:
-- erosion, dilation, opening, closing;
-- 4- or 8-connectivity;
-- 1 or 2 iterations;
-- direct binary input or a fixed Gaussian relaxation sigma=0.75;
-- threshold 0.5;
-- product fuzzy logic.
+The condition-aware fixed control is descriptively best, but it receives the true
+corruption-condition label. The eight predeclared family-wise comparisons show that both
+learned selectors have substantially lower IID loss than SoftMorph2 and the empirical
+W-operator:
+- direct minus SoftMorph2: **-0.07746**, family-wise 95% CI **[-0.07904, -0.07596]**;
+- action minus SoftMorph2: **-0.08132**, CI **[-0.08272, -0.08001]**;
+- direct minus W-operator: **-0.13703**, CI **[-0.13882, -0.13511]**;
+- action minus W-operator: **-0.14089**, CI **[-0.14248, -0.13933]**.
 
-One global configuration is selected on Oxford validation composite loss and frozen for IID test and Step-7 structured OOD.
+These results do not overturn the Step-5 finding that the current direct-output learner
+is inferior to the strongest same-bank IID controls.
 
-### Learned local binary morphology
-**Regularized empirical 3x3 W-operator.** The 512 possible zero-padded 3x3 binary neighborhoods are fitted by empirical foreground frequency on the Step-5 training pairs. Rare/unseen patterns use an identity-centered regularization prior. Alpha in {1,10,100} and threshold in {0.4,0.5,0.6} are selected on validation only. This is a direct translation-invariant binary image-operator control, aligned with the W-operator class emphasized by modern discrete morphological neural networks, but is not labeled as an implementation of the DMNN lattice-descent algorithm.
+## Structured-OOD results
+Across the frozen 33,021 Step-7 structured cases, with no Step-8 retuning:
+- direct-output selector: loss **0.10104**;
+- validation-best fixed morphology: **0.15108**;
+- SoftMorph2: **0.15195**;
+- action-coordinate selector: **0.15385**;
+- raw input: **0.15870**;
+- empirical W-operator: **0.16448**.
 
-## Statistics
-All method/condition repetitions are averaged within clean held-out mask before inference. Step 8 reports 5,000 clean-mask-clustered bootstrap intervals. Eight predeclared pairwise loss comparisons are family-wise corrected:
-- Direct vs SoftMorph, Action vs SoftMorph, Direct vs W3, Action vs W3 on IID;
-- the same four comparisons on structured OOD.
+The predeclared family-wise contrasts are:
+- direct minus SoftMorph2: **-0.05091**, CI **[-0.05217, -0.04965]**;
+- direct minus W-operator: **-0.06343**, CI **[-0.06474, -0.06218]**;
+- action minus SoftMorph2: **+0.00190**, CI **[+0.00118, +0.00258]**;
+- action minus W-operator: **-0.01062**, CI **[-0.01120, -0.01008]**.
+
+Thus SoftMorph2 significantly outperforms the action-coordinate selector under structured
+shift, while the representation-invariant direct-output selector significantly
+outperforms both external baselines. Its OOD advantage also appears in Dice (0.96564),
+IoU (0.93556), and exact resized-target topology agreement (0.52874), versus SoftMorph2
+(0.96251, 0.92985, 0.38385).
+
+## Interpretation and retained limitations
+Step 8 supplies a fair modern/differentiable morphology comparison without granting the
+external controls RGB information or structured-OOD tuning. It supports two bounded
+claims: (i) the Oxford IID performance of the same-bank selectors is not reproduced by
+these two external morphology controls under the matched post-processing protocol; and
+(ii) the Step-7 direct-output OOD result remains strong against SoftMorph2 and a learned
+local W-operator.
+
+It does **not** establish universal superiority over SoftMorph as an end-to-end trainable
+component, nor over full DMNN/BiMoNN architectures. SoftMorph2 is evaluated here as a
+validation-selected post-processing operator on binary masks, and the W-operator control
+does not reproduce the full DMNN optimization/architecture. The condition-aware fixed
+control remains slightly better than the learned selectors on IID data and is
+intentionally advantaged by condition labels. All unfavorable directions are retained.
 
 ## Gate
-Step 8 passes as a **comparison-completeness** step if:
-1. public SoftMorph2 is retrieved and provenance is recorded;
-2. the independent product-logic implementation agrees with the public code within 2e-6;
-3. all new baseline choices are validation-only;
-4. IID and structured OOD tests execute fully;
-5. all eight predeclared comparisons and adverse results are reported, regardless of direction.
-
-A win by the proposed method is *not* required for the gate; unfavorable modern-baseline results must remain in the paper.
+The predeclared comparison-completeness gate passes:
+1. public SoftMorph2 provenance is frozen;
+2. independent/public-code equivalence passes at discrepancy 0.0;
+3. all selections are validation-only;
+4. both IID and structured-OOD evaluations complete;
+5. all eight family-wise contrasts are reported, including the significant OOD win of
+   SoftMorph2 over action-coordinate selection.

@@ -1,0 +1,3 @@
+Artifact: step8-modern-baseline-results.zip
+SHA-256: 1fdcddb32406ae2c097439d7d1f84e690715b08bbe6812da65b027b8d0215840
+Internal SHA256SUMS: verified with zero mismatches.

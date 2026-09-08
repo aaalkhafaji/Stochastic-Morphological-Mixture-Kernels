@@ -1,0 +1,363 @@
+{
+  "protocol_seed": 20260907,
+  "step5_sha256": "889e7df9af279974d46595444bf768c627602d188ca8c93d0f65b30739f16e96",
+  "woperator": {
+    "best": {
+      "alpha": 1.0,
+      "threshold": 0.6,
+      "validation_loss": 0.16110552668280734
+    },
+    "trials": [
+      {
+        "alpha": 1.0,
+        "threshold": 0.4,
+        "validation_loss": 0.16379654534886354
+      },
+      {
+        "alpha": 1.0,
+        "threshold": 0.5,
+        "validation_loss": 0.1676526617355348
+      },
+      {
+        "alpha": 1.0,
+        "threshold": 0.6,
+        "validation_loss": 0.16110552668280734
+      },
+      {
+        "alpha": 10.0,
+        "threshold": 0.4,
+        "validation_loss": 0.16640740474258886
+      },
+      {
+        "alpha": 10.0,
+        "threshold": 0.5,
+        "validation_loss": 0.16779948354677326
+      },
+      {
+        "alpha": 10.0,
+        "threshold": 0.6,
+        "validation_loss": 0.16110552668280734
+      },
+      {
+        "alpha": 100.0,
+        "threshold": 0.4,
+        "validation_loss": 0.17514187906711068
+      },
+      {
+        "alpha": 100.0,
+        "threshold": 0.5,
+        "validation_loss": 0.17026670734058635
+      },
+      {
+        "alpha": 100.0,
+        "threshold": 0.6,
+        "validation_loss": 0.17240218020819664
+      }
+    ],
+    "patterns_seen": 512
+  },
+  "softmorph": {
+    "best": {
+      "operation": "closing",
+      "connectivity": 4,
+      "iterations": 1,
+      "sigma": 0.75,
+      "threshold": 0.5,
+      "validation_loss": 0.09921379689526152,
+      "seconds": 1.076609658999999
+    },
+    "trials": [
+      {
+        "operation": "erosion",
+        "connectivity": 4,
+        "iterations": 1,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.3886645434537085,
+        "seconds": 0.8172615169999915
+      },
+      {
+        "operation": "erosion",
+        "connectivity": 4,
+        "iterations": 1,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.36931940911138555,
+        "seconds": 1.0475510889999953
+      },
+      {
+        "operation": "erosion",
+        "connectivity": 4,
+        "iterations": 2,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.49544010195992333,
+        "seconds": 0.8560769040000054
+      },
+      {
+        "operation": "erosion",
+        "connectivity": 4,
+        "iterations": 2,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.5045635966747104,
+        "seconds": 1.0795384540000015
+      },
+      {
+        "operation": "erosion",
+        "connectivity": 8,
+        "iterations": 1,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.44965223728559633,
+        "seconds": 0.8222545060000073
+      },
+      {
+        "operation": "erosion",
+        "connectivity": 8,
+        "iterations": 1,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.45456405745131223,
+        "seconds": 1.0647552210000129
+      },
+      {
+        "operation": "erosion",
+        "connectivity": 8,
+        "iterations": 2,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.5423792726109512,
+        "seconds": 0.8796379620000039
+      },
+      {
+        "operation": "erosion",
+        "connectivity": 8,
+        "iterations": 2,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.5519743326288685,
+        "seconds": 1.1261695860000032
+      },
+      {
+        "operation": "dilation",
+        "connectivity": 4,
+        "iterations": 1,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.5198542654788018,
+        "seconds": 0.8799705739999979
+      },
+      {
+        "operation": "dilation",
+        "connectivity": 4,
+        "iterations": 1,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.4111345387126871,
+        "seconds": 1.0873295139999897
+      },
+      {
+        "operation": "dilation",
+        "connectivity": 4,
+        "iterations": 2,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.5729290439361239,
+        "seconds": 0.9373233600000077
+      },
+      {
+        "operation": "dilation",
+        "connectivity": 4,
+        "iterations": 2,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.536327657412108,
+        "seconds": 1.155950709999999
+      },
+      {
+        "operation": "dilation",
+        "connectivity": 8,
+        "iterations": 1,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.5176132330362799,
+        "seconds": 0.902696296000002
+      },
+      {
+        "operation": "dilation",
+        "connectivity": 8,
+        "iterations": 1,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.5011775612061571,
+        "seconds": 1.146869546000005
+      },
+      {
+        "operation": "dilation",
+        "connectivity": 8,
+        "iterations": 2,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.5627751198347678,
+        "seconds": 0.9611985019999878
+      },
+      {
+        "operation": "dilation",
+        "connectivity": 8,
+        "iterations": 2,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.570761331795787,
+        "seconds": 1.195329201000007
+      },
+      {
+        "operation": "opening",
+        "connectivity": 4,
+        "iterations": 1,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.22920030091582597,
+        "seconds": 0.8508785530000011
+      },
+      {
+        "operation": "opening",
+        "connectivity": 4,
+        "iterations": 1,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.1189258077676205,
+        "seconds": 1.0774933619999985
+      },
+      {
+        "operation": "opening",
+        "connectivity": 4,
+        "iterations": 2,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.2867056446763208,
+        "seconds": 0.9661988839999935
+      },
+      {
+        "operation": "opening",
+        "connectivity": 4,
+        "iterations": 2,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.2857978178160527,
+        "seconds": 1.1996530229999962
+      },
+      {
+        "operation": "opening",
+        "connectivity": 8,
+        "iterations": 1,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.2821698300432411,
+        "seconds": 0.9134559939999889
+      },
+      {
+        "operation": "opening",
+        "connectivity": 8,
+        "iterations": 1,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.12407711126436392,
+        "seconds": 1.1400114040000062
+      },
+      {
+        "operation": "opening",
+        "connectivity": 8,
+        "iterations": 2,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.3767072804112367,
+        "seconds": 1.0717673650000137
+      },
+      {
+        "operation": "opening",
+        "connectivity": 8,
+        "iterations": 2,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.3529743814255524,
+        "seconds": 1.3212785540000027
+      },
+      {
+        "operation": "closing",
+        "connectivity": 4,
+        "iterations": 1,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.27818901674698415,
+        "seconds": 0.8728972760000033
+      },
+      {
+        "operation": "closing",
+        "connectivity": 4,
+        "iterations": 1,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.09921379689526152,
+        "seconds": 1.076609658999999
+      },
+      {
+        "operation": "closing",
+        "connectivity": 4,
+        "iterations": 2,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.35156094753986467,
+        "seconds": 0.9952875259999985
+      },
+      {
+        "operation": "closing",
+        "connectivity": 4,
+        "iterations": 2,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.23283974025933107,
+        "seconds": 1.201346545000007
+      },
+      {
+        "operation": "closing",
+        "connectivity": 8,
+        "iterations": 1,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.3366167071464361,
+        "seconds": 0.9382060160000094
+      },
+      {
+        "operation": "closing",
+        "connectivity": 8,
+        "iterations": 1,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.12375832748328067,
+        "seconds": 1.1416364410000028
+      },
+      {
+        "operation": "closing",
+        "connectivity": 8,
+        "iterations": 2,
+        "sigma": 0.0,
+        "threshold": 0.5,
+        "validation_loss": 0.42875244307128413,
+        "seconds": 1.0965524389999928
+      },
+      {
+        "operation": "closing",
+        "connectivity": 8,
+        "iterations": 2,
+        "sigma": 0.75,
+        "threshold": 0.5,
+        "validation_loss": 0.4039094134011258,
+        "seconds": 1.3503349880000002
+      }
+    ],
+    "external_commit": "19729d10cc8d012e13154a470f07a094d683c2d0"
+  },
+  "softmorph_equivalence_json": "results/step8_baselines/softmorph_equivalence.json",
+  "no_step8_test_tuning": true
+}

@@ -1,0 +1,28 @@
+\begin{table}[t]
+\centering
+\caption{Step-8 fair-baseline comparison on Oxford-IIIT Pet. SoftMorph2 and the empirical $3\times3$ W-operator are tuned on the Step-5 validation split only. The condition-aware fixed control is intentionally advantaged by receiving the IID corruption label and is not applied to structured OOD cases.}
+\label{tab:step8baselines}
+\scriptsize
+\begin{tabular}{lcccc}
+\toprule
+Method & Loss $\downarrow$ & Dice $\uparrow$ & IoU $\uparrow$ & Topology exact $\uparrow$\\
+\midrule
+\multicolumn{5}{l}{\emph{Oxford IID: 22,014 held-out cases}}\\
+Input & 0.4482 & 0.9037 & 0.8336 & 0.0000\\
+Validation-best fixed & 0.0164 & 0.9950 & 0.9902 & 0.8737\\
+Condition-aware fixed & 0.0157 & 0.9951 & 0.9902 & 0.8783\\
+Action-coordinate & 0.0162 & 0.9951 & 0.9904 & 0.8769\\
+Direct-output & 0.0201 & 0.9929 & 0.9863 & 0.8493\\
+SoftMorph2 & 0.0975 & 0.9902 & 0.9817 & 0.5076\\
+Empirical $3\times3$ W-operator & 0.1571 & 0.9945 & 0.9899 & 0.3526\\
+\midrule
+\multicolumn{5}{l}{\emph{Structured OOD: 33,021 held-out cases; no retuning}}\\
+Input & 0.1587 & 0.9604 & 0.9258 & 0.3663\\
+Validation-best fixed & 0.1511 & 0.9621 & 0.9288 & 0.3665\\
+Action-coordinate & 0.1539 & 0.9612 & 0.9273 & 0.3666\\
+Direct-output & 0.1010 & 0.9656 & 0.9356 & 0.5287\\
+SoftMorph2 & 0.1519 & 0.9625 & 0.9298 & 0.3838\\
+Empirical $3\times3$ W-operator & 0.1645 & 0.9606 & 0.9262 & 0.2858\\
+\bottomrule
+\end{tabular}
+\end{table}

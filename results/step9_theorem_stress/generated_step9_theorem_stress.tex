@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Step-9 theorem-targeted finite stress tests. These are numerical checks of stated finite consequences, not independent performance benchmarks.}
+\label{tab:step9theorem}
+\scriptsize
+\begin{tabular}{p{.18\linewidth}p{.28\linewidth}p{.44\linewidth}}
+\toprule
+Claim family & Finite stress & Verified diagnostic\\
+\midrule
+Replication & $r=1,\ldots,256$ plus 4,500 random partitioned categorical cases & Universal TV bound has no positive violation; sharp construction agrees to $1.1\times10^{-16}$. With two distinct outputs, $M=2$ stays fixed while duplicated label count grows to $m=258$.\\
+Topology sensitivity & 2,304 exhaustive $3\times3$ Hamming-one pairs; 30,000 random multi-flip checks; both proof constructions & No violation of $|\Delta\beta_k|\le 3d_H$; explicit $|\Delta\beta_0|=|\Delta\beta_1|=3$ at $d_H=1$.\\
+Identifiability & All 512 masks on $3\times3$ under the 31-action bank & Incidence rank $18$; exactly $18$ distinct deterministic maps on this grid. Adding one exact duplicate gives 32 labels but rank remains 18.\\
+Bayesian reversal & 512-state, four-action lossy kernel; all 130,816 unordered row pairs & $\nu H_\mu^{\leftarrow}=\mu$ residual $2.2\times10^{-19}$; equal-prior Bayes-error identity exact; $HH_\mu^{\leftarrow}$ remains far from identity (max residual $0.9953$).\\
+Transport & All 16 masks on $2\times2$; exact finite OT through eight compositions & For the stated $K$, $\kappa(K)=.6$ and $\kappa(K^n)=.6^n$ to $6.9\times10^{-17}$; a deterministic $2\times2$ opening has $\kappa=4$, showing that morphology need not contract.\\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,26 @@
+{
+  "balanced04": {
+    "action_index": 28,
+    "action": "area_connected8"
+  },
+  "balanced10": {
+    "action_index": 30,
+    "action": "area_connected32"
+  },
+  "salt04": {
+    "action_index": 28,
+    "action": "area_connected8"
+  },
+  "salt10": {
+    "action_index": 29,
+    "action": "area_connected16"
+  },
+  "pepper04": {
+    "action_index": 28,
+    "action": "area_connected8"
+  },
+  "pepper10": {
+    "action_index": 29,
+    "action": "area_connected16"
+  }
+}

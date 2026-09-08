@@ -44,9 +44,16 @@ The DAVIS 2016 campaign has now been executed successfully on official pre-compu
 
 Step 7 completed successfully on all 3,669 held-out Oxford masks across nine predeclared structured errors (33,021 cases), without structured-error refitting or retuning. The direct-output selector reduces mean loss from 0.1587 to 0.1010 and improves aggregate Dice, IoU, exact topology agreement, and boundary F. The action-coordinate selector improves raw loss slightly but is significantly worse than the validation-best fixed morphology. Adverse structured families and the component-dropout diagnostic are retained.
 
-## Step 8 execution-ready update
-- Added a predeclared modern/fair baseline campaign on the frozen Oxford-IIIT Pet protocol.
-- Added public SoftMorph2 runtime retrieval plus numerical equivalence validation against an independent product-logic implementation; no SoftMorph source is redistributed.
-- Added a regularized empirical 3x3 W-operator learned on the same binary mask pairs.
-- Added a condition-aware fixed 31-action control for the IID benchmark.
-- Added a GitHub Actions workflow that evaluates IID and Step-7 structured OOD data with no structured-error retuning.
+## Strengthening branch — Step 8 modern/fair baselines
+
+Step 8 completed successfully on the frozen Oxford protocol. Public SoftMorph2 was retrieved at runtime at the recorded upstream commit, and the independent product-logic implementation matched the public 2D code with maximum absolute discrepancy 0.0. A regularized empirical 3x3 W-operator and an intentionally advantaged condition-aware fixed-bank control were also evaluated.
+
+Across 22,014 IID held-out cases, both learned selectors significantly outperform SoftMorph2 and the W-operator under the eight-comparison family-wise plan, although the condition-aware fixed control remains descriptively best. Across 33,021 structured-OOD cases with no retuning, the direct-output selector significantly outperforms SoftMorph2 and the W-operator, while SoftMorph2 significantly outperforms the action-coordinate selector. Unfavorable directions are retained.
+
+## Strengthening branch — Step 9 theorem-targeted stress tests
+
+- Added `run_theorem_stress_step9.py` with exact/finite checks for replication sensitivity, topology sharpness, incidence rank, Bayesian reversal, and Wasserstein composition.
+- Enumerated all 2,304 Hamming-one pairs on `3x3`, all 512 `3x3` inputs for the 31-action incidence diagnostic, all 130,816 unordered row pairs for the Bayesian-error identity, and all 16 `2x2` states for exact finite transport.
+- Verified the sharp replication constant through 256 duplicate copies and 4,500 additional random partitioned categorical laws.
+- Added separate figures for replication sensitivity, Bayes error versus row-law TV, and exact composition contraction.
+- These checks support theorem consequences only; they do not claim global contraction or identifiability of the trained high-resolution adaptive kernel.

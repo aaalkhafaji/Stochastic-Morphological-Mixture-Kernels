@@ -37,3 +37,25 @@ manuscript; the numerical-check files support rather than replace them.
 - Frozen input/protocol metadata: `results/step7_structured/step7_provenance.json`.
 
 - Step-7 generated manuscript table: `results/step7_structured/generated_step7_structured.tex`; supplement table: `results/generated_step7_supp.tex`.
+
+## Step 8 modern/fair baselines
+
+- Aggregate IID/OOD summaries: `results/step8_baselines/step8_summary.csv`.
+- Clean-mask-clustered intervals: `results/step8_baselines/step8_clustered_ci.csv`.
+- Eight predeclared family-wise loss contrasts: `results/step8_baselines/step8_paired_comparisons.json`.
+- SoftMorph public-code equivalence check: `results/step8_baselines/softmorph_equivalence.json`.
+- Validation-only selections and upstream commit: `results/step8_baselines/step8_selection.json`.
+- Condition-aware fixed selections: `results/step8_baselines/step8_condition_aware_selection.json`.
+- Provenance and no-retuning declaration: `results/step8_baselines/step8_provenance.json`.
+- Independent completion audit: `results/step8_baselines/STEP8_COMPLETION_AUDIT.json`.
+- Generated manuscript table: `results/generated_step8_baselines.tex`.
+
+## Step 9 theorem-targeted finite checks
+
+- `results/step9_theorem_stress/step9_summary.json`: gate-level summary.
+- `step9_replication_cardinality.csv`: sharp replication constants and `m` versus `M` cardinality.
+- `step9_topology_hamming1_3x3.csv`, `step9_topology_random_multiflip.csv`: exact/random topology-bound checks.
+- `step9_identifiability_gram.csv`, `step9_identifiability_prefix.csv`: incidence-rank diagnostics.
+- `step9_bayes_pairwise.csv`: equal-prior Bayes error versus row-law TV for all unordered pairs.
+- `step9_transport_iterates.csv`: exact contraction coefficients through eight compositions.
+- `figures/step9_replication_bound.*`, `step9_bayes_tv_error.*`, `step9_transport_contraction.*`: visual diagnostics.

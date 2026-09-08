@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "script": "code/run_theorem_stress_step9.py",
+  "seconds": 5.951416492462158,
+  "replication_max_bound_violation": 0.0,
+  "topology_max_bound_violation": 0.0,
+  "incidence_rank_3x3": 18,
+  "unique_maps_3x3": 18,
+  "bayes_marginal_residual": 2.168404344971009e-19,
+  "transport_max_iterate_residual": 6.938893903907228e-17
+}
