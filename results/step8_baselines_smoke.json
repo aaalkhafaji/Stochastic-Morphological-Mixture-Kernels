@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "n_masks": 8,
+  "softmorph_shape": [
+    8,
+    24,
+    24
+  ],
+  "w_patterns_seen": 210
+}

@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Oxford-IIIT Pet structured-error distribution-shift validation at $128\times128$. Selectors and hyperparameters are frozen from the IID Step~5 protocol; no structured-error case enters fitting or tuning. Values first average the nine predeclared structured errors within each held-out clean mask.}
+\label{tab:structured_step7}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccc}
+\toprule
+Method & Loss $\downarrow$ & Dice $\uparrow$ & IoU $\uparrow$ & Topo. exact $\uparrow$ & Boundary $F$ $\uparrow$\\
+\midrule
+Input & 0.1587 & 0.9604 & 0.9258 & 0.3663 & 0.8759\\
+Validation best & 0.1511 & 0.9621 & 0.9288 & 0.3665 & 0.8871\\
+Action-coordinate & 0.1539 & 0.9612 & 0.9273 & 0.3666 & 0.8811\\
+Direct-output & 0.1010 & 0.9656 & 0.9356 & 0.5287 & 0.9173\\
+\bottomrule
+\end{tabular}
+\end{table}

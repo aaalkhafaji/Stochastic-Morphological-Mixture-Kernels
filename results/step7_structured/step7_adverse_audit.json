@@ -1,0 +1,38 @@
+{
+  "Action-coordinate selector": {
+    "condition_differences_method_minus_input": {
+      "clustered_fn08": -0.017954790600373666,
+      "clustered_fp03": -0.012122861197280732,
+      "mixed_structured": -0.010027760424108523,
+      "holes2_r4": -0.008308218054494249,
+      "boundary_expand2": -0.007860591842932259,
+      "boundary_contract2": -0.0014119849226829628,
+      "bridge_spur12": 0.0019062895648157812,
+      "occlusion25": 0.003982530932179512,
+      "fragment_cut2": 0.00817752946183424
+    },
+    "n_primary_conditions_improved": 6,
+    "n_primary_conditions": 9,
+    "n_clean_masks_improved": 3354,
+    "n_clean_masks_worsened": 315,
+    "n_clean_masks": 3669
+  },
+  "Direct-output selector": {
+    "condition_differences_method_minus_input": {
+      "mixed_structured": -0.2177821520412298,
+      "fragment_cut2": -0.09743798058953254,
+      "clustered_fn08": -0.07712115015492438,
+      "clustered_fp03": -0.07544277403990063,
+      "holes2_r4": -0.041333010310273394,
+      "occlusion25": -0.013881685710563349,
+      "boundary_expand2": -0.008304519768523394,
+      "boundary_contract2": 0.0037704995310923056,
+      "bridge_spur12": 0.008604969111108364
+    },
+    "n_primary_conditions_improved": 7,
+    "n_primary_conditions": 9,
+    "n_clean_masks_improved": 3564,
+    "n_clean_masks_worsened": 105,
+    "n_clean_masks": 3669
+  }
+}

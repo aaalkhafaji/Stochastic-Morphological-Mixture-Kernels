@@ -1,0 +1,58 @@
+[
+  {
+    "method_a": "Action-coordinate selector",
+    "method_b": "Input",
+    "metric": "loss",
+    "n_images": 3669,
+    "mean_difference_a_minus_b": -0.004846650787004752,
+    "familywise95_ci": [
+      -0.005452703613215372,
+      -0.0042711484569349185
+    ],
+    "family_size": 4,
+    "bootstrap_resamples": 5000,
+    "cluster": "clean test mask"
+  },
+  {
+    "method_a": "Direct-output selector",
+    "method_b": "Input",
+    "metric": "loss",
+    "n_images": 3669,
+    "mean_difference_a_minus_b": -0.057658644885860755,
+    "familywise95_ci": [
+      -0.05888083603964153,
+      -0.0564970979430119
+    ],
+    "family_size": 4,
+    "bootstrap_resamples": 5000,
+    "cluster": "clean test mask"
+  },
+  {
+    "method_a": "Action-coordinate selector",
+    "method_b": "Validation best",
+    "metric": "loss",
+    "n_images": 3669,
+    "mean_difference_a_minus_b": 0.002772903370338238,
+    "familywise95_ci": [
+      0.002461491573854278,
+      0.0030878376095850877
+    ],
+    "family_size": 4,
+    "bootstrap_resamples": 5000,
+    "cluster": "clean test mask"
+  },
+  {
+    "method_a": "Direct-output selector",
+    "method_b": "Action-coordinate selector",
+    "metric": "loss",
+    "n_images": 3669,
+    "mean_difference_a_minus_b": -0.052811994098856,
+    "familywise95_ci": [
+      -0.05385361845688569,
+      -0.0517895508591423
+    ],
+    "family_size": 4,
+    "bootstrap_resamples": 5000,
+    "cluster": "clean test mask"
+  }
+]

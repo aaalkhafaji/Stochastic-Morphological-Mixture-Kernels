@@ -103,7 +103,7 @@ def main():
             if m in vals:
                 rows.append([m,f"{vals[m]['loss']:.4f}",f"{vals[m]['topology_exact']:.4f}",f"{vals[m]['boundary_f']:.4f}"])
         table(rows,[180,105,110,109])
-        p('Step 7 evaluates all 3,669 held-out Oxford masks under nine predeclared structured errors after fitting only on the Step-5 IID deletion/addition distribution. No structured case enters fitting or tuning. Per-condition outcomes, family-wise clean-mask bootstrap contrasts, and adverse cases are frozen under results/step7_structured/.')
+        p('Step 7 evaluates all 3,669 held-out Oxford masks under nine predeclared structured errors after fitting only on the Step-5 IID deletion/addition distribution. No structured case enters fitting or tuning. The frozen direct-output selector reduces mean loss from 0.1587 to 0.1010 and raises topology-exact agreement from 0.3663 to 0.5287 and boundary F from 0.8759 to 0.9173. Two primary families and the component-dropout diagnostic remain adverse. Per-condition outcomes, family-wise clean-mask bootstrap contrasts, and adverse cases are frozen under results/step7_structured/.')
     head('Numerical support for the proofs')
     top=checks['topology']
     p(f"Independent graph calculations compare {top['independent_graph_vs_scipy_masks']:,} masks and {top['single_pixel_comparisons']:,} single-pixel changes, check {top['exact_local_identity_cases']:,} exact local component identities, and include separate constructions attaining both sharp sensitivity bounds. The suite also runs 2,000 entropy/risk/replication trials, 32 finite transport comparisons, Bayesian-reversal checks, and gradient comparisons.")

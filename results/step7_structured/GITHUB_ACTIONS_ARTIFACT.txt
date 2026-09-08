@@ -1,0 +1,6 @@
+Step 7 GitHub Actions artifact
+filename: step7-structured-error-results.zip
+sha256: d82a9582224c7a3780fa4607ac9f2c3cce7ae230ca6e8fa22b967f424efb3a5c
+size_bytes: 4088709
+workflow: Step 7 Structured-error robustness
+status: successful

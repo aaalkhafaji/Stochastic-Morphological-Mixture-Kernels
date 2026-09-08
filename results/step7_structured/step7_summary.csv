@@ -1,0 +1,33 @@
+metric,method,mean,std,count
+loss,Action-coordinate selector,0.153854019,0.0178900053,3669
+loss,Direct-output selector,0.101042025,0.0291216146,3669
+loss,Input,0.15870067,0.0173898215,3669
+loss,Validation best,0.151081116,0.0184072901,3669
+mse,Action-coordinate selector,0.0202712772,0.00467886724,3669
+mse,Direct-output selector,0.0176958842,0.00445298252,3669
+mse,Input,0.0206678872,0.00459466606,3669
+mse,Validation best,0.0198189328,0.00460653425,3669
+dice,Action-coordinate selector,0.961237552,0.0160426141,3669
+dice,Direct-output selector,0.965639522,0.0159517916,3669
+dice,Input,0.960387617,0.0165854921,3669
+dice,Validation best,0.962076442,0.0158162504,3669
+iou,Action-coordinate selector,0.927299239,0.0248559954,3669
+iou,Direct-output selector,0.935562135,0.025428661,3669
+iou,Input,0.925810862,0.0257557807,3669
+iou,Validation best,0.928819543,0.0244673856,3669
+beta0_error,Action-coordinate selector,1.73111051,0.379642069,3669
+beta0_error,Direct-output selector,0.330286787,0.272171473,3669
+beta0_error,Input,2.81699525,0.688942632,3669
+beta0_error,Validation best,1.29357076,0.358312824,3669
+beta1_error,Action-coordinate selector,1.42835166,0.901104933,3669
+beta1_error,Direct-output selector,0.649520002,0.859926707,3669
+beta1_error,Input,1.76929833,0.836722443,3669
+beta1_error,Validation best,1.17934042,0.849047117,3669
+topology_exact,Action-coordinate selector,0.366615184,0.117383384,3669
+topology_exact,Direct-output selector,0.528742315,0.209767739,3669
+topology_exact,Input,0.366251779,0.0949212993,3669
+topology_exact,Validation best,0.366524333,0.123268655,3669
+boundary_f,Action-coordinate selector,0.881122119,0.016203786,3669
+boundary_f,Direct-output selector,0.91728445,0.0199636768,3669
+boundary_f,Input,0.87589684,0.0168661968,3669
+boundary_f,Validation best,0.887070278,0.0160388954,3669

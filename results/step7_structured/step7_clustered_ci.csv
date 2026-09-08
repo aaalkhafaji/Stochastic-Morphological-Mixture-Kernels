@@ -1,0 +1,21 @@
+method,metric,n_images,mean,ci95_low,ci95_high,bootstrap_resamples,cluster
+Input,loss,3669,0.15870067,0.158152673,0.159267428,5000,clean test mask
+Input,dice,3669,0.960387617,0.959855795,0.960907824,5000,clean test mask
+Input,iou,3669,0.925810862,0.924960782,0.92661676,5000,clean test mask
+Input,topology_exact,3669,0.366251779,0.363132552,0.369371006,5000,clean test mask
+Input,boundary_f,3669,0.87589684,0.875342836,0.876456066,5000,clean test mask
+Validation best,loss,3669,0.151081116,0.150484881,0.151662424,5000,clean test mask
+Validation best,dice,3669,0.962076442,0.961553203,0.962584528,5000,clean test mask
+Validation best,iou,3669,0.928819543,0.928014371,0.929605138,5000,clean test mask
+Validation best,topology_exact,3669,0.366524333,0.362587444,0.370491505,5000,clean test mask
+Validation best,boundary_f,3669,0.887070278,0.886552284,0.887587074,5000,clean test mask
+Action-coordinate selector,loss,3669,0.153854019,0.153294086,0.154440505,5000,clean test mask
+Action-coordinate selector,dice,3669,0.961237552,0.960721209,0.961743209,5000,clean test mask
+Action-coordinate selector,iou,3669,0.927299239,0.926486647,0.928074748,5000,clean test mask
+Action-coordinate selector,topology_exact,3669,0.366615184,0.362889525,0.370401411,5000,clean test mask
+Action-coordinate selector,boundary_f,3669,0.881122119,0.880605494,0.881650027,5000,clean test mask
+Direct-output selector,loss,3669,0.101042025,0.100112748,0.102017668,5000,clean test mask
+Direct-output selector,dice,3669,0.965639522,0.96512728,0.966128194,5000,clean test mask
+Direct-output selector,iou,3669,0.935562135,0.934753765,0.936372277,5000,clean test mask
+Direct-output selector,topology_exact,3669,0.528742315,0.521801278,0.535320251,5000,clean test mask
+Direct-output selector,boundary_f,3669,0.91728445,0.916626232,0.917931038,5000,clean test mask

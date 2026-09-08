@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "dataset": "Oxford-IIIT Pet",
+  "resolution": 128,
+  "n_test_masks": 3669,
+  "n_primary_conditions": 9,
+  "n_primary_cases": 33021,
+  "source_step5_artifact_sha256": "889e7df9af279974d46595444bf768c627602d188ca8c93d0f65b30739f16e96",
+  "training_distribution": "Step-5 IID deletion/addition only",
+  "structured_errors_used_for_training_or_tuning": false,
+  "primary_conditions": [
+    "boundary_expand2",
+    "boundary_contract2",
+    "clustered_fp03",
+    "clustered_fn08",
+    "holes2_r4",
+    "fragment_cut2",
+    "bridge_spur12",
+    "occlusion25",
+    "mixed_structured"
+  ],
+  "model_seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "fixed_action": "area_connected16",
+  "action_leaf": 20,
+  "direct_leaf": 8,
+  "direct_temperature": 0.005,
+  "component_dropout_eligible_masks": 116,
+  "bootstrap_resamples": 5000
+}

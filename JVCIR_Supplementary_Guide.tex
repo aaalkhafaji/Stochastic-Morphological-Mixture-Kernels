@@ -15,7 +15,7 @@
 \hypersetup{pdftitle={Supplementary Material S1: Stochastic Morphological pi-Mixture Kernels},pdfauthor={Adnan H. Abdulwahid; Ram C. Neupane}}
 \renewcommand{\familydefault}{\sfdefault}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt}
+\setlength{\parskip}{4.8pt}
 \setlength{\emergencystretch}{1.5em}
 \definecolor{GuideNavy}{HTML}{173A53}
 \definecolor{GuideMuted}{HTML}{536B7C}
@@ -154,9 +154,9 @@ full & Recompute all candidate banks from frozen clean masks, refit all models, 
 \endgroup
 
 \GuideHeading{Where each result comes from}
-summarize.py regenerates primary metrics, bootstrap intervals, ablations, diagnostic plots, qualitative examples, and gradient-variance diagnostics. validate\_kernel\_quotient.py regenerates the exploratory output-space table and saved probabilities. verify\_release.py checks splits, reconstructed scores, all saved forest predictions, fresh seed-101 refits, and CPU timings.
+\path{summarize.py} regenerates primary metrics, bootstrap intervals, ablations, diagnostic plots, qualitative examples, and gradient-variance diagnostics. \path{validate_kernel_quotient.py} regenerates the exploratory output-space table and saved probabilities. \path{verify_release.py} checks splits, reconstructed scores, all saved forest predictions, fresh seed-101 refits, and CPU timings.
 
-audit\_math.py, audit\_kernel\_theory.py, and audit\_oracle\_risk.py contain finite mathematical checks; test\_output\_space\_invariance.py and stress\_test\_output\_space\_invariance.py verify the direct output-space representation invariance; plot\_topology\_sharpness.py generates the explicit extremal masks. docs/RESULT\_MAP.md links the manuscript evidence to exact filenames. models/ contains every fitted estimator. data/source\_manifest.json preserves source archive URLs and hashes.
+\path{audit_math.py}, \path{audit_kernel_theory.py}, and \path{audit_oracle_risk.py} contain finite mathematical checks. \path{test_output_space_invariance.py} and \path{stress_test_output_space_invariance.py} verify the direct output-space representation invariance. \path{plot_topology_sharpness.py} generates the explicit extremal masks. \path{docs/RESULT_MAP.md} links evidence to exact filenames; \path{data/source_manifest.json} preserves source archive URLs and hashes.
 
 \GuideHeading{Expected agreement}
 Discrete actions and masks should agree under the pinned stack. Saved float32 arrays introduce rounding: replay probability tolerances are \(10^{-7}\) and sampled score recomputation tolerances are \(2\times10^{-6}\). Timings, PDF metadata, and compressed-container bytes can differ. Compare scientific values rather than regeneration timestamps.
@@ -199,11 +199,13 @@ Step~6 uses official DAVIS 2016 ground truth and pre-computed outputs from NLC, 
 Step~7 reuses the frozen Step~5 IID deletion/addition fitting distribution and fixed hyperparameters, but evaluates all 3,669 held-out Oxford masks under nine predeclared structured errors: boundary expansion/contraction, correlated false positives/negatives, interior holes, fragmentation cuts, a thin bridge/spur, localized occlusion, and a mixed error. No Step~7 structured case enters fitting or tuning.
 
 \begin{center}
-\includegraphics[width=0.98\linewidth]{figures/step7_structured_examples.pdf}
+\includegraphics[width=0.88\linewidth]{figures/step7_structured_examples.pdf}
 \end{center}
 \GuideSmall{The displayed mask is selected by a rule frozen before outcome analysis and is illustrative only. Full condition definitions are in \texttt{docs/STRUCTURED\_ERROR\_STEP7.md}.}
 
 \input{results/generated_step7_supp.tex}
+
+The nine-condition mean favors the frozen direct-output selector: loss 0.1010 versus 0.1587 for input, while exact topology agreement rises from 0.3663 to 0.5287 and boundary $F$ from 0.8759 to 0.9173. The family-wise direct-minus-input loss interval is $[-0.05888,-0.05650]$. Direct-output selection is adverse for boundary contraction and bridge/spur errors, and the secondary component-dropout diagnostic is also adverse; all are retained.
 
 \GuideHeading{Numerical support for the proofs}
 Independent graph calculations compare 66,146 masks and 1,053,698 single-pixel changes, check 2,304 exact local component identities, and include separate constructions attaining both sharp sensitivity bounds. The suite also runs 2,000 entropy/risk/replication trials, 32 finite transport comparisons, Bayesian-reversal checks, and gradient comparisons.

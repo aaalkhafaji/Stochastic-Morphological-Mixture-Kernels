@@ -36,3 +36,7 @@ result files, including provenance, protocol sequence/case tables, source-method
 summaries, sequence-clustered confidence intervals, paired contrasts, resize
 audit, and compressed per-case metrics. `GITHUB_ACTIONS_ARTIFACT.txt` records
 the SHA-256 of the original downloaded artifact.
+
+## Step 7 structured-error distribution shift
+
+`step7_structured/` contains the frozen 33,021-case Oxford structured-error campaign: protocol/provenance, raw compressed case metrics, seed summaries, condition summaries, clean-mask-clustered intervals, four family-wise loss contrasts, adverse accounting, the component-dropout diagnostic, and generated LaTeX. No Step-7 structured case enters fitting or tuning.

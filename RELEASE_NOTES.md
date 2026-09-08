@@ -41,3 +41,12 @@ The DAVIS 2016 campaign has now been executed successfully on official pre-compu
 - Reuses the exact Step-5 IID training distribution, fixed action, hyperparameters, and five estimator seeds; no structured-error case enters fitting/tuning.
 - Adds nine primary structured errors plus an eligibility-restricted natural component-dropout diagnostic.
 - Adds clean-mask-clustered bootstrap inference with four predeclared family-wise loss contrasts and explicit adverse-condition accounting.
+
+Step 7 completed successfully on all 3,669 held-out Oxford masks across nine predeclared structured errors (33,021 cases), without structured-error refitting or retuning. The direct-output selector reduces mean loss from 0.1587 to 0.1010 and improves aggregate Dice, IoU, exact topology agreement, and boundary F. The action-coordinate selector improves raw loss slightly but is significantly worse than the validation-best fixed morphology. Adverse structured families and the component-dropout diagnostic are retained.
+
+## Step 8 execution-ready update
+- Added a predeclared modern/fair baseline campaign on the frozen Oxford-IIIT Pet protocol.
+- Added public SoftMorph2 runtime retrieval plus numerical equivalence validation against an independent product-logic implementation; no SoftMorph source is redistributed.
+- Added a regularized empirical 3x3 W-operator learned on the same binary mask pairs.
+- Added a condition-aware fixed 31-action control for the IID benchmark.
+- Added a GitHub Actions workflow that evaluates IID and Step-7 structured OOD data with no structured-error retuning.

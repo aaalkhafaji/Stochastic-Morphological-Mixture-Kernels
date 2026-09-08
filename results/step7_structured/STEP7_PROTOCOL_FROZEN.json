@@ -1,0 +1,40 @@
+{
+  "status": "FROZEN_BEFORE_EXECUTION",
+  "step": 7,
+  "dataset": "Oxford-IIIT Pet",
+  "source_step5_artifact_sha256": "889e7df9af279974d46595444bf768c627602d188ca8c93d0f65b30739f16e96",
+  "resolution": 128,
+  "training_distribution": "Step-5 frozen IID deletion/addition only; no Step-7 structured errors in fitting/tuning",
+  "primary_conditions": [
+    "boundary_expand2",
+    "boundary_contract2",
+    "clustered_fp03",
+    "clustered_fn08",
+    "holes2_r4",
+    "fragment_cut2",
+    "bridge_spur12",
+    "occlusion25",
+    "mixed_structured"
+  ],
+  "secondary_diagnostic": "natural component dropout for held-out targets with >=2 foreground components of area >=5",
+  "model_seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "action_leaf": 20,
+  "direct_leaf": 8,
+  "direct_temperature": 0.005,
+  "fixed_action": "area_connected16",
+  "primary_cluster": "clean held-out mask",
+  "primary_comparisons": [
+    "Action-coordinate selector - Input",
+    "Direct-output selector - Input",
+    "Action-coordinate selector - Validation best",
+    "Direct-output selector - Action-coordinate selector"
+  ],
+  "bootstrap_resamples": 5000,
+  "familywise_method": "Bonferroni percentile intervals across 4 predeclared loss contrasts"
+}

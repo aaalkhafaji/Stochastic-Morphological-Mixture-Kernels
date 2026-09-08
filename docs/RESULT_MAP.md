@@ -35,3 +35,5 @@ manuscript; the numerical-check files support rather than replace them.
 - Adverse-condition/image accounting: `results/step7_structured/step7_adverse_audit.json`.
 - Natural component-dropout diagnostic: `results/step7_structured/step7_component_dropout.csv`.
 - Frozen input/protocol metadata: `results/step7_structured/step7_provenance.json`.
+
+- Step-7 generated manuscript table: `results/step7_structured/generated_step7_structured.tex`; supplement table: `results/generated_step7_supp.tex`.

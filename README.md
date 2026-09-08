@@ -109,3 +109,9 @@ The complete compact result artifact is frozen under `results/step6_davis2016/`,
 Step 7 keeps the Step-5 Oxford-IIIT Pet fitting distribution and hyperparameters frozen, then evaluates the learned selectors without refitting on nine topology-relevant structured error families: boundary expansion/contraction, spatially correlated false positives/negatives, interior holes, fragmentation cuts, a thin bridge/spur error, localized occlusion, and a mixed structured case. All 3,669 official held-out Oxford masks are retained at 128×128. A natural multi-component dropout is reported separately on its eligible subset.
 
 The protocol is frozen in `results/step7_structured/STEP7_PROTOCOL_FROZEN.json`; code and exact definitions are in `code/run_structured_step7.py` and `docs/STRUCTURED_ERROR_STEP7.md`. The preferred exact input is the successful Step-5 GitHub Actions result artifact with SHA-256 `889e7df9af279974d46595444bf768c627602d188ca8c93d0f65b30739f16e96`. Structured cases do not enter fitting or tuning.
+
+Step 7 completed successfully on 33,021 structured cases. The frozen direct-output selector reduces the nine-condition mean loss from 0.1587 (raw input) to 0.1010, with family-wise direct-minus-input interval [-0.05888, -0.05650]. Aggregate Dice, IoU, topology-exact rate, and boundary F also improve. Two primary families (boundary contraction and bridge/spur) and the secondary natural component-dropout diagnostic are adverse and are retained.
+
+
+## Step 8 modern/fair baselines (execution-ready)
+The workflow `.github/workflows/step8-modern-baselines.yml` compares the frozen Oxford pipeline against a condition-aware fixed-bank control, a validation-selected SoftMorph2 post-processing baseline, and a regularized empirical 3x3 W-operator. SoftMorph2 is retrieved from its public upstream repository at runtime and is not redistributed here. Step-8 test outcomes are not yet incorporated until the workflow artifact is audited.

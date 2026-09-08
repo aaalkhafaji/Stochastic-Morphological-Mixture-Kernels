@@ -1,0 +1,21 @@
+\begingroup\scriptsize
+\renewcommand{\arraystretch}{1.10}
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Structured error & Input & Fixed & Action & Direct\\
+\midrule
+Boundary expand & 0.0591 & 0.0509 & 0.0512 & 0.0508\\
+Boundary contract & 0.0508 & 0.0501 & 0.0494 & 0.0546\\
+Clustered FP & 0.2458 & 0.2325 & 0.2337 & 0.1704\\
+Clustered FN & 0.2384 & 0.2119 & 0.2204 & 0.1613\\
+Interior holes & 0.1990 & 0.1898 & 0.1907 & 0.1577\\
+Fragmentation cut & 0.1180 & 0.1265 & 0.1262 & 0.0206\\
+Bridge/spur & 0.0098 & 0.0135 & 0.0117 & 0.0184\\
+Occlusion & 0.0850 & 0.0892 & 0.0889 & 0.0711\\
+Mixed structured & 0.4224 & 0.3953 & 0.4124 & 0.2046\\
+\bottomrule
+\end{tabular}
+\end{center}
+\endgroup
+\GuideSmall{Secondary natural component-dropout diagnostic ($n=116$ eligible masks): input loss 0.0858, validation-best fixed 0.1054, action-coordinate 0.1038, and direct-output 0.1111. All topology-exact rates are zero because the diagnostic deliberately removes a genuine component; this diagnostic is excluded from the nine-condition headline mean.}
