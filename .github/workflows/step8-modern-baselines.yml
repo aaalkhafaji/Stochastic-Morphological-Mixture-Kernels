@@ -90,7 +90,9 @@ jobs:
           cp results/step8_baselines/softmorph_equivalence.json results/step8_baselines_full/
           cd results/step8_baselines_full
           rm -f SHA256SUMS
-          for f in *; do [ "$f" = SHA256SUMS ] || sha256sum "$f"; done | sort -k2 > SHA256SUMS
+          find . -type f ! -name SHA256SUMS -print0 \
+            | sort -z \
+            | xargs -0 sha256sum > SHA256SUMS
 
       - name: Verify frozen Step 8 result bytes
         shell: bash
