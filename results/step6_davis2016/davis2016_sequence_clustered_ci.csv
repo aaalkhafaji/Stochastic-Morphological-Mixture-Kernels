@@ -1,0 +1,25 @@
+method,metric,n_sequences,mean,ci95_low,ci95_high,bootstrap_resamples,cluster
+Input segmentation,loss,20,0.360855037,0.32324352,0.400214381,5000,video sequence
+Input segmentation,iou,20,0.494692873,0.432201218,0.556299269,5000,video sequence
+Input segmentation,boundary_f08,20,0.575876729,0.51981739,0.62793485,5000,video sequence
+Input segmentation,topology_exact,20,0.136264034,0.0766676933,0.199064699,5000,video sequence
+Validation best,loss,20,0.310396488,0.260434372,0.362460145,5000,video sequence
+Validation best,iou,20,0.49467552,0.430303715,0.557053965,5000,video sequence
+Validation best,boundary_f08,20,0.567192954,0.50628983,0.625082512,5000,video sequence
+Validation best,topology_exact,20,0.229052479,0.123361161,0.342793696,5000,video sequence
+Action-coordinate selector,loss,20,0.30714736,0.256769488,0.359425647,5000,video sequence
+Action-coordinate selector,iou,20,0.493730419,0.428628135,0.553663154,5000,video sequence
+Action-coordinate selector,boundary_f08,20,0.564069997,0.50573446,0.619807331,5000,video sequence
+Action-coordinate selector,topology_exact,20,0.233889211,0.128687086,0.351168948,5000,video sequence
+Direct-output selector,loss,20,0.310413864,0.260583113,0.362022511,5000,video sequence
+Direct-output selector,iou,20,0.488065907,0.425737546,0.549100133,5000,video sequence
+Direct-output selector,boundary_f08,20,0.55658627,0.500780014,0.611554361,5000,video sequence
+Direct-output selector,topology_exact,20,0.225407608,0.125421262,0.33241808,5000,video sequence
+Direct-output sampled,loss,20,0.310316265,0.260433425,0.366556497,5000,video sequence
+Direct-output sampled,iou,20,0.487996681,0.4255372,0.549930986,5000,video sequence
+Direct-output sampled,boundary_f08,20,0.556128037,0.501909136,0.610322383,5000,video sequence
+Direct-output sampled,topology_exact,20,0.225325666,0.126958973,0.334963535,5000,video sequence
+Oracle (diagnostic),loss,20,0.270004139,0.221383653,0.321682619,5000,video sequence
+Oracle (diagnostic),iou,20,0.505167303,0.439502786,0.567574673,5000,video sequence
+Oracle (diagnostic),boundary_f08,20,0.576730623,0.519269076,0.633576409,5000,video sequence
+Oracle (diagnostic),topology_exact,20,0.351806449,0.225983319,0.483730975,5000,video sequence

@@ -1,0 +1,9 @@
+{
+  "n_method_frame_cases": 8236,
+  "n_unique_groundtruth_frames": 1376,
+  "groundtruth_topology_preserved_fraction": 0.2623546511627907,
+  "input_beta_error_preserved_fraction": 0.1215395823215153,
+  "mean_absolute_iou_change": 0.005049852111355143,
+  "max_absolute_iou_change": 0.08903970118498761,
+  "native_resized_iou_correlation": 0.9995649602884142
+}

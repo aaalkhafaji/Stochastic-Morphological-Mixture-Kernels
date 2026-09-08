@@ -1,0 +1,47 @@
+{
+  "dataset": "DAVIS 2016 single-object video object segmentation",
+  "dataset_url": "https://davischallenge.org/davis2016/code.html",
+  "data_archive_url": "https://graphics.ethz.ch/Downloads/Data/Davis/DAVIS-data.zip",
+  "results_archive_url": "https://graphics.ethz.ch/Downloads/Data/Davis/DAVIS-results.zip",
+  "data_archive_md5": "0cb3cf9c5617209fa3cc4794e52a2ffa",
+  "data_archive_sha256": "a4148e3cdc4dacffc1c6c8b5b2b7f5254b663279eae6cae4e4bb3c75bf2d9d7a",
+  "results_archive_sha256": "78a8963780ee355b1f37869cf427358067ebc0e81539b7da772c9819373cad91",
+  "source_methods": {
+    "NLC": "nlc",
+    "FST": "fst",
+    "SAL": "sal",
+    "TRC": "trc",
+    "MSG": "msg",
+    "CVOS": "cvos"
+  },
+  "source_method_category": "unsupervised methods in the original DAVIS 2016 evaluation",
+  "resolution": 128,
+  "resize": "aspect-ratio preserving nearest-neighbor letterbox",
+  "protocol_seed": 20260907,
+  "model_seeds": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "sequence_counts": {
+    "train": 24,
+    "tune": 6,
+    "test": 20
+  },
+  "case_counts": {
+    "train": 9846,
+    "tune": 2598,
+    "test": 8236
+  },
+  "no_synthetic_corruption": true,
+  "rgb_images_used_by_estimator": false,
+  "statistical_cluster": "DAVIS video sequence",
+  "primary_metric_family": [
+    "loss",
+    "iou (DAVIS region J)",
+    "boundary_f08",
+    "topology_exact"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "image_index": 1,
+  "selection_rule": "first held-out Oxford mask with area fraction in [0.15,0.35], beta0=1, beta1=0; chosen before Step-7 outcome analysis",
+  "conditions": [
+    "boundary_expand2",
+    "boundary_contract2",
+    "clustered_fp03",
+    "clustered_fn08",
+    "holes2_r4",
+    "fragment_cut2",
+    "bridge_spur12",
+    "occlusion25",
+    "mixed_structured"
+  ]
+}

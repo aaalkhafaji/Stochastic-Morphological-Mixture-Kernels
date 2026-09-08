@@ -167,41 +167,14 @@ def ensure_davis(data_root: Path, data_archive: Path | None, results_archive: Pa
 
 
 def read_sequence_list(path: Path) -> list[str]:
-    """Read DAVIS split files and return unique video-sequence names.
-
-    DAVIS 2016's original ``ImageSets/480p/{train,val}.txt`` files are
-    frame lists, e.g.::
-
-        /JPEGImages/480p/bear/00000.jpg /Annotations/480p/bear/00000.png
-
-    while newer DAVIS layouts often store one sequence name per line.  This
-    parser accepts both formats.  In a frame-list row, the sequence is the
-    directory immediately below the resolution component (``480p``), or, as a
-    fallback, the parent directory of the frame path.
-    """
     rows = []
-    seen = set()
     for line in path.read_text().splitlines():
         line = line.strip()
         if not line or line.startswith("#"):
             continue
-        token = line.split()[0].strip()
-        clean = token.strip("/")
-        if "/" not in clean:
-            seq = clean
-        else:
-            parts = list(Path(clean).parts)
-            seq = None
-            # Original DAVIS 2016 frame-list format: .../480p/<seq>/<frame>
-            for i, part in enumerate(parts[:-1]):
-                if part.lower() == "480p" and i + 1 < len(parts) - 1:
-                    seq = parts[i + 1]
-                    break
-            if seq is None:
-                seq = Path(clean).parent.name
-        if seq and seq not in seen:
-            rows.append(seq)
-            seen.add(seq)
+        token = line.split()[0].strip().strip("/")
+        token = Path(token).stem if "/" in token else token
+        rows.append(token)
     return rows
 
 
@@ -592,7 +565,7 @@ def create_result_tex(outdir:Path):
     lines=[r"\begin{table}[t]",r"\centering",r"\caption{DAVIS 2016 genuine segmentation-error validation on the official held-out validation sequences. The observed masks are pre-computed outputs of six unsupervised methods from the original DAVIS benchmark, not synthetically corrupted ground truth. Values first average frames, source methods, and fitted seeds within video sequence and then average equally over sequences.}",r"\label{tab:davisactual}",r"\small",r"\begin{tabular}{lcccc}",r"\toprule",r"Method & Loss $\downarrow$ & Region $J$ $\uparrow$ & Boundary $F$ $\uparrow$ & Topology exact $\uparrow$\\",r"\midrule"]
     for m in methods:
         if m in loss.index:
-            lines.append(f"{m} & {loss.loc[m,'mean']:.4f} & {iou.loc[m,'mean']:.4f} & {bf.loc[m,'mean']:.4f} & {topo.loc[m,'mean']:.4f}\\")
+            lines.append(f"{m} & {loss.loc[m,'mean']:.4f} & {iou.loc[m,'mean']:.4f} & {bf.loc[m,'mean']:.4f} & {topo.loc[m,'mean']:.4f}\\\\")
     lines += [r"\bottomrule",r"\end{tabular}",r"\end{table}",""]
     comps=json.loads((outdir/"davis2016_paired_comparisons.json").read_text())
     lines.append("% Four predeclared sequence-clustered loss contrasts (A minus B):")

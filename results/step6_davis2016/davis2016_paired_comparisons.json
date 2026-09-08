@@ -1,0 +1,70 @@
+[
+  {
+    "method_a": "Action-coordinate selector",
+    "method_b": "Input segmentation",
+    "metric": "loss",
+    "n_sequences": 20,
+    "mean_difference_a_minus_b": -0.053707676861971934,
+    "ci95": [
+      -0.07308224606384768,
+      -0.03467427240953558
+    ],
+    "familywise95_ci_four_comparisons": [
+      -0.07739305750727818,
+      -0.029933278109294637
+    ],
+    "bootstrap_resamples": 5000,
+    "cluster": "video sequence"
+  },
+  {
+    "method_a": "Direct-output selector",
+    "method_b": "Input segmentation",
+    "metric": "loss",
+    "n_sequences": 20,
+    "mean_difference_a_minus_b": -0.05044117243480547,
+    "ci95": [
+      -0.06853614724081272,
+      -0.032068184961508164
+    ],
+    "familywise95_ci_four_comparisons": [
+      -0.07260121826949434,
+      -0.0269304888327114
+    ],
+    "bootstrap_resamples": 5000,
+    "cluster": "video sequence"
+  },
+  {
+    "method_a": "Direct-output selector",
+    "method_b": "Action-coordinate selector",
+    "metric": "loss",
+    "n_sequences": 20,
+    "mean_difference_a_minus_b": 0.0032665044271664697,
+    "ci95": [
+      0.0004119811769025722,
+      0.006558934344165145
+    ],
+    "familywise95_ci_four_comparisons": [
+      -0.00027588225683292404,
+      0.007520003976110307
+    ],
+    "bootstrap_resamples": 5000,
+    "cluster": "video sequence"
+  },
+  {
+    "method_a": "Direct-output selector",
+    "method_b": "Validation best",
+    "metric": "loss",
+    "n_sequences": 20,
+    "mean_difference_a_minus_b": 1.737606239165454e-05,
+    "ci95": [
+      -0.003863867482108233,
+      0.004580215781203138
+    ],
+    "familywise95_ci_four_comparisons": [
+      -0.004836530982528523,
+      0.006103311736399184
+    ],
+    "bootstrap_resamples": 5000,
+    "cluster": "video sequence"
+  }
+]

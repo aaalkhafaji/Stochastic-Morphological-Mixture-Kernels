@@ -1,0 +1,4 @@
+Original GitHub Actions artifact: step6-davis2016-results.zip
+SHA256: f93863c545d4b92c5fdca5da3b1a0ff79105cfa9ea36ddcbb630d2488d7471d4
+Internal SHA256SUMS verification: PASS (13 result files).
+Workflow status: SUCCESS.

@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{DAVIS 2016 genuine segmentation-error validation on the official held-out validation sequences. The observed masks are pre-computed outputs of six unsupervised methods from the original DAVIS benchmark, not synthetically corrupted ground truth. Values first average frames, source methods, and fitted seeds within video sequence and then average equally over sequences.}
+\label{tab:davisactual}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Method & Loss $\downarrow$ & Region $J$ $\uparrow$ & Boundary $F$ $\uparrow$ & Topology exact $\uparrow$\\
+\midrule
+Input segmentation & 0.3609 & 0.4947 & 0.5759 & 0.1363\
+Validation best & 0.3104 & 0.4947 & 0.5672 & 0.2291\
+Action-coordinate selector & 0.3071 & 0.4937 & 0.5641 & 0.2339\
+Direct-output selector & 0.3104 & 0.4881 & 0.5566 & 0.2254\
+Direct-output sampled & 0.3103 & 0.4880 & 0.5561 & 0.2253\
+Oracle (diagnostic) & 0.2700 & 0.5052 & 0.5767 & 0.3518\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Four predeclared sequence-clustered loss contrasts (A minus B):
+% Action-coordinate selector vs Input segmentation: mean=-0.0537076769; FWER95=[-0.0773930575,-0.0299332781]; nseq=20
+% Direct-output selector vs Input segmentation: mean=-0.0504411724; FWER95=[-0.0726012183,-0.0269304888]; nseq=20
+% Direct-output selector vs Action-coordinate selector: mean=0.00326650443; FWER95=[-0.000275882257,0.00752000398]; nseq=20
+% Direct-output selector vs Validation best: mean=1.73760624e-05; FWER95=[-0.00483653098,0.00610331174]; nseq=20

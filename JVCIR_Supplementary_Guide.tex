@@ -2,14 +2,14 @@
 % Compile twice with: pdflatex JVCIR_Supplementary_Guide.tex
 % Standard TeX Live/MiKTeX packages only; no external assets or BibTeX needed.
 % Numerical tables are embedded snapshots of the accompanying frozen results.
-% Strengthening working branch through Step 4; frozen public baseline is v2.1.0.
+% Strengthening working branch through Step 7; frozen public baseline is v2.1.0.
 \documentclass[10pt,letterpaper]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern,amsmath}
 \usepackage[letterpaper,margin=0.75in,top=0.625in,bottom=0.67in,footskip=0.32in]{geometry}
 \usepackage[table]{xcolor}
-\usepackage{array,booktabs}
+\usepackage{array,booktabs,graphicx}
 \usepackage{microtype,listings,fancyhdr}
 \usepackage[hidelinks]{hyperref}
 \hypersetup{pdftitle={Supplementary Material S1: Stochastic Morphological pi-Mixture Kernels},pdfauthor={Adnan H. Abdulwahid; Ram C. Neupane}}
@@ -39,11 +39,11 @@
 \textbf{Stochastic Morphological \(\pi\)-Mixture Kernels: Identifiability, Topological Stability, and Output-Space Learning}
 
 \GuideSmall{Adnan H. Abdulwahid \textperiodcentered{} Ram C. Neupane}
-\GuideSmall{Reproducibility guide | Strengthening branch Step 4 | Baseline archive v2.1.0 | Prepared 7 September 2026}
+\GuideSmall{Reproducibility guide | Strengthening branch Step 7 | Baseline archive v2.1.0 | Prepared 7 September 2026}
 \GuideHeading{Purpose and scope}
 This archive supplies the complete computational record accompanying the manuscript: frozen inputs, fitted models, candidate outputs, primary and diagnostic results, figure and table generators, and numerical checks of the mathematical claims. The written proofs remain in the main manuscript.
 
-The original campaign evaluates a fixed morphological bank on a held-out test set. The subsequent output-space construction reuses that inspected set and is explicitly exploratory. Reproducing these calculations does not create a new independent validation.
+The original campaign evaluates a fixed morphological bank on a held-out test set. The subsequent output-space construction reuses that inspected set and is explicitly exploratory. Steps 5 and 6 add independent public-data validations: Oxford-IIIT Pet supplies higher-resolution human annotations under frozen synthetic corruptions, while DAVIS 2016 supplies genuine algorithm-produced segmentation errors with no synthetic corruption. Step 7 freezes the Step-5 IID-fitted selectors and evaluates nine structured Oxford error families without refitting or retuning. Reproducing the original calculations does not create a new independent validation.
 
 \GuideHeading{Primary experiment at a glance}
 
@@ -190,13 +190,28 @@ The table above remains the archived post-hoc class-minimum baseline. The streng
 
 Step~4 adds a global oracle/excess-risk decomposition into finite-bank approximation, output-cost estimation, and entropy/reference terms. audit\_oracle\_risk.py checks the pointwise and global inequalities on 2,500 random finite problems containing 19,692 conditional inputs. No positive bound violation occurs; the exact-decomposition residual is \(1.11\times10^{-16}\). These are mathematical/implementation checks, not additional independent benchmark data.
 
+\GuideHeading{Independent Oxford and DAVIS validations}
+Step~5 uses all 3,669 official Oxford-IIIT Pet test masks at $128\times128$ under six frozen corruption conditions (22,014 held-out cases). The action-coordinate selector has mean composite loss 0.0162 versus 0.0164 for the validation-best fixed morphology; the direct-output selector is adverse at 0.0201 under both predeclared paired comparisons. Native/resized Betti pairs agree for 85.31\% of Oxford test masks, so topology statements concern the resized targets.
+
+Step~6 uses official DAVIS 2016 ground truth and pre-computed outputs from NLC, FST, SAL, TRC, MSG, and CVOS. No synthetic corruption is introduced. The held-out set contains 20 video sequences, 1,376 unique ground-truth frames, and 8,236 method--frame cases. The action-coordinate selector reduces sequence-mean composite loss from 0.3609 to 0.3071; the representation-invariant direct-output selector reaches 0.3104. Both improvements versus the raw segmentations have four-comparison family-wise 95\% sequence-bootstrap intervals excluding zero. Region $J$ and boundary $F$ do not improve, while resized-target exact topology agreement rises from 0.1363 to 0.2339 for action-coordinate selection. The three adverse sequences are retained. Native/resized Betti pairs agree for only 26.24\% of DAVIS held-out frames, so DAVIS topology metrics are explicitly tied to the $128\times128$ evaluation targets.
+
+\GuideHeading{Step 7 structured-error distribution shift}
+Step~7 reuses the frozen Step~5 IID deletion/addition fitting distribution and fixed hyperparameters, but evaluates all 3,669 held-out Oxford masks under nine predeclared structured errors: boundary expansion/contraction, correlated false positives/negatives, interior holes, fragmentation cuts, a thin bridge/spur, localized occlusion, and a mixed error. No Step~7 structured case enters fitting or tuning.
+
+\begin{center}
+\includegraphics[width=0.98\linewidth]{figures/step7_structured_examples.pdf}
+\end{center}
+\GuideSmall{The displayed mask is selected by a rule frozen before outcome analysis and is illustrative only. Full condition definitions are in \texttt{docs/STRUCTURED\_ERROR\_STEP7.md}.}
+
+\input{results/generated_step7_supp.tex}
+
 \GuideHeading{Numerical support for the proofs}
 Independent graph calculations compare 66,146 masks and 1,053,698 single-pixel changes, check 2,304 exact local component identities, and include separate constructions attaining both sharp sensitivity bounds. The suite also runs 2,000 entropy/risk/replication trials, 32 finite transport comparisons, Bayesian-reversal checks, and gradient comparisons.
 
 The largest finite-difference gradient residual in the expanded suite is \(8.2\times10^{-11}\). These finite and numerical checks complement the quantified written proofs; they are not a proof-assistant certificate or external mathematical review.
 
 \GuideHeading{Limits to retain in any presentation}
-Individual metrics do not all improve: MNIST Dice and shapes hole error can worsen. Stronger Fashion-MNIST corruption gives a documented failure against the fixed area filter. Clean inputs can change. Evaluating a full 31-action bank is materially slower than using a single area filter. Low-resolution binary masks and simulated corruptions do not establish RGB, clinical, real-sensor, or high-resolution performance.
+Individual metrics do not all improve: MNIST Dice and shapes hole error can worsen. Stronger Fashion-MNIST corruption gives a documented failure against the fixed area filter. Clean inputs can change. Evaluating a full 31-action bank is materially slower than using a single area filter. Oxford closes the low-resolution-only gap, DAVIS closes the synthetic-error-only gap, and Step~7 probes structured mask-error shift; none establishes RGB restoration, clinical performance, correlated real-sensor-noise robustness, or native-resolution topology preservation. DAVIS source segmentations are from the 2016 benchmark rather than contemporary architectures.
 
 The smooth morphology control is not a full implementation of BiMoNN, DMNN, or SoftMorph. No superiority over those published architectures is claimed. The mathematical contraction statements require their stated coefficient conditions; the fitted model has not been shown to satisfy a global contraction coefficient below one.
 

@@ -98,21 +98,14 @@ The official Step-5 campaign has now been executed through the manual GitHub Act
 
 ## Step 6: DAVIS 2016 genuine segmentation-error validation
 
-Step 6 tests the morphology framework on actual algorithm-produced segmentation
-errors from the official DAVIS 2016 benchmark.  It uses the pre-computed masks
-of the six unsupervised methods NLC, FST, SAL, TRC, MSG, and CVOS and the
-official dense ground-truth annotations.  No synthetic corruption is introduced
-in this campaign, and statistical inference is clustered by video sequence.
+Step 6 has been **successfully executed** on actual algorithm-produced segmentation errors from the official DAVIS 2016 benchmark. It uses the official dense masks plus the pre-computed outputs of NLC, FST, SAL, TRC, MSG, and CVOS. No synthetic corruption is introduced and inference is clustered by video sequence.
 
-The easiest execution route is GitHub Actions:
+The official run contains 24 fitting, 6 tuning, and 20 held-out video sequences, with 8,236 held-out source-method/frame cases over 1,376 unique ground-truth frames. Relative to raw input segmentations, the action-coordinate selector reduces mean composite loss from 0.3609 to 0.3071 and the direct-output selector to 0.3104; the four-comparison family-wise sequence-bootstrap intervals for both improvements exclude zero. Exact resized-target topology agreement rises from 0.1363 to 0.2339 (action-coordinate), while region J and boundary F do not improve. Adverse sequences are retained.
 
-1. Open **Actions**.
-2. Choose **Step 6 DAVIS 2016 genuine-error validation**.
-3. Click **Run workflow** on `main`.
-4. After success, download the artifact **step6-davis2016-results**.
+The complete compact result artifact is frozen under `results/step6_davis2016/`, including provenance, source-method summaries, sequence-level effects, 5,000-resample clustered intervals, paired comparisons, resize audit, and per-case metrics. See `STEP6_DAVIS_GENUINE_ERROR_VALIDATION.md` in the campaign package and `data/DAVIS2016_NOTICE.md`. The workflow remains available as `.github/workflows/step6-davis2016.yml` for independent reruns.
 
-The workflow downloads the official DAVIS 2016 data and pre-computed result
-archives, verifies the official MD5 published for `DAVIS-data.zip`, records
-SHA-256 hashes for both downloaded archives, selectively extracts only masks and
-split files (RGB frames are not used by the estimator), runs the predeclared
-analysis, and freezes checksums for the compact result artifact.
+## Step 7: structured-error distribution-shift robustness
+
+Step 7 keeps the Step-5 Oxford-IIIT Pet fitting distribution and hyperparameters frozen, then evaluates the learned selectors without refitting on nine topology-relevant structured error families: boundary expansion/contraction, spatially correlated false positives/negatives, interior holes, fragmentation cuts, a thin bridge/spur error, localized occlusion, and a mixed structured case. All 3,669 official held-out Oxford masks are retained at 128×128. A natural multi-component dropout is reported separately on its eligible subset.
+
+The protocol is frozen in `results/step7_structured/STEP7_PROTOCOL_FROZEN.json`; code and exact definitions are in `code/run_structured_step7.py` and `docs/STRUCTURED_ERROR_STEP7.md`. The preferred exact input is the successful Step-5 GitHub Actions result artifact with SHA-256 `889e7df9af279974d46595444bf768c627602d188ca8c93d0f65b30739f16e96`. Structured cases do not enter fitting or tuning.

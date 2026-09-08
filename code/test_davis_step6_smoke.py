@@ -7,7 +7,7 @@ from PIL import Image
 
 from run_davis_step6 import (
     PRIMARY_SOURCE_METHODS, boundary_f08, letterbox_bool, extract_case,
-    split_train_sequences, discover_source_methods, png_map, read_sequence_list
+    split_train_sequences, discover_source_methods, png_map
 )
 
 rng=np.random.default_rng(20260907)
@@ -22,16 +22,6 @@ assert e['action_features'].shape==(160,)
 assert e['direct_features'].shape==(31,10)
 assert 1 <= int(e['n_distinct']) <= 31
 assert 0 <= boundary_f08(xs,ys) <= 1
-
-# DAVIS-2016 split files are frame lists; newer layouts may list sequences.
-with tempfile.TemporaryDirectory() as td:
-    p=Path(td)/'train.txt'
-    p.write_text('/JPEGImages/480p/bear/00000.jpg /Annotations/480p/bear/00000.png\n'
-                 '/JPEGImages/480p/bear/00001.jpg /Annotations/480p/bear/00001.png\n'
-                 '/JPEGImages/480p/blackswan/00000.jpg /Annotations/480p/blackswan/00000.png\n')
-    assert read_sequence_list(p)==['bear','blackswan']
-    p.write_text('bear\nblackswan\n')
-    assert read_sequence_list(p)==['bear','blackswan']
 
 # Deterministic sequence splitting.
 seqs=[f'seq{i:02d}' for i in range(30)]

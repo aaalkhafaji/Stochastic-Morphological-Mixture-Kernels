@@ -28,3 +28,11 @@ selection metadata, per-condition and macro-breed summaries, clustered confidenc
 intervals, paired comparisons, generated LaTeX, and provenance. Large NPZ caches
 and the compressed per-case metric table are excluded from Git history; their
 full-artifact hashes are retained for the next Zenodo archival update.
+
+
+Step-6 DAVIS 2016 genuine-segmentation-error evidence is stored under
+`step6_davis2016/`. The directory preserves the exact successful GitHub Actions
+result files, including provenance, protocol sequence/case tables, source-method
+summaries, sequence-clustered confidence intervals, paired contrasts, resize
+audit, and compressed per-case metrics. `GITHUB_ACTIONS_ARTIFACT.txt` records
+the SHA-256 of the original downloaded artifact.

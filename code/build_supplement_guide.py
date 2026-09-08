@@ -41,10 +41,10 @@ def main():
     p('Supplementary Material S1','TitleS')
     p('<b>Stochastic Morphological π-Mixture Kernels: Identifiability, Topological Stability, and Output-Space Learning</b>')
     p('Adnan H. Abdulwahid · Ram C. Neupane','SmallS')
-    p('Reproducibility guide | Strengthening branch Step 4 | Baseline archive v2.1.0 | Prepared 7 September 2026','SmallS')
+    p('Reproducibility guide | Strengthening branch Step 7 | Baseline archive v2.1.0 | Prepared 7 September 2026','SmallS')
     head('Purpose and scope')
     p('This archive supplies the complete computational record accompanying the manuscript: frozen inputs, fitted models, candidate outputs, primary and diagnostic results, figure and table generators, and numerical checks of the mathematical claims. The written proofs remain in the main manuscript.')
-    p('The original campaign evaluates a fixed morphological bank on a held-out test set. The subsequent output-space construction reuses that inspected set and is explicitly exploratory. Reproducing these calculations does not create a new independent validation.')
+    p('The original campaign evaluates a fixed morphological bank on a held-out test set. The subsequent output-space construction reuses that inspected set and is explicitly exploratory. Steps 5 and 6 add independent public-data validations: Oxford-IIIT Pet supplies higher-resolution human annotations under frozen synthetic corruptions, while DAVIS 2016 supplies genuine algorithm-produced segmentation errors with no synthetic corruption. Step 7 then freezes the Step-5 IID-fitted selectors and probes nine structured Oxford error families without refitting or retuning.')
     head('Primary experiment at a glance')
     table([['Dataset','Mask size','Train / validation','Scored test'],['Shapes','48 × 48','1,000 / 300','499'],['MNIST','28 × 28','2,000 / 500','1,000'],['Fashion-MNIST','28 × 28','2,000 / 500','1,000']],[115,85,177,127])
     p('The 31-action bank is frozen before the final primary evaluation. Six primary corruption conditions produce 14,994 noisy cases; two additional conditions produce 4,998 diagnostic cases. Five fitted seeds (101-105) are retained for each dataset, together with three learned local-filter models.')
@@ -88,12 +88,28 @@ def main():
     table(rows,[105,143,128,128])
     p('The output-space loss is slightly higher on all three datasets. Its demonstrated benefit here is invariance to redundant action representation. There are 14,880 direct replication checks on retained cases; the largest residual is below 7×10⁻¹⁶. This extension is not an independent confirmatory benchmark.')
     p(f"Strengthening branch: direct output-cost learning makes the retrained pipeline invariant under output-preserving representation refinement. Step 3 records exact-zero discrepancies across 288 nonbase retraining and 6,912 output-law comparisons. Step 4 separates excess risk into bank approximation, estimation, and entropy/reference terms; {oracle['random_batches']:,} random finite global checks ({oracle['conditional_inputs_checked']:,} conditional inputs) show no positive bound violation and an exact-decomposition residual of {oracle['max_exact_decomposition_residual']:.2e}. These are mathematical/implementation checks, not new benchmark evidence.",'SmallS')
+    head('Independent Oxford and DAVIS validations')
+    p('Step 5 uses all 3,669 official Oxford-IIIT Pet test masks at 128×128 under six frozen corruption conditions (22,014 held-out cases). The action-coordinate selector has mean composite loss 0.0162 versus 0.0164 for the validation-best fixed morphology; the direct-output selector is adverse at 0.0201 under both predeclared paired comparisons.')
+    p('Step 6 uses official DAVIS 2016 ground truth and pre-computed outputs from NLC, FST, SAL, TRC, MSG, and CVOS with no synthetic corruption. The held-out set contains 20 video sequences, 1,376 unique ground-truth frames, and 8,236 method-frame cases. Action-coordinate and direct-output selectors reduce sequence-mean composite loss from 0.3609 to 0.3071 and 0.3104, respectively; both improvements versus raw segmentations have family-wise 95% sequence-bootstrap intervals excluding zero. Region J and boundary F do not improve, while resized-target exact topology agreement rises from 0.1363 to 0.2339 for action-coordinate selection. Native/resized Betti pairs agree for only 26.24% of DAVIS held-out frames.')
+    if (ROOT/'results/step7_structured/step7_summary.csv').exists():
+        st=list(csv.DictReader((ROOT/'results/step7_structured/step7_summary.csv').open()))
+        vals={}
+        for r in st:
+            if r['metric'] in ('loss','topology_exact','boundary_f'):
+                vals.setdefault(r['method'],{})[r['metric']]=float(r['mean'])
+        head('Structured-error distribution shift')
+        rows=[['Method','Loss','Topology exact','Boundary F']]
+        for m in ['Input','Validation best','Action-coordinate selector','Direct-output selector']:
+            if m in vals:
+                rows.append([m,f"{vals[m]['loss']:.4f}",f"{vals[m]['topology_exact']:.4f}",f"{vals[m]['boundary_f']:.4f}"])
+        table(rows,[180,105,110,109])
+        p('Step 7 evaluates all 3,669 held-out Oxford masks under nine predeclared structured errors after fitting only on the Step-5 IID deletion/addition distribution. No structured case enters fitting or tuning. Per-condition outcomes, family-wise clean-mask bootstrap contrasts, and adverse cases are frozen under results/step7_structured/.')
     head('Numerical support for the proofs')
     top=checks['topology']
     p(f"Independent graph calculations compare {top['independent_graph_vs_scipy_masks']:,} masks and {top['single_pixel_comparisons']:,} single-pixel changes, check {top['exact_local_identity_cases']:,} exact local component identities, and include separate constructions attaining both sharp sensitivity bounds. The suite also runs 2,000 entropy/risk/replication trials, 32 finite transport comparisons, Bayesian-reversal checks, and gradient comparisons.")
     p('The largest finite-difference gradient residual in the expanded suite is 8.2×10⁻¹¹. These finite and numerical checks complement the quantified written proofs; they are not a proof-assistant certificate or external mathematical review.')
     head('Limits to retain in any presentation')
-    p('Individual metrics do not all improve: MNIST Dice and shapes hole error can worsen. Stronger Fashion-MNIST corruption gives a documented failure against the fixed area filter. Clean inputs can change. Evaluating a full 31-action bank is materially slower than using a single area filter. Low-resolution binary masks and simulated corruptions do not establish RGB, clinical, real-sensor, or high-resolution performance.')
+    p('Individual metrics do not all improve: MNIST Dice and shapes hole error can worsen. Stronger Fashion-MNIST corruption gives a documented failure against the fixed area filter. Clean inputs can change. Evaluating a full 31-action bank is materially slower than using a single area filter. Oxford closes the low-resolution-only gap, DAVIS closes the synthetic-error-only gap, and Step 7 probes structured mask-error shift; none establishes RGB restoration, clinical performance, correlated real-sensor-noise robustness, or native-resolution topology preservation. DAVIS source segmentations are from the 2016 benchmark rather than contemporary architectures.')
     p('The smooth morphology control is not a full implementation of BiMoNN, DMNN, or SoftMorph. No superiority over those published architectures is claimed. The mathematical contraction statements require their stated coefficient conditions; the fitted model has not been shown to satisfy a global contraction coefficient below one.')
     head('Attribution and reuse')
     p('Dataset sources, original hashes, and the Fashion-MNIST license are supplied. LICENSE_NOTICE.md records the project rights status without asserting an unselected open-source license. CITATION.cff contains manuscript/software attribution without an invented DOI. The manuscript discloses generative AI assistance; the authors retain responsibility for its content.','SmallS')
